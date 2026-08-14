@@ -7,7 +7,10 @@ Personalizowana wersja Monopoly Deal na wieczór kawalerski Bartka Goraja.
 ## Co tu jest
 
 - `karty.html` + `karty.css` - **karty w wersji do druku**: 56 x 87 mm, spad 3 mm, keyline, arkusze A4 po 9 sztuk. Przycisk "Powiel wg nakładu" ustawia liczbę kopii zgodnie z talią, "Drukuj / PDF" eksportuje.
-- `bartek.png` - maskotka (Goraj w cylindrze), używana na jokerze i rewersie
+- `logo-goripoly.png` - **logotyp GORIPOLY, jedno źródło dla całego projektu**. Pojawia się na banknotach, w nagłówku obu stron i na rewersie. Podmiana logo = podmiana tego jednego pliku (ta sama nazwa, proporcje ok. 1000x271).
+- `bartek.png` - maskotka (Goraj w cylindrze). W kółkach kapelusz wystaje ponad okrąg, dół jest maskowany kołem.
+- `rewers.jpg` - grafika rewersu (tymczasowa), na całą kartę
+- `files/` - materiały źródłowe w pełnej rozdzielczości (nie trafiają do repo)
 - `GORIPOLY-podglad.pdf` - podglądowy eksport, po jednym wzorze z każdej karty
 - `index.html` - wszystkie 110 kart z opisami, do przeglądania na telefonie
 - `KARTY.md` - ta sama lista w formie tekstowej, do wygodnego edytowania

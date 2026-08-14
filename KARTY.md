@@ -191,6 +191,12 @@ Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się prze
 
 ---
 
+## Zasoby graficzne
+
+- `logo-goripoly.png` - logotyp GORIPOLY. **Jedno źródło dla całego projektu**: banknoty, nagłówki stron, rewers. Zmiana logo to podmiana tego pliku, nic więcej.
+- `bartek.png` - maskotka. Tło przezroczyste, w kółkach kapelusz wystaje ponad okrąg.
+- `rewers.jpg` - rewers talii, wersja tymczasowa.
+
 ## Gdzie są karty
 
 - Wygląd do druku: `karty.html` (+ `karty.css`). Milimetry, keyline 3,5 mm od cięcia, spad 3 mm, symbol waluty jako SVG, wachlarz ikonek, arkusz A4 po 9 kart.

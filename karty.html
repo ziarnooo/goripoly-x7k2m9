@@ -104,7 +104,7 @@
 </svg>
 
 <div class="bar">
-  <h1><em>GORI</em>POLY - karty do druku</h1>
+  <h1><img src="logo-goripoly.png" alt="GORIPOLY">karty do druku</h1>
   <button data-f="all" class="on">Wszystko</button>
   <button data-f="prop">Nieruchomości</button>
   <button data-f="wild">Jokery</button>
@@ -298,26 +298,31 @@ function badge(v, cls){
 function nameCls(n){return n.length > 17 ? 'sm' : ''}
 function embSize(n){const L=n.length; return L<=9?6:L<=14?5:L<=20?4.2:L<=30?3.6:3.1}
 
-/* wachlarz ikonek: karta z cyfrą na wierzchu, pozostałe w prawo i w górę */
-function fan(n, full){
+/* wachlarz ikonek: karta z cyfra na wierzchu, pozostale w prawo i w gore */
+function fan(n, full, d){
+  const dx=+(d.fw*0.26).toFixed(2), dy=+(d.fh*0.107).toFixed(2);
+  const box=`width:${d.fw}mm;height:${d.fh}mm`;
   let s='';
   for(let i=n-1;i>=1;i--){
-    s+=`<div class="fan__card" style="transform:translate(${(1.6*i).toFixed(2)}mm,${(-0.9*i).toFixed(2)}mm) rotate(${-7*i}deg);z-index:${9-i}">
+    s+=`<div class="fan__card" style="${box};transform:translate(${(dx*i).toFixed(2)}mm,${(-dy*i).toFixed(2)}mm) rotate(${-7*i}deg);z-index:${9-i}">
       <div class="fan__bar"></div></div>`;
   }
-  s+=`<div class="fan__card" style="z-index:9"><div class="fan__bar"></div><div class="fan__num">${n}</div></div>`;
-  if(full) s+=`<svg class="sparks" viewBox="0 0 5 6"><g stroke="#111" stroke-width=".45" stroke-linecap="round">
+  s+=`<div class="fan__card" style="${box};z-index:9"><div class="fan__bar"></div><div class="fan__num">${n}</div></div>`;
+  if(full) s+=`<svg class="sparks" viewBox="0 0 5 6" style="left:${(d.fw*0.87).toFixed(2)}mm;top:${(-d.fh*0.17).toFixed(2)}mm;width:${(d.fw*0.8).toFixed(2)}mm;height:${(d.fh*0.72).toFixed(2)}mm"><g stroke="#111" stroke-width=".45" stroke-linecap="round">
     <line x1=".6" y1="1.4" x2="2.2" y2=".4"/><line x1="1" y1="3" x2="2.8" y2="3"/>
     <line x1=".6" y1="4.6" x2="2.2" y2="5.6"/></g></svg>`;
-  return `<div class="fan">${s}</div>`;
+  return `<div class="fan" style="${box};--bar:${(d.fh*0.21).toFixed(2)}mm;--num:${(d.fh*0.33).toFixed(2)}mm">${s}</div>`;
 }
 
 function rentLadder(key, mini){
   const s=SETS[key], n=s.size;
-  const pitch = mini ? (n>3?6.6:n>2?8.2:10) : (n>3?8.5:11);
+  /* przy 4 rzedach ikonki musza byc mniejsze, zeby zostal odstep miedzy nimi */
+  const d = mini
+    ? (n>3 ? {fw:3.8,fh:5.1,pitch:7.0} : n>2 ? {fw:4.4,fh:6.0,pitch:8.2} : {fw:4.4,fh:6.0,pitch:10})
+    : (n>3 ? {fw:5.2,fh:7.0,pitch:9.8} : {fw:6.2,fh:8.4,pitch:11});
   let rows='';
   s.rents.forEach((r,i)=>{
-    rows+=`<li class="rent-row" style="--pitch:${pitch}mm">${fan(i+1, i===n-1)}<span class="rent">${amt(r)}</span></li>`;
+    rows+=`<li class="rent-row" style="--pitch:${d.pitch}mm">${fan(i+1, i===n-1, d)}<span class="rent">${amt(r)}</span></li>`;
   });
   return `<div class="body"><ol class="rent-list">${rows}</ol>
     ${mini?'':'<p class="complete-set">Komplet</p>'}</div>`;
@@ -389,7 +394,7 @@ function moneyCard([v,q,color]){
       <span class="money-corner money-corner--tl">${amt(v)}</span>
       <span class="money-corner money-corner--br">${amt(v)}</span>
       <div class="coin">${amt(v)}</div>
-      <div class="money-band">GORIPOLY</div>
+      <div class="money-band"><img src="logo-goripoly.png" alt="GORIPOLY"></div>
     </div>
   </article>`;
 }
@@ -442,22 +447,7 @@ function rulesCard([title, items]){
 
 function backCard(){
   return `<article class="card card--back" data-t="back">
-    <div class="key">
-      <div class="back-dots"></div>
-      <div class="wedge wedge--tl"></div>
-      <div class="wedge wedge--br"></div>
-      <div class="back-center">
-        <svg class="arc" viewBox="0 0 100 100">
-          <defs>
-            <path id="arcT" d="M6,50 a44,44 0 0 1 88,0" fill="none"/>
-            <path id="arcB" d="M94,50 a44,44 0 0 1 -88,0" fill="none"/>
-          </defs>
-          <text font-size="9"><textPath href="#arcT" startOffset="50%" text-anchor="middle">GORIPOLY</textPath></text>
-          <text font-size="9"><textPath href="#arcB" startOffset="50%" text-anchor="middle">GORIPOLY</textPath></text>
-        </svg>
-        <div class="mascot"><img src="bartek.png" alt="Goraj"></div>
-      </div>
-    </div>
+    <div class="key"><img src="rewers.jpg" alt="Rewers GORIPOLY"></div>
   </article>`;
 }
 
