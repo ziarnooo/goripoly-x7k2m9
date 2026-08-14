@@ -318,7 +318,7 @@ function rentLadder(key, mini){
   const s=SETS[key], n=s.size;
   /* przy 4 rzedach ikonki musza byc mniejsze, zeby zostal odstep miedzy nimi */
   const d = mini
-    ? (n>3 ? {fw:3.8,fh:5.1,pitch:7.0} : n>2 ? {fw:4.4,fh:6.0,pitch:8.2} : {fw:4.4,fh:6.0,pitch:10})
+    ? (n>3 ? {fw:3.5,fh:4.6,pitch:6.5} : n>2 ? {fw:4.4,fh:6.0,pitch:8.4} : {fw:4.4,fh:6.0,pitch:10})
     : (n>3 ? {fw:5.2,fh:7.0,pitch:9.8} : {fw:6.2,fh:8.4,pitch:11});
   let rows='';
   s.rents.forEach((r,i)=>{
@@ -403,7 +403,7 @@ function actionCard(a, type){
   return `<article class="card card--action" data-t="${type}" style="--c:${a.c}">
     <div class="key">
       <div class="chevron"></div>
-      <span class="action-tag">${type==='oops'?'Przypał':'Akcja'}</span>
+      <div class="rent-head">${type==='oops'?'Karta przypału':'Karta akcji'}</div>
       <div class="emblem">
         <svg viewBox="0 0 100 100"><use href="#ico-${a.ico}"/></svg>
         <b style="--nsize:${embSize(a.n)}mm">${esc(a.n)}</b>
@@ -426,7 +426,7 @@ function rentCard(r){
     <div class="key">
       <div class="rent-head">Karta akcji</div>
       <div class="rent-emblem">${halves}
-        <div class="label"><b>CZYNSZ</b>${all?'<i>WSZYSTKIE KOLORY</i>':''}</div>
+        <div class="label"><b>CZYNSZ</b></div>
       </div>
       <p class="effect">${esc(eff)}<i>${esc(r.n)}</i></p>
       <div class="rent-head rent-head--flip">Karta akcji</div>

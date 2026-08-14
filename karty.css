@@ -134,12 +134,12 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .card--wild2 .half{position:absolute;left:0;right:0;height:40mm;overflow:hidden}
 .card--wild2 .half--a{top:0}
 .card--wild2 .half--b{bottom:0;transform:rotate(180deg)}
-.card--wild2 .half .band{height:9mm}
+.card--wild2 .half .band{height:8mm}
 .card--wild2 .half .band h2{font-size:3mm}
 .card--wild2 .half .band h2.sm{font-size:2.55mm}
-.card--wild2 .half .badge{--badge-d:7mm;left:calc(5mm - 3.5mm);top:calc(9mm - 3.5mm)}
+.card--wild2 .half .badge{--badge-d:7mm;left:calc(5mm - 3.5mm);top:calc(8mm - 3.5mm)}
 .card--wild2 .half .badge .amt{--num:2.65mm}
-.card--wild2 .body{top:11.5mm}
+.card--wild2 .body{top:9.5mm}
 .card--wild2 .rent{--num:4.2mm}
 .wild-divider{
   position:absolute;left:0;right:0;top:40mm;height:0;
@@ -148,7 +148,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .wild-divider span{
   position:absolute;left:50%;top:0;transform:translate(-50%,-50%);
   background:#fff;padding:0 1.8mm;white-space:nowrap;
-  font-size:2mm;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#666;
+  font-size:1.9mm;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#666;
 }
 
 /* ---------------- joker wszystkie kolory ---------------- */
@@ -202,11 +202,6 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .card--action .key{background:var(--c);overflow:hidden}
 .chevron{position:absolute;inset:0;
   background:repeating-linear-gradient(45deg,rgba(255,255,255,.12) 0 .4mm,transparent .4mm 2mm)}
-.action-tag{
-  position:absolute;top:2.4mm;right:2.6mm;transform:rotate(-8deg);z-index:5;
-  font-size:5.2mm;font-weight:900;color:#fff;letter-spacing:.02em;text-transform:uppercase;
-  -webkit-text-stroke:.4mm var(--ink);paint-order:stroke fill;
-}
 .badge--action{left:4mm;top:4mm}   /* zachodzi na keyline, ale zostaje 1 mm od linii cięcia */
 .emblem{
   position:absolute;left:50%;top:19mm;transform:translateX(-50%);
@@ -222,7 +217,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   position:absolute;left:3.4mm;right:3.4mm;top:49mm;bottom:2.4mm;overflow:hidden;text-align:center;
   font-size:2.7mm;font-weight:600;line-height:1.24;color:var(--ink);z-index:3;
 }
-.effect i{display:block;font-size:2.4mm;font-weight:300;font-style:italic;color:rgba(17,17,17,.6);margin-top:.9mm}
+.effect i{display:block;font-size:2.4mm;font-weight:300;font-style:italic;color:rgba(17,17,17,.78);margin-top:.9mm}
 
 /* ---------------- karty czynszu ---------------- */
 .card--rent .key{background:#F2E6C8;overflow:hidden}
