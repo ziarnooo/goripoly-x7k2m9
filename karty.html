@@ -191,19 +191,19 @@ const MONEY = [[1,6,'#C8E6A0'],[2,5,'#F4C89A'],[3,3,'#9FCBEA'],[4,3,'#D9AFE0'],[
 /* karty akcji - kolor i piktogram wg typu oryginału */
 const ACTIONS = [
   {k:'breaker',c:'#7A1FA2',ico:'breaker',v:5,q:2,n:'Monikracja',
-   t:'Zabierz dowolnemu graczowi pełny komplet nieruchomości, razem z klimatyzacją i bookingiem.',f:'odwołania rozpatruje ta sama osoba'},
+   t:'Zabierz dowolnemu graczowi pełny komplet nieruchomości, razem z budynkami.',f:'odwołania rozpatruje ta sama osoba'},
   {k:'jsn',c:'#00A6A6',ico:'jsn',v:4,q:2,n:'Dzisiaj Nie, Kochanie',
-   t:'Zagraj w dowolnym momencie, gdy ktoś zagra przeciwko Tobie kartę akcji. Anuluje jej działanie.',f:'bez dyskusji, bez odwołania'},
+   t:'Zagraj, gdy ktoś zagra przeciwko Tobie kartę akcji. Anuluje jej działanie.',f:'bez dyskusji, bez odwołania'},
   {k:'jsn',c:'#00A6A6',ico:'jsn',v:4,q:1,n:'Nie Płacę VAT-u',
-   t:'Zagraj w dowolnym momencie, gdy ktoś zagra przeciwko Tobie kartę akcji. Anuluje jej działanie.',f:'przychodu też nie zadeklarowałem'},
+   t:'Zagraj, gdy ktoś zagra przeciwko Tobie kartę akcji. Anuluje jej działanie.',f:'przychodu też nie zadeklarowałem'},
   {k:'sly',c:'#E85D9B',ico:'sly',v:3,q:2,n:'Otodom o 23:40',
    t:'Podkradnij jedną nieruchomość z niepełnego kompletu innego gracza.',f:'grunt, działka, hektar. Godzina bez znaczenia'},
   {k:'sly',c:'#E85D9B',ico:'sly',v:3,q:1,n:'Pani Beata Ma Klucze',
    t:'Podkradnij jedną nieruchomość z niepełnego kompletu innego gracza.',f:'weszła bez zapowiedzi'},
   {k:'forced',c:'#F2A93B',ico:'forced',v:3,q:2,n:'Wspólna Decyzja',
-   t:'Wymień się nieruchomością z innym graczem. Żadna nie może być z pełnego kompletu.',f:'podobno wszyscy się zgodzili'},
+   t:'Wymień się nieruchomością z innym graczem. Żadna nie z pełnego kompletu.',f:'podobno wszyscy się zgodzili'},
   {k:'forced',c:'#F2A93B',ico:'forced',v:3,q:1,n:'Rotacja Leżaków',
-   t:'Wymień się nieruchomością z innym graczem. Żadna nie może być z pełnego kompletu.',f:'ręczniki leżały od 6:40'},
+   t:'Wymień się nieruchomością z innym graczem. Żadna nie z pełnego kompletu.',f:'ręczniki leżały od 6:40'},
   {k:'debt',c:'#4A5FC1',ico:'debt',v:3,q:1,n:'Czynsz za Popowice',
    t:'Wybrany gracz płaci Ci 5M.',f:'wynajmujesz, to płacisz'},
   {k:'debt',c:'#4A5FC1',ico:'debt',v:3,q:1,n:'Potłuczone Kieliszki',
@@ -213,7 +213,7 @@ const ACTIONS = [
   {k:'bday',c:'#E8318A',ico:'bday',v:2,q:3,n:'6 Października',
    t:'Wszyscy gracze dają Ci po 2M w prezencie.',f:'urodziny Goraja, zrzutka obowiązkowa'},
   {k:'dbl',c:'#8DC63F',ico:'dbl',v:1,q:2,n:'Sezon w Los Alcázares',
-   t:'Zagraj razem z kartą czynszu, żeby podwoić stawkę. Liczy się jako druga akcja.',f:'lipiec, wszystko drożeje'},
+   t:'Zagraj z kartą czynszu, żeby podwoić stawkę. Liczy się jako druga akcja.',f:'lipiec, wszystko drożeje'},
   {k:'pass',c:'#E1231C',ico:'pass',v:1,q:2,n:'Ślub!',
    t:'Dobierz 2 dodatkowe karty. Możesz wskazać gracza, który dobiera razem z Tobą.',f:'od dziś wszystko dobieracie wspólnie'},
   {k:'pass',c:'#E1231C',ico:'pass',v:1,q:2,n:'Dywidenda z GPW',
@@ -228,13 +228,13 @@ const ACTIONS = [
 
 const BUILDINGS = [
   {c:'#8DC63F',ico:'house',v:3,q:2,n:'Klimatyzacja',
-   t:'Dołóż do pełnego kompletu, żeby podnieść czynsz o 3M. Nie działa na trasy i usługi.',f:'w apartamencie obowiązkowa'},
+   t:'Dołóż do pełnego kompletu: czynsz rośnie o 3M. Nie działa na trasy i usługi.',f:'w apartamencie obowiązkowa'},
   {c:'#8DC63F',ico:'house',v:3,q:1,n:'Klimatyzacja w Astrze',
-   t:'Dołóż do pełnego kompletu, żeby podnieść czynsz o 3M. Nie działa na trasy i usługi.',f:'naprawa kosztowała tyle, co metr kawalerki'},
+   t:'Dołóż do pełnego kompletu: czynsz rośnie o 3M. Nie działa na trasy i usługi.',f:'naprawa kosztowała tyle, co metr kawalerki'},
   {c:'#8DC63F',ico:'hotel',v:4,q:1,n:'Booking z Oceną 9.4',
-   t:'Dołóż do kompletu, który ma już klimatyzację, żeby podnieść czynsz o kolejne 4M.',f:'ręczniki złożone w łabędzie'},
+   t:'Dołóż do kompletu z klimatyzacją: czynsz rośnie o kolejne 4M.',f:'ręczniki złożone w łabędzie'},
   {c:'#8DC63F',ico:'hotel',v:4,q:1,n:'Superhost Sezonu',
-   t:'Dołóż do kompletu, który ma już klimatyzację, żeby podnieść czynsz o kolejne 4M.',f:'odbiór kluczy o każdej porze'}
+   t:'Dołóż do kompletu z klimatyzacją: czynsz rośnie o kolejne 4M.',f:'odbiór kluczy o każdej porze'}
 ];
 
 /* nasz dodatek, poza oryginalną talią */
@@ -314,13 +314,13 @@ function fan(n, full){
 
 function rentLadder(key, mini){
   const s=SETS[key], n=s.size;
-  const pitch = mini ? (n>3?6:n>2?7.5:9) : (n>3?8.5:11);
+  const pitch = mini ? (n>3?6.6:n>2?8.2:10) : (n>3?8.5:11);
   let rows='';
   s.rents.forEach((r,i)=>{
     rows+=`<li class="rent-row" style="--pitch:${pitch}mm">${fan(i+1, i===n-1)}<span class="rent">${amt(r)}</span></li>`;
   });
   return `<div class="body"><ol class="rent-list">${rows}</ol>
-    ${mini?'':'<p class="complete-set">Pełny<br>komplet</p>'}</div>`;
+    ${mini?'':'<p class="complete-set">Komplet</p>'}</div>`;
 }
 
 function setVars(key){
@@ -333,7 +333,7 @@ function propCard([key,name,flavor]){
   const s=SETS[key];
   return `<article class="card card--property" data-t="prop" style="${setVars(key)}">
     <div class="key">
-      <header class="band"><h2 class="${nameCls(name)}">${esc(name)}</h2></header>
+      <header class="band"><h2>${esc(name)}</h2></header>
       ${badge(s.val,'badge--prop')}
       <div class="cols">
         <span class="col-head col-head--left">Karty<br>w kolorze</span>
@@ -354,7 +354,7 @@ function wildCard([a,b,v,q,name]){
   return `<article class="card card--wild2" data-t="wild">
     <div class="key">
       ${half(a,'a')}
-      <div class="wild-strip"><b>Nieruchomość joker</b><i>(kartę czytasz z obu stron)</i></div>
+      <div class="wild-divider"><span>Czytaj z dwóch stron</span></div>
       ${half(b,'b')}
     </div>
   </article>`;

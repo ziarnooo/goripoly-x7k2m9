@@ -62,9 +62,10 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 }
 
 /* ---------------- symbol waluty ---------------- */
-.amt{display:inline-flex;align-items:flex-start;gap:.5mm;line-height:1}
-.amt .m{height:calc(var(--num) * .45);width:calc(var(--num) * .66);flex:none;margin-top:.1mm;fill:currentColor}
-.amt b{font-size:var(--num);font-weight:800;line-height:.82;letter-spacing:-.01em}
+.amt{display:inline-flex;align-items:flex-end;gap:.6mm;line-height:1}
+.amt .m{height:calc(var(--num) * .60);width:calc(var(--num) * .88);flex:none;fill:currentColor;
+  display:block;margin-bottom:calc(var(--num) * .04)}
+.amt b{font-size:var(--num);font-weight:800;line-height:.76;letter-spacing:-.01em;display:block}
 
 /* ---------------- pasek tytułowy ---------------- */
 .band{
@@ -75,9 +76,8 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 }
 .band h2{
   font-size:3.6mm;font-weight:800;text-transform:uppercase;text-align:center;
-  line-height:1.02;letter-spacing:-.01em;
+  line-height:1.08;letter-spacing:-.015em;text-wrap:balance;
 }
-.band h2.sm{font-size:3.1mm}
 
 /* ---------------- badge nominału ---------------- */
 .badge{
@@ -130,33 +130,35 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 /* podpis - jedyne odstępstwo od oryginału, żarty muszą gdzieś być */
 .flavor{
   position:absolute;left:3mm;right:3mm;bottom:2.6mm;text-align:center;
-  font-size:2.5mm;font-weight:600;font-style:italic;line-height:1.2;color:#6f6a60;
+  font-size:2.3mm;font-weight:400;font-style:italic;line-height:1.22;color:#8a857a;
 }
 
 /* ---------------- joker dwukolorowy ---------------- */
-.card--wild2 .half{position:absolute;left:0;right:0;height:35.5mm;overflow:hidden}
+.card--wild2 .half{position:absolute;left:0;right:0;height:40mm;overflow:hidden}
 .card--wild2 .half--a{top:0}
 .card--wild2 .half--b{bottom:0;transform:rotate(180deg)}
 .card--wild2 .half .band{height:9mm}
 .card--wild2 .half .band h2{font-size:3mm}
-.card--wild2 .half .band h2.sm{font-size:2.5mm}
+.card--wild2 .half .band h2.sm{font-size:2.55mm}
 .card--wild2 .half .badge{--badge-d:7mm;left:calc(5mm - 3.5mm);top:calc(9mm - 3.5mm)}
 .card--wild2 .half .badge b{font-size:3.6mm;margin-top:1.5mm}
 .card--wild2 .half .badge .m{height:1.5mm;width:2.2mm;top:.9mm;left:1.1mm}
-.card--wild2 .body{top:10.5mm}
+.card--wild2 .body{top:11.5mm}
 .card--wild2 .fan{width:4.4mm;height:6mm}
 .card--wild2 .fan__card{width:4.4mm;height:6mm}
 .card--wild2 .fan__bar{height:1.3mm}
 .card--wild2 .fan__num{font-size:2.1mm}
 .card--wild2 .rent{--num:4.2mm}
 .card--wild2 .sparks{left:3.9mm;top:-1mm;width:3.6mm;height:4.4mm}
-.wild-strip{
-  position:absolute;left:0;right:0;top:35.5mm;height:8mm;background:#fff;
-  border-top:var(--stroke) solid var(--ink);border-bottom:var(--stroke) solid var(--ink);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4mm;z-index:5;
+.wild-divider{
+  position:absolute;left:0;right:0;top:40mm;height:0;
+  border-top:.35mm dashed var(--ink);z-index:5;
 }
-.wild-strip b{font-size:3.4mm;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
-.wild-strip i{font-size:2.2mm;font-weight:600;font-style:italic;color:#555}
+.wild-divider span{
+  position:absolute;left:50%;top:0;transform:translate(-50%,-50%);
+  background:#fff;padding:0 1.8mm;white-space:nowrap;
+  font-size:2mm;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#666;
+}
 
 /* ---------------- joker wszystkie kolory ---------------- */
 .card--wildall .key{background:#111111;color:#fff}
@@ -212,10 +214,10 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .emblem b{font-size:var(--nsize,6mm);font-weight:900;text-transform:uppercase;
   text-align:center;line-height:1.02;letter-spacing:-.01em;color:var(--ink)}
 .effect{
-  position:absolute;left:3.4mm;right:3.4mm;top:50mm;bottom:2.6mm;overflow:hidden;text-align:center;
-  font-size:2.8mm;font-weight:600;line-height:1.26;color:var(--ink);z-index:3;
+  position:absolute;left:3.4mm;right:3.4mm;top:49mm;bottom:2.4mm;overflow:hidden;text-align:center;
+  font-size:2.7mm;font-weight:600;line-height:1.24;color:var(--ink);z-index:3;
 }
-.effect i{display:block;font-size:2.5mm;font-style:italic;color:rgba(17,17,17,.62);margin-top:1mm}
+.effect i{display:block;font-size:2.4mm;font-weight:400;font-style:italic;color:rgba(17,17,17,.6);margin-top:.9mm}
 
 /* ---------------- karty czynszu ---------------- */
 .card--rent .key{background:#F2E6C8;overflow:hidden}
