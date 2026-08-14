@@ -1,267 +1,206 @@
-# GORIpoly - pełna lista kart (110)
+# GORIpoly - pełna lista kart
 
-Źródło prawdy do iteracji. Struktura talii 1:1 jak oryginalny Monopoly Deal (polska edycja).
-Zmieniamy tylko nazwy i podpisy. Wartości, czynsze i liczba sztuk zostają.
+Źródło prawdy. Struktura talii 1:1 z oryginalnym Monopoly Deal (Hasbro E3113).
+Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zmieniamy wyłącznie nazwy i podpisy.
 
-**Skład talii:** 28 nieruchomości + 11 nieruchomości uniwersalnych (wild) + 13 czynszów + 36 akcji + 20 pieniędzy + 2 karty zasad = 110
+**Talia podstawowa: 110 kart**
 
-Legenda:
-- ✅ zatwierdzone przez Ciebie
-- 🔧 zmienione w tej iteracji (wg Twoich uwag)
-- ❓ czeka na Twoją decyzję / dane
-- 🆕 propozycja, nowa
+| Typ | Liczba |
+|---|---|
+| Karty zasad | 4 |
+| Nieruchomości | 28 |
+| Jokery (property wild) | 11 |
+| Czynsze (rent) | 13 |
+| Akcje | 34 |
+| Pieniądze | 20 |
 
----
-
-## 1. NIERUCHOMOŚCI (28 kart)
-
-### Brązowe - Olkusz: korzenie (wartość 1M; czynsz 1/2M) - 2 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 1 | ul. Konopacka | **Szopa na Jasnej** | głęboko na działce, wchodzisz na własne ryzyko | 🔧 |
-| 2 | ul. Stawki | **Trawnik na Jasnej** | duży, będzie co kosić | 🔧 |
-
-### Błękitne - Olkusz: rodzina (1M; 1/2/3M) - 3 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 3 | ul. Radzymińska | **Dom na Jasnej** | Olkusz HQ | ✅ |
-| 4 | ul. Jagiellońska | **Dom Mamy na Nowowiejskiej** | obiad zawsze o 14:00 | 🔧 |
-| 5 | ul. Targowa | **Teściowie na Skwerze** | dwa przystanki od wszystkiego | 🔧 |
-
-> Capri wypadło stąd, bo zostaje w mediach (tam jest śmieszniejsze). Trzecia błękitna to teraz mieszkanie teściów w Olkuszu.
-
-### Różowe - Wrocław: dodatki lokatorskie (2M; 1/2/4M) - 3 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 6 | ul. Płowiecka | **Komórka Lokatorska** | pojemność: nieskończona | ✅ |
-| 7 | ul. Marsa | **Miejsce Parkingowe** | luksus, o którym Katowice marzą | ✅ |
-| 8 | ul. Grochowska | **Miejsce na Rower** | strzeżone lepiej niż mieszkanie | ✅ |
-
-### Pomarańczowe - Wrocław: Port Popowice (2M; 1/3/5M) - 3 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 9 | ul. Obozowa | **Mieszkanie na Porcie Popowice** | ❓ metraż wpisujemy czy nie (patrz pytania) | 🔧 |
-| 10 | ul. Górczewska | **Beach Bar pod Milenijnym** | ❓ potrzebna prawdziwa nazwa | 🔧 |
-| 11 | ul. Wolska | **Siłownia i Basen Orbita** | karnet, z którego korzysta się sezonowo | 🔧 |
-
-### Czerwone - Katowice: Gliwicka (3M; 2/3/6M) - 3 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 12 | ul. Mickiewicza | **Mieszkanie na Gliwickiej** | Gliwicka 220D/9, przyszłe mieszkanie z żoną. Najcenniejsze aktywo w talii | 🔧 |
-| 13 | ul. Słowackiego | **Piwnica na Gliwickiej** | to, co się nie mieści na górze | 🔧 |
-| 14 | pl. Wilsona | **Zawsze Dostępne Miejsce na Gliwickiej** | ostatnio widziane w 2019 | 🔧 |
-
-### Żółte - Hiszpania: sąsiedztwo (3M; 2/4/6M) - 3 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 15 | ul. Świętokrzyska | **Mieszkanie Teściowej** | Los Alcázares, blisko. Za blisko? | ✅ |
-| 16 | Krakowskie Przedmieście | **Mieszkanie Teścia** | azyl po drugiej stronie kompleksu | ✅ |
-| 17 | ul. Nowy Świat | **Mieszkanie Beaty** | "szefowej" wspólnoty | 🔧 |
-
-### Zielone - Los Alcázares: życie w kompleksie (4M; 2/4/7M) - 3 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 18 | pl. Trzech Krzyży | **Taras przed Apartamentem** | z widokiem, dopóki nikt nie zaparkuje | 🔧 |
-| 19 | ul. Marszałkowska | **Basen w Kompleksie** | ręcznik na leżaku od 6:40, właściciel nieznany | 🔧 |
-| 20 | Al. Jerozolimskie | **Plaża ❓ (nazwa do potwierdzenia)** | 5 minut spacerem | ❓ |
-
-### Granatowe - Premium (4M; 3/8M) - 2 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 21 | ul. Belwederska | **Apartament Los Alcázares** | perła w koronie Goraja | ✅ |
-| 22 | Aleje Ujazdowskie | **Piwnica do Apartamentu** | hiszpańska, klimatyzowana naturalnie | 🔧 |
-
-### Czarne (dworce) - Trasy Goraja (2M; 1/2/3/4M) - 4 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 23 | Dworzec Centralny | **Lotnisko Alicante** | trzy godziny od własnej piwnicy | 🔧 podpis |
-| 24 | Dworzec Gdański | **A4 z korkami** | Katowice-Wrocław, czas przejazdu: zależy | 🔧 |
-| 25 | Dworzec Wschodni | **DK94 do Olkusza** | droga na obiad | ✅ |
-| 26 | Dworzec Zachodni | **Dworzec Wrocław Główny** | peron 3, pociąg opóźniony | 🔧 |
-
-### Jasnozielone (media) - Usługi niezbędne do życia (2M; 1/2M) - 2 karty
-
-| # | Oryginał | GORIpoly | Podpis | St. |
-|---|---|---|---|---|
-| 27 | Elektrownia | **Capri** | restauracja teściowej. Kto wejdzie, ten płaci za obiad | ✅ |
-| 28 | Wodociągi | **Ryanair do Alicante** | bagaż podręczny 40x20x25 | ✅ |
+**Dodatek GORIpoly: 6 kart przypału** (poza talią, nie ruszają balansu)
 
 ---
 
-## 2. NIERUCHOMOŚCI UNIWERSALNE / WILD (11 kart)
+## 1. NIERUCHOMOŚCI (28)
 
-W oryginale to karty z dwoma pasami kolorów (grasz nimi jako jedna z dwóch grup) plus 2 tęczowe (dowolny kolor, wartość 0M).
+### Brązowe - Olkusz: korzenie | wartość 1M | czynsz 1M / 2M
 
-| # | Kolory | Szt. | Wartość | GORIpoly (nazwa) | St. |
-|---|---|---|---|---|---|
-| W1 | granat + zieleń | 1 | 4M | **Klucze do apartamentu** | 🆕 |
-| W2 | zieleń + dworce | 1 | 4M | **Transfer z lotniska** | 🆕 |
-| W3 | media + dworce | 1 | 4M | **Lot i obiad w pakiecie** | 🆕 |
-| W4 | błękit + brąz | 1 | 1M | **Klucze do Olkusza** | 🆕 |
-| W5 | błękit + dworce | 1 | 4M | **Wypad do domu** | 🆕 |
-| W6 | róż + pomarańcz | 2 | 2M | **Klucze do Wrocławia** | 🆕 |
-| W7 | czerwień + żółć | 2 | 3M | **Klucze do Katowic i Hiszpanii** | 🆕 |
-| W8 | tęczowa (dowolny kolor) | 2 | 0M | **Goraj załatwi** | 🆕 |
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| Mediterranean Avenue | **Szopa na Jasnej** | głęboko na działce, wchodzisz na własne ryzyko |
+| Baltic Avenue | **Trawnik na Jasnej** | duży, będzie co kosić |
 
-> Uwaga: nazwy na wildach są opcjonalne. W oryginale te karty nie mają nazw, tylko pasy kolorów. Możemy zostawić czyste pasy albo dać te podpisy dla klimatu. Twoja decyzja.
+### Błękitne - Olkusz: rodzina | 1M | 1M / 2M / 3M
+
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| Oriental Avenue | **Dom na Jasnej** | Olkusz HQ |
+| Vermont Avenue | **Dom Mamy na Nowowiejskiej** | obiad zawsze o 14:00 |
+| Connecticut Avenue | **Teściowie na Skwerze** | dwa przystanki od wszystkiego |
+
+### Różowe - Wrocław: dodatki lokatorskie | 2M | 1M / 2M / 4M
+
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| St. Charles Place | **Komórka Lokatorska** | pojemność: nieskończona |
+| Virginia Avenue | **Miejsce Parkingowe** | luksus, o którym Katowice marzą |
+| States Avenue | **Miejsce na Rower** | strzeżone lepiej niż mieszkanie |
+
+### Pomarańczowe - Wrocław: Port Popowice | 2M | 1M / 3M / 5M
+
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| New York Avenue | **Mieszkanie na Porcie Popowice** | widok, komórka, cisza |
+| St. James Place | **Hotspot** | beach bar pod Mostem Milenijnym |
+| Tennessee Avenue | **Siłownia i Basen Orbita** | karnet całoroczny, sezon dwumiesięczny |
+
+**Warianty zamienne** (do wyboru, którą trójkę drukujemy):
+- **Mieszkanie na Grunwaldzie** - balkon w całości oddany gołębiom
+- **Mieszkanie z Justyną i Zerykiem** - suma kątów: 320 stopni
+
+### Czerwone - Katowice: Gliwicka | 3M | 2M / 3M / 6M
+
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| Kentucky Avenue | **Mieszkanie na Gliwickiej** | Gliwicka 220D/9, przyszłe mieszkanie z żoną |
+| Indiana Avenue | **Piwnica na Gliwickiej** | to, co się nie mieści na górze |
+| Illinois Avenue | **Zawsze Dostępne Miejsce** | na Gliwickiej, ostatnio widziane w 2019 |
+
+### Żółte - Hiszpania: sąsiedztwo | 3M | 2M / 4M / 6M
+
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| Ventnor Avenue | **Mieszkanie Teściowej** | blisko. Za blisko? |
+| Marvin Gardens | **Mieszkanie Teścia** | azyl po drugiej stronie kompleksu |
+| Atlantic Avenue | **Mieszkanie Beaty** | "szefowej" wspólnoty |
+
+### Zielone - Los Alcázares: życie w kompleksie | 4M | 2M / 4M / 7M
+
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| North Carolina Avenue | **Taras przed Apartamentem** | z widokiem, dopóki nikt nie zaparkuje |
+| Pacific Avenue | **Basen w Kompleksie** | ręcznik na leżaku od 6:40, właściciel nieznany |
+| Pennsylvania Avenue | **Plaża Las Salinas** | 5 minut spacerem, kajty na horyzoncie |
+
+### Granatowe - Premium | 4M | 3M / 8M
+
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| Boardwalk | **Apartament Los Alcázares** | perła w koronie Goraja |
+| Park Place | **Piwnica do Apartamentu** | klimatyzowana naturalnie |
+
+### Czarne - Trasy Goraja | 2M | 1M / 2M / 3M / 4M
+
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| Reading Railroad | **Lotnisko Alicante** | trzy godziny od własnej piwnicy |
+| Pennsylvania Railroad | **A4 z korkami** | Katowice - Wrocław, czas przejazdu: zależy |
+| B. & O. Railroad | **DK94 do Olkusza** | droga na obiad |
+| Short Line | **Dworzec Wrocław Główny** | peron 3, pociąg opóźniony |
+
+### Jasnozielone - Usługi niezbędne do życia | 2M | 1M / 2M
+
+| Oryginał | GORIpoly | Podpis |
+|---|---|---|
+| Electric Company | **Capri** | restauracja teściowej. Kto wejdzie, ten płaci za obiad |
+| Water Works | **Ryanair do Alicante** | bagaż podręczny 40 x 20 x 25 |
 
 ---
 
-## 3. KARTY CZYNSZU (13 kart)
+## 2. JOKERY / PROPERTY WILD (11)
 
-Pary kolorów jak w oryginale, nie da się ich mieszać.
+Dwustronne, kolory podzielone na pół, w turze można obrócić.
 
-| # | Pary | Szt. | Wartość | GORIpoly | Podpis | St. |
-|---|---|---|---|---|---|---|
-| C1 | granat + zieleń | 2 | 1M | **Czynsz z kompleksu** | wspólnota już policzyła | 🆕 |
-| C2 | czerwień + żółć | 2 | 1M | **Czynsz z Gliwickiej i Hiszpanii** | dwa mieszkania, jedno konto | 🆕 |
-| C3 | róż + pomarańcz | 2 | 1M | **Czynsz z Popowic** | wraz z opłatą za komórkę | 🆕 |
-| C4 | błękit + brąz | 2 | 1M | **Czynsz z Olkusza** | u mamy się nie płaci, u reszty tak | 🆕 |
-| C5 | dworce + media | 2 | 1M | **Rozliczenie za dojazdy** | paliwo, bilet, bagaż podręczny | 🆕 |
-| C6 | tęczowa (dowolny kolor) | 3 | 3M | **Rozliczenie roczne** | wybierasz kolor i osobę. Bez dyskusji | 🆕 |
-
----
-
-## 4. KARTY AKCJI (36 kart)
-
-### Deal Breaker / Zerwanie umowy - 2 szt., 5M
-Zabierasz przeciwnikowi pełny komplet nieruchomości.
-
-| Wariant | Nazwa | Podpis | St. |
+| Kolory | Szt. | Wartość | GORIpoly |
 |---|---|---|---|
-| A (domyślny) | **Wiśniewska zarządziła** | Zabierz pełny komplet. Odwołania rozpatruje ta sama osoba | 🆕 |
-| B | **Monikracja** | Zabierz pełny komplet. W Capri decyzje zapadają raz | 🆕 |
-| C | **Monika podporządkowuje** | Zabierz pełny komplet. To była wspólna decyzja | 🆕 |
-
-> ❓ Wybierz wariant. "Teściowa Przejmuje" wypada.
-
-### Just Say No / Nic z tego - 3 szt., 4M
-Anuluje akcję zagraną przeciwko Tobie.
-
-| Nazwa | Podpis | St. |
-|---|---|---|
-| **Dzisiaj nie, kochanie** | Anuluje dowolną akcję. Bez dyskusji, bez odwołania | 🔧 |
-
-### Sly Deal / Podstępna zamiana - 3 szt., 3M
-Zabierasz jedną kartę nieruchomości (nie z kompletu).
-
-| Nazwa | Podpis | St. |
-|---|---|---|
-| **Pani Beata ma klucze** | Weszła bez zapowiedzi. Zabierz 1 nieruchomość spoza kompletu | 🆕 |
-
-### Forced Deal / Wymuszona wymiana - 4 szt., 3M
-Wymieniasz się nieruchomością z przeciwnikiem.
-
-| Nazwa | Podpis | St. |
-|---|---|---|
-| **Wspólna decyzja** | Wymień się nieruchomością. Podobno wszyscy się zgodzili | 🆕 |
-
-### Debt Collector / Dłużnik - 3 szt., 3M
-Wybrany gracz płaci Ci 5M. Robimy 3 różne wzory:
-
-| # | Nazwa | Podpis | St. |
-|---|---|---|---|
-| D1 | **Czynsz za Popowice** | Wynajmujesz, to płacisz. Wybrany gracz daje 5M | 🆕 |
-| D2 | **Potłuczone kieliszki** | Komplet był na wyposażeniu. Wybrany gracz daje 5M | 🆕 |
-| D3 | **Zgubione klucze do apartamentu** | Wymiana wkładki na koszt gościa. 5M | 🆕 |
-
-### It's My Birthday / Urodziny - 3 szt., 2M
-Każdy gracz daje Ci 2M.
-
-| Nazwa | Podpis | St. |
-|---|---|---|
-| **6 października** | Urodziny Goraja. Każdy dorzuca się po 2M | 🆕 |
-
-### Double The Rent / Podwójny czynsz - 2 szt., 1M
-Podwaja kwotę zagranej karty czynszu.
-
-| Nazwa | Podpis | St. |
-|---|---|---|
-| **Sezon w Los Alcázares** | Lipiec. Stawki x2 | 🆕 |
-
-### House / Dom - 3 szt., 3M
-Dokładasz do pełnego kompletu, +3M do czynszu.
-
-| Nazwa | Podpis | St. |
-|---|---|---|
-| **Klimatyzacja** | +3M do czynszu za komplet | 🆕 |
-
-### Hotel - 3 szt., 4M
-Dokładasz do kompletu z domem, +4M do czynszu.
-
-| Nazwa | Podpis | St. |
-|---|---|---|
-| **Booking z oceną 9.4** | +4M do czynszu. Ręczniki w łabędzie | 🆕 |
-
-### Pass Go / Przejdź przez Start - 10 szt., 1M
-Dobierz 2 karty. Robimy 5 wzorów po 2 sztuki:
-
-| # | Nazwa | Podpis | St. |
-|---|---|---|---|
-| P1 | **Ślub!** | Dobierz 2 karty. Od dziś wszystko dobieracie wspólnie | ✅ |
-| P2 | **Dywidenda z GPW** | Spółki dowiozły. Dobierz 2 karty | 🆕 |
-| P3 | **Obiad u mamy** | Wychodzisz z pełnym brzuchem i słoikami. Dobierz 2 karty | 🆕 |
-| P4 | **Rezerwacja na cały sierpień** | Apartament wynajęty w jeden dzień. Dobierz 2 karty | 🆕 |
-| P5 | **Wolne miejsce przed Gliwicką** | Ktoś odjechał. Dobierz 2 karty, zanim ktoś zajmie | 🆕 |
+| granat / zieleń | 1 | 4M | **Klucze do Apartamentu** |
+| trasa / zieleń | 1 | 4M | **Transfer z Lotniska** |
+| trasa / błękit | 1 | 4M | **Wypad do Domu** |
+| trasa / usługi | 1 | 2M | **Lot i Obiad w Pakiecie** |
+| błękit / brąz | 1 | 1M | **Klucze do Olkusza** |
+| róż / pomarańcz | 2 | 2M | **Klucze do Wrocławia** |
+| czerwień / żółć | 2 | 3M | **Klucze do Katowic i Hiszpanii** |
+| wszystkie 10 kolorów | 2 | brak wartości | **Goraj Załatwi** |
 
 ---
 
-## 4b. KARTY DODATKOWE / HOUSE RULES (poza oryginałem) - 🆕 do decyzji
+## 3. CZYNSZE / RENT (13)
 
-Oryginał nie ma kart "tracisz". Jeśli chcemy takie żarty, wchodzą jako osobny dodatek. Propozycje:
+| Kolory | Szt. | Wartość | GORIpoly | Podpis |
+|---|---|---|---|---|
+| brąz / błękit | 2 | 1M | **Czynsz z Olkusza** | u mamy się nie płaci, u reszty tak |
+| róż / pomarańcz | 2 | 1M | **Czynsz z Wrocławia** | razem z opłatą za komórkę |
+| czerwień / żółć | 2 | 1M | **Czynsz z Gliwickiej i Hiszpanii** | dwa mieszkania, jedno konto |
+| granat / zieleń | 2 | 1M | **Czynsz z Kompleksu** | wspólnota już policzyła |
+| trasa / usługi | 2 | 1M | **Rozliczenie za Dojazdy** | paliwo, bilet, bagaż podręczny |
+| wszystkie kolory | 3 | 3M | **Rozliczenie Roczne** | bez dyskusji |
 
-| # | Nazwa | Podpis / efekt | St. |
+---
+
+## 4. AKCJE (34)
+
+| Oryginał | Szt. | Wart. | GORIpoly | Podpis |
+|---|---|---|---|---|
+| Deal Breaker | 2 | 5M | **Monikracja** | odwołania rozpatruje ta sama osoba |
+| Just Say No | 2 | 4M | **Dzisiaj Nie, Kochanie** | bez dyskusji, bez odwołania |
+| Just Say No | 1 | 4M | **Nie Płacę VAT-u** | przychodu też nie zadeklarowałem |
+| Sly Deal | 2 | 3M | **Otodom o 23:40** | grunt, działka, hektar. Godzina bez znaczenia |
+| Sly Deal | 1 | 3M | **Pani Beata Ma Klucze** | weszła bez zapowiedzi |
+| Forced Deal | 2 | 3M | **Wspólna Decyzja** | podobno wszyscy się zgodzili |
+| Forced Deal | 1 | 3M | **Rotacja Leżaków** | ręczniki leżały od 6:40 |
+| Debt Collector | 1 | 3M | **Czynsz za Popowice** | wynajmujesz, to płacisz |
+| Debt Collector | 1 | 3M | **Potłuczone Kieliszki** | komplet był na wyposażeniu |
+| Debt Collector | 1 | 3M | **Zgubione Klucze** | wymiana wkładki na koszt gościa |
+| It's My Birthday | 3 | 2M | **6 Października** | urodziny Goraja, zrzutka obowiązkowa |
+| Double The Rent | 2 | 1M | **Sezon w Los Alcázares** | lipiec, wszystko drożeje |
+| House | 2 | 3M | **Klimatyzacja** | w apartamencie obowiązkowa |
+| House | 1 | 3M | **Klimatyzacja w Astrze** | naprawa kosztowała tyle, co całe auto |
+| Hotel | 1 | 4M | **Booking z Oceną 9.4** | ręczniki złożone w łabędzie |
+| Hotel | 1 | 4M | **Superhost Sezonu** | odbiór kluczy o każdej porze |
+| Pass Go | 2 | 1M | **Ślub!** | od dziś wszystko dobieracie wspólnie |
+| Pass Go | 2 | 1M | **Dywidenda z GPW** | spółki dowiozły |
+| Pass Go | 2 | 1M | **Zwrot Szklanek do Ikei** | naklejki zostały, kasa wróciła |
+| Pass Go | 2 | 1M | **Obiad u Mamy** | wychodzisz z pełnym brzuchem i słoikami |
+| Pass Go | 2 | 1M | **Wolne Miejsce przed Gliwicką** | ktoś odjechał, bierz zanim zajmą |
+
+Rozkład zgadza się z oryginałem: Pass Go 10, Sly Deal 3, Forced Deal 3, Debt Collector 3, Birthday 3, Just Say No 3, House 3, Deal Breaker 2, Hotel 2, Double The Rent 2.
+
+---
+
+## 5. PIENIĄDZE (20, razem 57M)
+
+1M x6, 2M x5, 3M x3, 4M x3, 5M x2, 10M x1. Docelowo z ludkiem Goraja zamiast standardowej grafiki.
+
+---
+
+## 6. KARTY ZASAD (4)
+
+Jak Zacząć / Jak Zagrywasz / Jak Płacisz / Czego Nie Ma w Oryginale. Treść w `index.html`.
+
+---
+
+## 7. DODATEK: KARTY PRZYPAŁU (6, poza talią)
+
+Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się przed nimi "Dzisiaj nie, kochanie".
+
+| GORIpoly | Wart. | Efekt | Podpis |
 |---|---|---|---|
-| H1 | **Nocka na lotnisku w Alicante** | Auto padło w drodze po odbiór. Tracisz turę, ale rano masz cały terminal dla siebie | 🆕 |
-| H2 | **Beata i niezadowoleni goście** | Opinia 6.1 na Booking. Odłóż 2M do banku | 🆕 |
-| H3 | **Sierpień bez rezerwacji** | Apartament stoi pusty. Odłóż 2M do banku | 🆕 |
-
-> ❓ Wchodzimy w dodatek czy trzymamy się sztywno oryginału?
-
----
-
-## 5. KARTY PIENIĘDZY (20 kart)
-
-| Nominał | Szt. | Pomysł na grafikę | St. |
-|---|---|---|---|
-| 1M | 6 | banknot z Gorajem | ❓ |
-| 2M | 5 | | ❓ |
-| 3M | 3 | | ❓ |
-| 4M | 3 | | ❓ |
-| 5M | 2 | | ❓ |
-| 10M | 1 | wersja "złota", Goraj w garniturze | ❓ |
-
-> ❓ Decyzja: personalizujemy banknoty (twarz Goraja, podpisy typu "Bank Rodziny Goraj") czy zostawiamy generyczne.
+| **Nocka na Lotnisku w Alicante** | 2M | Wybrany gracz opuszcza następną turę | auto padło w drodze po odbiór |
+| **Pielgrzymka: Sekcja Ekologiczna** | 2M | Wybrany gracz opuszcza następną turę | rozkładasz śmietniki, sprzątasz po wszystkich |
+| **Kontrola z Urzędu Skarbowego** | 2M | Wybrany gracz odkłada 5M do banku | przychód sam się nie zadeklaruje |
+| **Zebranie Rady Osiedla** | 2M | Wybrany gracz odkłada 2M do banku | trzy godziny o segregacji |
+| **Beata i Niezadowoleni Goście** | 2M | Wybrany gracz odkłada 2M do banku | ocena 6.1 i długi komentarz |
+| **Sierpień bez Rezerwacji** | 2M | Wybrany gracz odkłada 2M do banku | apartament stoi pusty w szczycie sezonu |
 
 ---
 
-## 6. KARTY ZASAD (2 karty)
-Skrót zasad. Przepisujemy 1:1 z oryginału, z podmienionymi nazwami akcji.
+## Odstępstwa od oryginału (świadome)
 
----
+1. **Karty przypału** - 6 kart, których w Monopoly Deal nie ma. Osobny dodatek, można grać bez nich.
+2. **"Ślub!"** - działa jak Pass Go, ale pozwala wskazać gracza, który dobiera 2 karty razem z Tobą.
 
-## Otwarte pytania do Ciebie
+Reszta jest 1:1.
 
-1. **Popowice - metraż.** Wpisujemy "39 m²" czy sam "Port Popowice"? Jeśli metraż, to jaki dokładnie?
-2. **Beach bar pod Milenijnym** - jak się nazywa to miejsce? Wpisałem placeholder.
-3. **Plaża w Los Alcázares** - która to? La Concha, Del Espejo, Las Palmeras, Manzanares, Carrión?
-4. **Gliwicka 220D/9** - potwierdź numer, wchodzi na kartę jako podpis.
-5. **Deal Breaker** - wariant A, B czy C (Wiśniewska zarządziła / Monikracja / Monika podporządkowuje)?
-6. **Sprzątaczka** - jak jej na imię? Miała być karta, na razie nie wiem jak ją nazwać.
-7. **Wildy** - dajemy im nazwy czy zostawiamy same pasy kolorów jak w oryginale?
-8. **Banknoty** - personalizujemy?
+## Otwarte
 
-## Uwaga mechaniczna
-
-W Monopoly Deal **nie ma karty "tracisz pieniądze"** - wszystkie akcje albo zabierają coś przeciwnikowi, albo dają Tobie. Dlatego Twoje pomysły o stratach (potłuczone kieliszki, zgubione klucze, Beata i niezadowoleni goście, niewynajęte mieszkanie) wrzuciłem jako **Dłużnika** - czyli to ktoś inny płaci Tobie za szkody. Działa i mechanika zostaje nietknięta.
-
-Jeśli chcesz kartę, na której realnie się traci, to musi być karta spoza oryginału (house rule). Mogę dorzucić 2-3 takie jako opcjonalny dodatek, np. "Beata i niezadowoleni goście - odłóż 2M do banku". Powiedz czy wchodzimy w to.
+1. Pomarańczowe: zostawiamy Hotspot i Orbitę czy wchodzą Grunwald / mieszkanie z Justyną i Zerykiem?
+2. Grafiki: ludek w stylu Monopoly z twarzą Goraja (Dominik podeśle materiał). Miejsca na kartach zarezerwowane.
+3. Rewers talii.
+4. Po zatwierdzeniu: PDF do drukarni, 56 x 87 mm ze spadami 3 mm, CMYK, 300 DPI.
