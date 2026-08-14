@@ -102,7 +102,9 @@ Pozostałe akcje do spersonalizowania w tym samym duchu: Czynsz (per kolor), Czy
 
 ## Status / otwarte kwestie
 
-1. Nazwy i podpisy nieruchomości — wstępnie zaakceptowane, mogą jeszcze wpaść korekty od zamawiającego.
-2. Czekamy na 5–10 insiderskich żartów o Bartku → z nich pozostałe karty akcji.
-3. Decyzja: czy karty pieniędzy personalizujemy (np. banknoty z Gorajem), czy zostają generyczne.
-4. Decyzja drukarska: druk w drukarni gier (np. Porta Art — brak minimum nakładu) vs lokalna drukarnia na sztywnym papierze 300–350 g z zaokrąglonymi rogami.
+**Aktualna lista wszystkich 110 kart żyje w `KARTY.md` - to jest źródło prawdy.** Ten brief opisuje tylko ton, kolory i wymogi druku. Strona do review: https://ziarnooo.github.io/goripoly-x7k2m9/
+
+1. Nazwy i podpisy - pierwsza tura poprawek od zamawiającego naniesiona, otwarte pytania na końcu `KARTY.md`.
+2. Decyzja: czy karty pieniędzy personalizujemy (np. banknoty z Gorajem), czy zostają generyczne.
+3. Decyzja: czy wchodzi dodatek "house rules" z kartami, na których się traci (poza oryginalną talią).
+4. Decyzja drukarska: druk w drukarni gier (np. Porta Art - brak minimum nakładu) vs lokalna drukarnia na sztywnym papierze 300-350 g z zaokrąglonymi rogami.
