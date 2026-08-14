@@ -293,7 +293,7 @@ const numc = hex => lum(hex) > 0.60 ? '#111111' : hex;         /* cyfra w ikonce
 function amt(v, cls){return `<span class="amt ${cls||''}"><svg class="m" viewBox="0 0 120 82"><use href="#m-glyph"/></svg><b>${v}</b></span>`}
 function badge(v, cls){
   if(v===null) return `<div class="badge badge--none ${cls||''}"><b>BEZ<br>WART.</b></div>`;
-  return `<div class="badge ${cls||''}"><svg class="m" viewBox="0 0 120 82"><use href="#m-glyph"/></svg><b>${v}</b></div>`;
+  return `<div class="badge ${cls||''}">${amt(v)}</div>`;
 }
 function nameCls(n){return n.length > 17 ? 'sm' : ''}
 function embSize(n){const L=n.length; return L<=9?6:L<=14?5:L<=20?4.2:L<=30?3.6:3.1}

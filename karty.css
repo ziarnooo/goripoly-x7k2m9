@@ -62,10 +62,9 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 }
 
 /* ---------------- symbol waluty ---------------- */
-.amt{display:inline-flex;align-items:flex-end;gap:.6mm;line-height:1}
-.amt .m{height:calc(var(--num) * .60);width:calc(var(--num) * .88);flex:none;fill:currentColor;
-  display:block;margin-bottom:calc(var(--num) * .04)}
-.amt b{font-size:var(--num);font-weight:800;line-height:.76;letter-spacing:-.01em;display:block}
+.amt{display:inline-flex;align-items:baseline;gap:.45mm;white-space:nowrap}
+.amt .m{height:calc(var(--num) * .70);width:calc(var(--num) * 1.024);flex:none;fill:currentColor;display:block}
+.amt b{font-size:var(--num);font-weight:800;line-height:1;letter-spacing:-.01em}
 
 /* ---------------- pasek tytułowy ---------------- */
 .band{
@@ -86,9 +85,8 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   display:flex;align-items:center;justify-content:center;color:var(--ink);
 }
 .badge--prop{left:calc(6.5mm - var(--badge-d)/2);top:calc(var(--band-h) - var(--badge-d)/2)}
-.badge .m{position:absolute;top:1.2mm;left:1.5mm;height:1.9mm;width:2.8mm;fill:var(--ink)}
-.badge b{font-size:4.6mm;font-weight:800;line-height:1;margin-top:1.9mm}
-.badge--none b{font-size:1.9mm;font-weight:800;margin-top:0;text-align:center;line-height:1.05}
+.badge .amt{--num:3.4mm}
+.badge--none b{font-size:1.9mm;font-weight:800;text-align:center;line-height:1.05}
 
 /* ---------------- kolumny ---------------- */
 .cols{
@@ -123,8 +121,8 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 
 .complete-set{
   position:relative;left:var(--col-left);transform:translateX(-50%);width:22mm;
-  margin-top:2mm;text-align:center;font-size:2.3mm;font-weight:800;
-  text-transform:uppercase;line-height:1.05;letter-spacing:.02em;
+  margin-top:2mm;text-align:center;font-size:2.3mm;font-weight:400;
+  text-transform:uppercase;line-height:1.05;letter-spacing:.08em;color:#555;
 }
 
 /* podpis - jedyne odstępstwo od oryginału, żarty muszą gdzieś być */
@@ -141,8 +139,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .card--wild2 .half .band h2{font-size:3mm}
 .card--wild2 .half .band h2.sm{font-size:2.55mm}
 .card--wild2 .half .badge{--badge-d:7mm;left:calc(5mm - 3.5mm);top:calc(9mm - 3.5mm)}
-.card--wild2 .half .badge b{font-size:3.6mm;margin-top:1.5mm}
-.card--wild2 .half .badge .m{height:1.5mm;width:2.2mm;top:.9mm;left:1.1mm}
+.card--wild2 .half .badge .amt{--num:2.65mm}
 .card--wild2 .body{top:11.5mm}
 .card--wild2 .fan{width:4.4mm;height:6mm}
 .card--wild2 .fan__card{width:4.4mm;height:6mm}
@@ -183,7 +180,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .coin{
   position:absolute;left:50%;top:24mm;transform:translateX(-50%);
   width:34mm;height:34mm;border-radius:50%;background:#fff;border:1mm solid var(--ink);
-  display:flex;align-items:center;justify-content:center;--num:16mm;z-index:3;
+  display:flex;align-items:center;justify-content:center;--num:11.5mm;z-index:3;
 }
 .rays{position:absolute;left:50%;top:24mm;transform:translateX(-50%);width:46mm;height:34mm;
   margin-top:-6mm;height:46mm;z-index:2;opacity:.20}
