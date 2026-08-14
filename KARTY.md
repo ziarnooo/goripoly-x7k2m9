@@ -151,7 +151,7 @@ Dwustronne, kolory podzielone na pół, w turze można obrócić.
 | It's My Birthday | 3 | 2M | **6 Października** | urodziny Goraja, zrzutka obowiązkowa |
 | Double The Rent | 2 | 1M | **Sezon w Los Alcázares** | lipiec, wszystko drożeje |
 | House | 2 | 3M | **Klimatyzacja** | w apartamencie obowiązkowa |
-| House | 1 | 3M | **Klimatyzacja w Astrze** | naprawa kosztowała tyle, co całe auto |
+| House | 1 | 3M | **Klimatyzacja w Astrze** | naprawa kosztowała tyle, co metr kawalerki |
 | Hotel | 1 | 4M | **Booking z Oceną 9.4** | ręczniki złożone w łabędzie |
 | Hotel | 1 | 4M | **Superhost Sezonu** | odbiór kluczy o każdej porze |
 | Pass Go | 2 | 1M | **Ślub!** | od dziś wszystko dobieracie wspólnie |

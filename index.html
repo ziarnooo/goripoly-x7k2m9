@@ -10,12 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --mono-red:#E02A2A; --ink:#1D1D1B; --paper:#F2EFE6; --muted:#6b675c;
+    --mono-red:#E02A2A; --ink:#1D1D1B; --paper:#EFEBE0; --muted:#6b675c; --cardpaper:#FDFBF3;
   }
   *{box-sizing:border-box;margin:0;padding:0;-webkit-text-size-adjust:100%}
   body{background:var(--paper);color:var(--ink);font-family:'Archivo',system-ui,-apple-system,sans-serif;padding-bottom:60px}
 
-  /* ---------------- HEADER ---------------- */
   header{background:var(--mono-red);padding:26px 16px 32px;text-align:center;position:relative;overflow:hidden}
   header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;
     background:repeating-linear-gradient(90deg,var(--ink) 0 18px,transparent 18px 36px)}
@@ -25,19 +24,16 @@
   .logo h1 span{color:var(--ink)}
   header p{color:#fff;font-weight:700;margin-top:12px;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
   .mascot{width:76px;height:76px;border-radius:50%;border:3px dashed rgba(255,255,255,.85);margin:0 auto 14px;
-    display:grid;place-items:center;color:#fff;font-size:9.5px;font-weight:700;line-height:1.2;text-transform:uppercase;letter-spacing:.04em}
+    display:grid;place-items:center;color:#fff;font-size:9.5px;font-weight:700;line-height:1.2;text-transform:uppercase}
 
   main{max-width:1120px;margin:0 auto;padding:0 12px}
 
-  /* ---------------- QUICK RULES ---------------- */
   .rules{background:#fff;border:3px solid var(--mono-red);border-radius:14px;padding:16px 16px 14px;margin-top:22px}
   .rules h2{font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase;color:var(--mono-red);margin-bottom:10px}
   .rules ol{margin-left:17px;font-size:13.5px;line-height:1.55}
   .rules li{margin-bottom:6px}
-  .rules b{color:var(--ink)}
   .rules .hint{margin-top:10px;font-size:12.5px;color:var(--muted);line-height:1.5;border-top:1px dashed #ccc7ba;padding-top:9px}
 
-  /* ---------------- NAV ---------------- */
   .toolbar{position:sticky;top:0;z-index:30;background:var(--paper);padding:11px 0 8px;margin-top:16px;
     display:flex;gap:7px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;
     box-shadow:0 8px 8px -8px rgba(0,0,0,.12)}
@@ -45,83 +41,126 @@
   .toolbar a{flex:none;font-size:11.5px;font-weight:700;text-decoration:none;color:var(--ink);
     background:#fff;border:2px solid var(--ink);border-radius:999px;padding:6px 11px;white-space:nowrap}
 
-  /* ---------------- SECTIONS ---------------- */
   section{margin-top:30px;scroll-margin-top:58px}
   .sec-head{display:flex;align-items:center;gap:9px;margin-bottom:3px;flex-wrap:wrap}
   .swatch{width:16px;height:16px;border:2.5px solid var(--ink);border-radius:4px;flex:none}
-  .sec-head h2{font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:.02em}
+  .sec-head h2{font-family:'Archivo Black',sans-serif;font-size:15px;text-transform:uppercase}
   .sec-head .cnt{font-size:11px;font-weight:700;color:var(--muted);border:2px solid #d6d1c4;border-radius:999px;padding:2px 8px}
   .sec-note{font-size:12.5px;color:var(--muted);margin-bottom:12px;line-height:1.5}
   .subhead{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);
     margin:16px 0 8px;padding-top:12px;border-top:1px dashed #ccc7ba}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:14px 12px}
-  @media(min-width:640px){.grid{grid-template-columns:repeat(auto-fill,minmax(176px,1fr));gap:18px 16px}}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px 12px}
+  @media(min-width:640px){.grid{grid-template-columns:repeat(auto-fill,minmax(182px,1fr));gap:20px 16px}}
   .slot{container-type:inline-size}
   .qty{margin-top:5px;font-size:10.5px;font-weight:700;color:var(--muted);text-align:center;letter-spacing:.06em}
 
-  /* ---------------- CARD ---------------- */
-  .mcard{aspect-ratio:56/87;background:#fff;border:0.9cqi solid var(--ink);border-radius:4.5cqi;
+  /* ============ KARTA ============ */
+  .mcard{aspect-ratio:56/87;background:var(--cardpaper);border:0.7cqi solid #2a2a28;border-radius:3.4cqi;
     position:relative;overflow:hidden;display:flex;flex-direction:column;
-    box-shadow:0 2px 0 rgba(29,29,27,.18),0 6px 14px rgba(29,29,27,.10)}
-  .corner{position:absolute;z-index:4;background:#fff;color:var(--ink);border:0.8cqi solid var(--ink);
-    border-radius:50%;width:16cqi;height:16cqi;display:grid;place-items:center;
-    font-family:'Archivo Black',sans-serif;font-size:6.6cqi;letter-spacing:-.02em}
-  .corner.tl{top:2.4cqi;left:2.4cqi}
-  .corner.br{bottom:2.4cqi;right:2.4cqi;transform:rotate(180deg)}
-  .corner.none{font-size:4.4cqi;line-height:1;text-align:center}
+    box-shadow:0 2px 0 rgba(29,29,27,.16),0 6px 14px rgba(29,29,27,.10)}
+  /* ozdobna podwójna ramka */
+  .frame{position:absolute;inset:2.2cqi;border:0.55cqi solid var(--acc);border-radius:2.4cqi;pointer-events:none;z-index:2}
+  .frame::after{content:"";position:absolute;inset:1.1cqi;border:0.28cqi solid var(--acc);border-radius:1.6cqi;opacity:.55}
 
-  .head{border-bottom:0.9cqi solid var(--ink);padding:4.5cqi 4cqi 4cqi;min-height:27cqi;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1cqi;text-align:center;position:relative}
-  .head .nm{font-family:'Archivo Black',sans-serif;font-size:8.2cqi;line-height:1.03;text-transform:uppercase;
+  .badge{position:absolute;z-index:5;width:13cqi;height:13cqi;border-radius:2cqi;background:#fff;
+    border:0.55cqi solid var(--acc);display:grid;place-items:center;
+    font-family:'Archivo Black',sans-serif;font-size:5.4cqi;color:var(--ink);letter-spacing:-.03em}
+  .badge.tl{top:4cqi;left:4cqi} .badge.br{bottom:4cqi;right:4cqi;transform:rotate(180deg)}
+  .badge.nv{font-size:3.3cqi;line-height:1.05;text-align:center;letter-spacing:0}
+
+  .ribbon{position:relative;z-index:3;margin:19cqi 8cqi 0;padding:1.5cqi 0;text-align:center;
+    background:var(--acc);color:#fff;border-radius:1.2cqi;
+    font-size:3.9cqi;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+  .ribbon.on-light{color:var(--ink)}
+
+  .stage{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:2cqi;padding:3cqi 7cqi 4cqi;text-align:center}
+
+  .emblem{width:72cqi;aspect-ratio:1/.68;border:0.85cqi solid var(--ink);border-radius:50%;background:#fff;
+    display:grid;place-items:center;padding:3cqi 4cqi;flex:none}
+  .emblem span{font-family:'Archivo Black',sans-serif;text-transform:uppercase;line-height:1.02;
     word-break:break-word;hyphens:auto}
-  .head .nm.l2{font-size:7cqi} .head .nm.l3{font-size:6cqi} .head .nm.l4{font-size:5.2cqi}
-  .head .kicker{font-size:4.4cqi;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.72}
-  .head.dark{color:#fff} .head.light{color:var(--ink)}
+  .emblem.split{border:none;padding:0;overflow:hidden;position:relative;background:none}
+  .emblem.split .halves{position:absolute;inset:0;display:flex;border:0.85cqi solid var(--ink);border-radius:50%;overflow:hidden}
+  .emblem.split .halves>div{flex:1}
 
-  /* split header for wilds + rent */
-  .split{display:flex;position:absolute;inset:0;z-index:0}
-  .split>div{flex:1}
-  .split.multi>div{flex:1}
-  .head .over{position:relative;z-index:1;background:#fff;color:var(--ink);border:0.8cqi solid var(--ink);
-    border-radius:2.5cqi;padding:2cqi 2.6cqi;max-width:88%}
+  .desc{font-size:4.3cqi;line-height:1.3;color:#3a362e;font-weight:600}
+  .flav{font-size:4cqi;line-height:1.24;color:#847f71;font-style:italic}
+  .asmoney{position:absolute;z-index:3;left:18cqi;right:18cqi;bottom:6.5cqi;text-align:center;
+    font-size:3cqi;line-height:1.25;letter-spacing:.03em;text-transform:uppercase;color:#a8a294;font-weight:700}
 
-  .body{flex:1;padding:3.5cqi 5cqi 9cqi;display:flex;flex-direction:column;justify-content:center;gap:1.6cqi}
-  .rt-title{font-size:4.4cqi;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#a39e90;text-align:center;margin-bottom:1cqi}
-  .rt{display:flex;justify-content:space-between;align-items:baseline;font-size:6cqi;font-weight:600;color:#4d493f;
-    border-bottom:0.35cqi dotted #cfcabb;padding-bottom:0.8cqi}
-  .rt b{font-family:'Archivo Black',sans-serif;color:var(--ink);font-size:6.2cqi}
-  .txt{font-size:5.6cqi;line-height:1.34;color:#3c382f;text-align:center;font-weight:600}
-  .flavor{font-size:5cqi;line-height:1.28;color:#7a7568;text-align:center;font-style:italic;
-    padding:0 4cqi;margin-bottom:1cqi}
-  .foot-flavor{position:absolute;left:5cqi;right:5cqi;bottom:3.2cqi;font-size:4.6cqi;line-height:1.22;
-    color:#8a8578;text-align:center;font-style:italic}
+  /* --- nieruchomość --- */
+  .pband{position:relative;z-index:3;margin:18.5cqi 5cqi 0;padding:3cqi 2cqi;border:0.6cqi solid var(--ink);
+    border-radius:1.6cqi;text-align:center}
+  .pband .nm{font-family:'Archivo Black',sans-serif;font-size:6.6cqi;line-height:1.03;text-transform:uppercase;
+    word-break:break-word;hyphens:auto;display:block}
+  .pband .nm.s2{font-size:5.6cqi} .pband .nm.s3{font-size:4.8cqi} .pband .nm.s4{font-size:4.2cqi}
+  .prents{position:relative;z-index:3;flex:1;padding:3cqi 9cqi;display:flex;flex-direction:column;
+    justify-content:center;gap:1.6cqi}
+  .rt-title{font-size:3.9cqi;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#a8a294;text-align:center;margin-bottom:.6cqi}
+  .rt{display:flex;justify-content:space-between;align-items:baseline;font-size:4.6cqi;font-weight:600;
+    color:#4d493f;border-bottom:0.3cqi dotted #cdc7b7;padding-bottom:.7cqi}
+  .rt b{font-family:'Archivo Black',sans-serif;color:var(--ink);font-size:5cqi}
+  .pfoot{position:relative;z-index:3;padding:0 8cqi 2.5cqi;text-align:center;
+    font-size:3.9cqi;line-height:1.22;color:#8a8578;font-style:italic}
+  .pmirror{position:relative;z-index:3;margin:0 5cqi 18.5cqi;padding:1.4cqi 2cqi;
+    border:0.5cqi solid var(--ink);border-radius:1.2cqi;text-align:center;transform:rotate(180deg)}
+  .pmirror span{font-family:'Archivo Black',sans-serif;font-size:3.6cqi;text-transform:uppercase;line-height:1;
+    display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 
-  .art{margin:0 auto;width:78%;aspect-ratio:1/.62;border:0.7cqi dashed #c9c4b6;border-radius:2.5cqi;
-    display:grid;place-items:center;color:#b3ae9f;font-size:4.2cqi;font-weight:700;text-transform:uppercase;
-    letter-spacing:.08em;text-align:center;line-height:1.25;background:#fbfaf6}
+  /* --- joker dwukolorowy --- */
+  .wildhalf{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:1.4cqi;padding:5cqi 8cqi;text-align:center}
+  .wildhalf.b{transform:rotate(180deg)}
+  .wildbar{width:100%;padding:2.2cqi 2cqi;border:0.6cqi solid var(--ink);border-radius:1.4cqi}
+  .wildbar span{font-family:'Archivo Black',sans-serif;font-size:4.6cqi;text-transform:uppercase;line-height:1.05;display:block}
+  .wildbar span.s2{font-size:4cqi} .wildbar span.s3{font-size:3.5cqi}
+  .wildmid{position:relative;z-index:4;margin:0 5cqi;padding:1.4cqi 0;text-align:center;background:var(--cardpaper);
+    border-top:0.4cqi solid var(--ink);border-bottom:0.4cqi solid var(--ink);
+    font-size:3.4cqi;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#6b675c}
+  .wildcol{font-size:3.5cqi;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a7568}
 
-  .money-face{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2cqi;padding:4cqi}
-  .money-face .big{font-family:'Archivo Black',sans-serif;font-size:26cqi;line-height:.9;color:#fff;
-    text-shadow:0 0.8cqi 0 rgba(0,0,0,.22)}
-  .money-face .cap{font-size:4.6cqi;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+  /* --- stripes --- */
+  .stripes{display:flex;width:100%;height:5cqi;border:0.5cqi solid var(--ink);border-radius:1cqi;overflow:hidden}
+  .stripes>div{flex:1}
 
-  .rules-card .body{justify-content:flex-start;padding-top:4cqi;gap:2cqi}
-  .rules-card .li{font-size:4.9cqi;line-height:1.3;color:#3c382f;display:flex;gap:1.6cqi;text-align:left;font-weight:600}
-  .rules-card .li i{font-style:normal;color:var(--mono-red);font-family:'Archivo Black',sans-serif;flex:none}
+  /* --- pieniądze --- */
+  .money{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2cqi}
+  .money .big{font-family:'Archivo Black',sans-serif;font-size:30cqi;line-height:.86;color:var(--ink)}
+  .money .cap{font-size:3.6cqi;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#7a7568}
 
-  footer{margin-top:36px;background:#fff;border:3px solid var(--ink);border-radius:14px;padding:16px;
-    font-size:13px;line-height:1.6}
+  /* --- placeholder grafiki --- */
+  .art{width:52cqi;aspect-ratio:1/1;border:0.6cqi dashed #bdb7a7;border-radius:50%;display:grid;place-items:center;
+    color:#b3ad9c;font-size:3.4cqi;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+    text-align:center;line-height:1.2;background:#fff}
+
+  /* --- zasady --- */
+  .rlist{position:relative;z-index:3;padding:4cqi 8cqi;display:flex;flex-direction:column;gap:2.4cqi}
+  .rlist .li{display:flex;gap:2cqi;font-size:4cqi;line-height:1.28;color:#3a362e;font-weight:600;text-align:left}
+  .rlist .li i{font-style:normal;font-family:'Archivo Black',sans-serif;color:var(--acc);flex:none}
+
+  /* --- rewers --- */
+  .backcard{background:var(--mono-red);border-color:#fff;border-width:2.6cqi}
+  .backcard .bwrap{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3cqi;padding:6cqi}
+  .backcard .blogo{background:#fff;border-radius:1.6cqi;padding:3cqi 5cqi;text-align:center;transform:rotate(-2deg)}
+  .backcard .blogo b{display:block;font-family:'Archivo Black',sans-serif;font-size:9cqi;color:var(--mono-red);line-height:1}
+  .backcard .blogo i{display:block;font-style:normal;font-family:'Archivo Black',sans-serif;font-size:6cqi;color:var(--ink);letter-spacing:.1em}
+  .backcard .sky{width:100%;height:22cqi;background:
+    linear-gradient(to top,rgba(0,0,0,.28) 0 100%) padding-box;
+    -webkit-mask:repeating-linear-gradient(90deg,#000 0 6cqi,transparent 6cqi 8cqi);
+    mask:repeating-linear-gradient(90deg,#000 0 6cqi,transparent 6cqi 8cqi);border-radius:1cqi}
+
+  footer{margin-top:36px;background:#fff;border:3px solid var(--ink);border-radius:14px;padding:16px;font-size:13px;line-height:1.6}
   footer h3{font-family:'Archivo Black',sans-serif;font-size:14px;text-transform:uppercase;margin-bottom:8px}
   footer ul{margin-left:17px} footer li{margin-bottom:4px}
   .tally{font-size:12.5px;color:var(--muted);margin-top:20px;text-align:center;line-height:1.6}
 
-  /* ---------------- PRINT PREVIEW ---------------- */
   @media print{
     body{background:#fff;padding:0}
     header,.toolbar,.rules,.sec-note,footer,.tally,.qty,.subhead{display:none!important}
     .sec-head{margin:0 0 4mm}
-    section{margin-top:6mm;page-break-inside:auto}
+    section{margin-top:6mm}
     main{max-width:none;padding:0}
     .grid{grid-template-columns:repeat(3,56mm);gap:4mm;justify-content:center}
     .slot{width:56mm}
@@ -149,7 +188,7 @@
       <li><b>Na koniec tury</b> możesz mieć maks 7 kart na ręce, resztę odrzucasz.</li>
       <li><b>"Monikracja"</b> zabiera cały komplet, <b>"Dzisiaj nie, kochanie"</b> anuluje dowolną akcję zagraną w Ciebie.</li>
     </ol>
-    <div class="hint">Mechanika, wartości i czynsze są 1:1 z oryginalnym Monopoly Deal, więc kto grał, ten umie. Zmienione są tylko nazwy. Karty przypału na dole to nasz dodatek, poza podstawową talią.</div>
+    <div class="hint">Mechanika, wartości i czynsze są 1:1 z oryginalnym Monopoly Deal, więc kto grał, ten umie. Zmienione są tylko nazwy. Karty przypału to nasz dodatek, poza podstawową talią.</div>
   </div>
 
   <nav class="toolbar" id="nav"></nav>
@@ -158,8 +197,7 @@
   <footer>
     <h3>Co jeszcze wjedzie</h3>
     <ul>
-      <li>Grafiki: ludek w stylu Monopoly z twarzą Goraja, na banknotach i kartach akcji (miejsca już zarezerwowane).</li>
-      <li>Rewers talii ze wspólnym logo.</li>
+      <li>Grafiki: ludek w stylu Monopoly z twarzą Goraja, w miejscach oznaczonych kropkowanym kołem.</li>
       <li>PDF do drukarni: karty 56 x 87 mm ze spadami 3 mm, CMYK, 300 DPI.</li>
     </ul>
   </footer>
@@ -170,131 +208,156 @@
 <script>
 const C = {brown:'#955436',ltblue:'#AAE0FA',pink:'#D93A96',orange:'#F7941D',red:'#ED1B24',
   yellow:'#FEF200',green:'#1FB25A',dkblue:'#0072BB',rail:'#1D1D1B',util:'#BFDCAE'};
+/* ciemniejsze warianty do ramek, żeby żółty i błękit nie znikały */
+const FRAME = {brown:'#955436',ltblue:'#5FA8CC',pink:'#D93A96',orange:'#D97706',red:'#ED1B24',
+  yellow:'#C9A800',green:'#1FB25A',dkblue:'#0072BB',rail:'#1D1D1B',util:'#7FA86A'};
 const LIGHT = new Set(['ltblue','yellow','util','orange']);
 const ALLCOLORS = ['brown','ltblue','pink','orange','red','yellow','green','dkblue','rail','util'];
+const PLNAME = {brown:'brązowy',ltblue:'błękitny',pink:'różowy',orange:'pomarańczowy',red:'czerwony',
+  yellow:'żółty',green:'zielony',dkblue:'granatowy',rail:'trasa',util:'usługi'};
 
 const A = {pass:'#1FB25A',sly:'#C0392B',forced:'#1B7A8C',debt:'#7A5230',bday:'#E91E8C',
-  jsn:'#6B4E9E',house:'#2E8540',hotel:'#E85D04',breaker:'#2B2B2B',dbl:'#F2A007',oops:'#B00020',rules:'#1D1D1B'};
-const MONEY_C = {1:'#8FBF6A',2:'#D9A441',3:'#4FA3D1',4:'#B07AA1',5:'#C05B8C',10:'#C9A227'};
+  jsn:'#6B4E9E',house:'#2E8540',hotel:'#E85D04',breaker:'#2B2B2B',dbl:'#F2A007',
+  oops:'#B00020',rules:'#1D1D1B',wild:'#4A4A48',rent:'#2E8540',money:'#C9A227'};
 
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
-function nmClass(n){const L=n.length;return L>30?'l4':L>21?'l3':L>13?'l2':''}
+function embSize(n){const L=n.length;return L<=9?8.4:L<=14?7:L<=20?5.9:L<=28?5:L<=38?4.3:3.8}
+function bandCls(n){const L=n.length;return L<=14?'':L<=20?'s2':L<=28?'s3':'s4'}
+function barCls(n){const L=n.length;return L<=16?'':L<=26?'s2':'s3'}
 
-function corners(v){
-  if(v===null) return `<span class="corner tl none">BEZ<br>WART.</span><span class="corner br none">BEZ<br>WART.</span>`;
-  return `<span class="corner tl">${v}</span><span class="corner br">${v}</span>`;
+function badges(v){
+  if(v===null) return `<span class="badge tl nv" style="--acc:#4A4A48">bez<br>wart.</span>
+    <span class="badge br nv" style="--acc:#4A4A48">bez<br>wart.</span>`;
+  return `<span class="badge tl">${v}</span><span class="badge br">${v}</span>`;
 }
+function stripes(){return `<div class="stripes">${ALLCOLORS.map(k=>`<div style="background:${C[k]}"></div>`).join('')}</div>`}
 
-/* --- karta nieruchomości --- */
+/* ---------- nieruchomość ---------- */
 function propCard(c, sec){
-  const col = C[sec.color], dark = LIGHT.has(sec.color)?'light':'dark';
-  const rows = sec.rents.map((r,i)=>`<div class="rt"><span>${i+1} ${i===0?'karta':'karty'}</span><b>${r}</b></div>`).join('');
-  return `<div class="mcard">
-    ${corners(sec.val)}
-    <div class="head ${dark}" style="background:${col}">
-      <span class="kicker">${esc(sec.kicker)}</span>
-      <span class="nm ${nmClass(c.n)}">${esc(c.n)}</span>
-    </div>
-    <div class="body">
-      <div class="rt-title">Czynsz</div>${rows}
-    </div>
-    ${c.s?`<div class="foot-flavor">${esc(c.s)}</div>`:''}
+  const col=C[sec.color], acc=FRAME[sec.color], txt=LIGHT.has(sec.color)?'var(--ink)':'#fff';
+  const rows=sec.rents.map((r,i)=>`<div class="rt"><span>${i+1} ${i===0?'karta':'karty'}${i===sec.rents.length-1?' (komplet)':''}</span><b>${r}</b></div>`).join('');
+  return `<div class="mcard" style="--acc:${acc}">
+    <div class="frame"></div>${badges(sec.val)}
+    <div class="pband" style="background:${col};color:${txt}"><span class="nm ${bandCls(c.n)}">${esc(c.n)}</span></div>
+    <div class="prents"><div class="rt-title">Czynsz</div>${rows}</div>
+    ${c.s?`<div class="pfoot">${esc(c.s)}</div>`:''}
+    <div class="pmirror" style="background:${col};color:${txt}"><span>${esc(c.n)}</span></div>
   </div>`;
 }
 
-/* --- karta uniwersalna (wild) --- */
+/* ---------- joker ---------- */
 function wildCard(c){
-  const halves = c.multi
-    ? `<div class="split multi">${ALLCOLORS.map(k=>`<div style="background:${C[k]}"></div>`).join('')}</div>`
-    : `<div class="split"><div style="background:${C[c.a]}"></div><div style="background:${C[c.b]}"></div></div>`;
-  return `<div class="mcard">
-    ${corners(c.multi?null:c.v)}
-    <div class="head light" style="background:#fff;min-height:34cqi">
-      ${halves}
-      <span class="over nm ${nmClass(c.n)}">${esc(c.n)}</span>
+  if(c.multi){
+    return `<div class="mcard" style="--acc:${A.wild}">
+      <div class="frame"></div>${badges(null)}
+      <div class="ribbon">Joker</div>
+      <div class="stage">
+        <div style="width:76cqi">${stripes()}</div>
+        <div class="desc" style="font-family:'Archivo Black',sans-serif;font-size:6cqi;text-transform:uppercase;line-height:1.05">${esc(c.n)}</div>
+        <div class="art" style="width:44cqi">Goraj<br>w cylindrze</div>
+        <div class="desc">${esc(c.t)}</div>
+      </div>
+      <div class="asmoney">Bez wartości pieniężnej</div>
+    </div>`;
+  }
+  const ca=C[c.a], cb=C[c.b], ta=LIGHT.has(c.a)?'var(--ink)':'#fff', tb=LIGHT.has(c.b)?'var(--ink)':'#fff';
+  return `<div class="mcard" style="--acc:${A.wild}">
+    <div class="frame"></div>${badges(c.v)}
+    <div class="wildhalf a">
+      <div class="wildbar" style="background:${ca};color:${ta}"><span class="${barCls(c.n)}">${esc(c.n)}</span></div>
+      <div class="wildcol">${esc(PLNAME[c.a])}</div>
     </div>
-    <div class="body">
-      <div class="txt">${esc(c.t)}</div>
+    <div class="wildmid">Nieruchomość joker</div>
+    <div class="wildhalf b">
+      <div class="wildbar" style="background:${cb};color:${tb}"><span class="${barCls(c.n)}">${esc(c.n)}</span></div>
+      <div class="wildcol">${esc(PLNAME[c.b])}</div>
     </div>
-    ${c.s?`<div class="foot-flavor">${esc(c.s)}</div>`:''}
   </div>`;
 }
 
-/* --- karta czynszu --- */
+/* ---------- czynsz ---------- */
 function rentCard(c){
   const halves = c.multi
-    ? `<div class="split multi">${ALLCOLORS.map(k=>`<div style="background:${C[k]}"></div>`).join('')}</div>`
-    : `<div class="split"><div style="background:${C[c.a]}"></div><div style="background:${C[c.b]}"></div></div>`;
-  return `<div class="mcard">
-    ${corners(c.v)}
-    <div class="head light" style="background:#fff;min-height:32cqi">
-      ${halves}
-      <span class="over nm ${nmClass(c.n)}">${esc(c.n)}</span>
+    ? `<div class="halves">${ALLCOLORS.map(k=>`<div style="background:${C[k]}"></div>`).join('')}</div>`
+    : `<div class="halves"><div style="background:${C[c.a]}"></div><div style="background:${C[c.b]}"></div></div>`;
+  return `<div class="mcard" style="--acc:${A.rent}">
+    <div class="frame"></div>${badges(c.v)}
+    <div class="ribbon">Karta czynszu</div>
+    <div class="stage">
+      <div class="emblem split" style="width:56cqi">${halves}</div>
+      <div class="desc" style="font-family:'Archivo Black',sans-serif;font-size:${embSize(c.n)}cqi;text-transform:uppercase;line-height:1.05">${esc(c.n)}</div>
+      <div class="flav">${esc(c.t)}</div>
     </div>
-    <div class="body">
-      <div class="txt">${esc(c.t)}</div>
-    </div>
-    ${c.s?`<div class="foot-flavor">${esc(c.s)}</div>`:''}
+    <div class="asmoney">Możesz zagrać jako pieniądze</div>
   </div>`;
 }
 
-/* --- karta akcji --- */
+/* ---------- akcja ---------- */
 function actionCard(c){
-  return `<div class="mcard">
-    ${corners(c.v)}
-    <div class="head dark" style="background:${c.c};min-height:24cqi">
-      <span class="nm ${nmClass(c.n)}">${esc(c.n)}</span>
+  return `<div class="mcard" style="--acc:${c.c}">
+    <div class="frame"></div>${badges(c.v)}
+    <div class="ribbon">${esc(c.kind||'Karta akcji')}</div>
+    <div class="stage">
+      <div class="emblem"><span style="font-size:${embSize(c.n)}cqi">${esc(c.n)}</span></div>
+      <div class="desc">${esc(c.t)}</div>
+      ${c.s?`<div class="flav">${esc(c.s)}</div>`:''}
     </div>
-    <div class="body">
-      <div class="art">${esc(c.art||'grafika')}</div>
-      <div class="txt">${esc(c.t)}</div>
-      ${c.s?`<div class="flavor">${esc(c.s)}</div>`:''}
-    </div>
+    <div class="asmoney">Możesz zagrać jako pieniądze</div>
   </div>`;
 }
 
-/* --- banknot --- */
+/* ---------- pieniądze ---------- */
 function moneyCard(c){
-  return `<div class="mcard">
-    <div class="head dark" style="background:${MONEY_C[c.v]};min-height:20cqi;border-bottom-color:var(--ink)">
-      <span class="kicker">Bank rodziny Goraj</span>
-      <span class="nm l2">GORIpoly</span>
-    </div>
-    <div class="money-face" style="background:${MONEY_C[c.v]}">
-      <div class="art" style="width:56%;border-color:rgba(255,255,255,.75);color:rgba(255,255,255,.9);background:rgba(255,255,255,.12)">Goraj</div>
+  return `<div class="mcard" style="--acc:${A.money};background:#FBF3D8">
+    <div class="frame"></div>
+    <span class="badge tl">${c.v}M</span><span class="badge br">${c.v}M</span>
+    <div class="ribbon on-light" style="background:#F3E2A9">Bank rodziny Goraj</div>
+    <div class="money">
+      <div class="art" style="width:40cqi">Goraj</div>
       <div class="big">${c.v}M</div>
       <div class="cap">milion${c.v===1?'':'ów'}</div>
     </div>
   </div>`;
 }
 
-/* --- karta zasad --- */
+/* ---------- zasady ---------- */
 function rulesCard(c){
-  return `<div class="mcard rules-card">
-    <div class="head dark" style="background:${A.rules};min-height:22cqi">
-      <span class="kicker">Zasady</span>
-      <span class="nm ${nmClass(c.n)}">${esc(c.n)}</span>
+  return `<div class="mcard" style="--acc:${A.rules}">
+    <div class="frame"></div>
+    <div class="ribbon">Zasady</div>
+    <div class="stage" style="flex:none;padding-bottom:1cqi">
+      <div class="emblem" style="aspect-ratio:1/.44"><span style="font-size:${embSize(c.n)}cqi">${esc(c.n)}</span></div>
     </div>
-    <div class="body">
-      ${c.items.map((t,i)=>`<div class="li"><i>${i+1}</i><span>${esc(t)}</span></div>`).join('')}
+    <div class="rlist">${c.items.map((t,i)=>`<div class="li"><i>${i+1}</i><span>${esc(t)}</span></div>`).join('')}</div>
+  </div>`;
+}
+
+/* ---------- rewers ---------- */
+function backCard(){
+  return `<div class="mcard backcard" style="--acc:#fff">
+    <div class="bwrap">
+      <div class="sky" style="background:rgba(0,0,0,.25)"></div>
+      <div class="blogo"><b>GORIPOLY</b><i>DEAL</i></div>
+      <div class="sky" style="background:rgba(0,0,0,.25)"></div>
     </div>
   </div>`;
 }
 
-const RENDER = {prop:propCard, wild:wildCard, rent:rentCard, action:actionCard, money:moneyCard, rules:rulesCard};
+const RENDER = {prop:propCard, wild:wildCard, rent:rentCard, action:actionCard,
+  money:moneyCard, rules:rulesCard, back:backCard};
 
 /* ============================ DANE ============================ */
 
 const SECTIONS = [
 {id:'brazowe',type:'prop',title:'Brązowe - Olkusz: korzenie',color:'brown',val:'1M',rents:['1M','2M'],
- kicker:'Olkusz',note:'Najtańsza grupa. Pełny komplet to 2 karty.',
+ note:'Najtańsza grupa. Pełny komplet to 2 karty.',
  cards:[
   {n:'Szopa na Jasnej',s:'głęboko na działce, wchodzisz na własne ryzyko'},
   {n:'Trawnik na Jasnej',s:'duży, będzie co kosić'},
 ]},
 
 {id:'blekitne',type:'prop',title:'Błękitne - Olkusz: rodzina',color:'ltblue',val:'1M',rents:['1M','2M','3M'],
- kicker:'Olkusz',note:'Komplet to 3 karty.',
+ note:'Komplet to 3 karty.',
  cards:[
   {n:'Dom na Jasnej',s:'Olkusz HQ'},
   {n:'Dom Mamy na Nowowiejskiej',s:'obiad zawsze o 14:00'},
@@ -302,7 +365,7 @@ const SECTIONS = [
 ]},
 
 {id:'rozowe',type:'prop',title:'Różowe - Wrocław: dodatki lokatorskie',color:'pink',val:'2M',rents:['1M','2M','4M'],
- kicker:'Wrocław',note:'Prawdziwy majątek to nie metry.',
+ note:'Prawdziwy majątek to nie metry.',
  cards:[
   {n:'Komórka Lokatorska',s:'pojemność: nieskończona'},
   {n:'Miejsce Parkingowe',s:'luksus, o którym Katowice marzą'},
@@ -310,7 +373,7 @@ const SECTIONS = [
 ]},
 
 {id:'pomaranczowe',type:'prop',title:'Pomarańczowe - Wrocław: Port Popowice',color:'orange',val:'2M',rents:['1M','3M','5M'],
- kicker:'Wrocław',note:'Pod spodem warianty zamienne - do wyboru, którą wersję drukujemy.',
+ note:'Pod spodem warianty zamienne - do wyboru, którą trójkę drukujemy.',
  cards:[
   {n:'Mieszkanie na Porcie Popowice',s:'widok, komórka, cisza'},
   {n:'Hotspot',s:'beach bar pod Mostem Milenijnym'},
@@ -322,7 +385,6 @@ const SECTIONS = [
  ]}},
 
 {id:'czerwone',type:'prop',title:'Czerwone - Katowice: Gliwicka',color:'red',val:'3M',rents:['2M','3M','6M'],
- kicker:'Katowice',note:'',
  cards:[
   {n:'Mieszkanie na Gliwickiej',s:'Gliwicka 220D/9, przyszłe mieszkanie z żoną'},
   {n:'Piwnica na Gliwickiej',s:'to, co się nie mieści na górze'},
@@ -330,7 +392,6 @@ const SECTIONS = [
 ]},
 
 {id:'zolte',type:'prop',title:'Żółte - Hiszpania: sąsiedztwo',color:'yellow',val:'3M',rents:['2M','4M','6M'],
- kicker:'Los Alcázares',note:'',
  cards:[
   {n:'Mieszkanie Teściowej',s:'blisko. Za blisko?'},
   {n:'Mieszkanie Teścia',s:'azyl po drugiej stronie kompleksu'},
@@ -338,7 +399,6 @@ const SECTIONS = [
 ]},
 
 {id:'zielone',type:'prop',title:'Zielone - Los Alcázares: życie w kompleksie',color:'green',val:'4M',rents:['2M','4M','7M'],
- kicker:'Mar Menor',note:'',
  cards:[
   {n:'Taras przed Apartamentem',s:'z widokiem, dopóki nikt nie zaparkuje'},
   {n:'Basen w Kompleksie',s:'ręcznik na leżaku od 6:40, właściciel nieznany'},
@@ -346,14 +406,14 @@ const SECTIONS = [
 ]},
 
 {id:'granatowe',type:'prop',title:'Granatowe - Premium',color:'dkblue',val:'4M',rents:['3M','8M'],
- kicker:'Premium',note:'Najdroższa grupa w talii. Komplet to 2 karty.',
+ note:'Najdroższa grupa w talii. Komplet to 2 karty.',
  cards:[
   {n:'Apartament Los Alcázares',s:'perła w koronie Goraja'},
   {n:'Piwnica do Apartamentu',s:'klimatyzowana naturalnie'},
 ]},
 
 {id:'trasy',type:'prop',title:'Czarne - Trasy Goraja',color:'rail',val:'2M',rents:['1M','2M','3M','4M'],
- kicker:'Trasa',note:'W oryginale koleje. Komplet to 4 karty.',
+ note:'W oryginale koleje. Komplet to 4 karty.',
  cards:[
   {n:'Lotnisko Alicante',s:'trzy godziny od własnej piwnicy'},
   {n:'A4 z korkami',s:'Katowice - Wrocław, czas przejazdu: zależy'},
@@ -362,71 +422,75 @@ const SECTIONS = [
 ]},
 
 {id:'media',type:'prop',title:'Jasnozielone - Usługi niezbędne do życia',color:'util',val:'2M',rents:['1M','2M'],
- kicker:'Usługi',note:'W oryginale elektrownia i wodociągi.',
+ note:'W oryginale elektrownia i wodociągi.',
  cards:[
   {n:'Capri',s:'restauracja teściowej. Kto wejdzie, ten płaci za obiad'},
   {n:'Ryanair do Alicante',s:'bagaż podręczny 40 x 20 x 25'},
 ]},
 
-{id:'jokery',type:'wild',title:'Jokery - nieruchomości uniwersalne',color:'#7a7568',note:'Dwustronne, w swojej turze możesz je obrócić na drugi kolor. Dwie tęczowe pasują do każdego kompletu, ale nie mają wartości i nie da się nimi płacić.',
+{id:'jokery',type:'wild',title:'Jokery - nieruchomości uniwersalne',color:'#4A4A48',
+ note:'Dwustronne: na karcie są oba kolory, w swojej turze możesz ją obrócić. Dwie tęczowe pasują do każdego kompletu, ale nie mają wartości i nie da się nimi płacić.',
  cards:[
-  {n:'Klucze do Apartamentu',a:'dkblue',b:'green',v:'4M',t:'Granatowy albo zielony',q:1},
-  {n:'Transfer z Lotniska',a:'rail',b:'green',v:'4M',t:'Trasa albo zielony',q:1},
-  {n:'Wypad do Domu',a:'rail',b:'ltblue',v:'4M',t:'Trasa albo błękitny',q:1},
-  {n:'Lot i Obiad w Pakiecie',a:'rail',b:'util',v:'2M',t:'Trasa albo usługi',q:1},
-  {n:'Klucze do Olkusza',a:'ltblue',b:'brown',v:'1M',t:'Błękitny albo brązowy',q:1},
-  {n:'Klucze do Wrocławia',a:'pink',b:'orange',v:'2M',t:'Różowy albo pomarańczowy',q:2},
-  {n:'Klucze do Katowic i Hiszpanii',a:'red',b:'yellow',v:'3M',t:'Czerwony albo żółty',q:2},
-  {n:'Goraj Załatwi',multi:true,t:'Wchodzi do dowolnego kompletu. Nie ma wartości, nie zapłacisz nim',q:2},
+  {n:'Klucze do Apartamentu',a:'dkblue',b:'green',v:'4M',q:1},
+  {n:'Transfer z Lotniska',a:'rail',b:'green',v:'4M',q:1},
+  {n:'Wypad do Domu',a:'rail',b:'ltblue',v:'4M',q:1},
+  {n:'Lot i Obiad w Pakiecie',a:'rail',b:'util',v:'2M',q:1},
+  {n:'Klucze do Olkusza',a:'ltblue',b:'brown',v:'1M',q:1},
+  {n:'Klucze do Wrocławia',a:'pink',b:'orange',v:'2M',q:2},
+  {n:'Klucze do Katowic i Hiszpanii',a:'red',b:'yellow',v:'3M',q:2},
+  {n:'Goraj Załatwi',multi:true,t:'Wchodzi do dowolnego kompletu. Nie ma wartości pieniężnej, nie zapłacisz nią',q:2},
 ]},
 
-{id:'czynsze',type:'rent',title:'Czynsze',color:'#2E8540',note:'Zagrywasz i inkasujesz od wszystkich za jeden ze swoich kolorów. Tęczowa bierze od jednego wybranego gracza, ale za dowolny kolor.',
+{id:'czynsze',type:'rent',title:'Czynsze',color:'#2E8540',
+ note:'Zagrywasz i inkasujesz od wszystkich za jeden ze swoich kolorów. Tęczowa bierze od jednego wybranego gracza, ale za dowolny kolor.',
  cards:[
-  {n:'Czynsz z Olkusza',a:'brown',b:'ltblue',v:'1M',t:'Wszyscy płacą Ci czynsz za brązowe albo błękitne',s:'u mamy się nie płaci, u reszty tak',q:2},
-  {n:'Czynsz z Wrocławia',a:'pink',b:'orange',v:'1M',t:'Wszyscy płacą Ci czynsz za różowe albo pomarańczowe',s:'razem z opłatą za komórkę',q:2},
-  {n:'Czynsz z Gliwickiej i Hiszpanii',a:'red',b:'yellow',v:'1M',t:'Wszyscy płacą Ci czynsz za czerwone albo żółte',s:'dwa mieszkania, jedno konto',q:2},
-  {n:'Czynsz z Kompleksu',a:'dkblue',b:'green',v:'1M',t:'Wszyscy płacą Ci czynsz za granatowe albo zielone',s:'wspólnota już policzyła',q:2},
-  {n:'Rozliczenie za Dojazdy',a:'rail',b:'util',v:'1M',t:'Wszyscy płacą Ci czynsz za trasy albo usługi',s:'paliwo, bilet, bagaż podręczny',q:2},
-  {n:'Rozliczenie Roczne',multi:true,v:'3M',t:'Wybierasz jednego gracza i jeden dowolny kolor. Płaci Ci czynsz',s:'bez dyskusji',q:3},
+  {n:'Czynsz z Olkusza',a:'brown',b:'ltblue',v:'1M',t:'Wszyscy płacą Ci czynsz za brązowe albo błękitne',q:2},
+  {n:'Czynsz z Wrocławia',a:'pink',b:'orange',v:'1M',t:'Wszyscy płacą Ci czynsz za różowe albo pomarańczowe',q:2},
+  {n:'Czynsz z Gliwickiej i Hiszpanii',a:'red',b:'yellow',v:'1M',t:'Wszyscy płacą Ci czynsz za czerwone albo żółte',q:2},
+  {n:'Czynsz z Kompleksu',a:'dkblue',b:'green',v:'1M',t:'Wszyscy płacą Ci czynsz za granatowe albo zielone',q:2},
+  {n:'Rozliczenie za Dojazdy',a:'rail',b:'util',v:'1M',t:'Wszyscy płacą Ci czynsz za trasy albo usługi',q:2},
+  {n:'Rozliczenie Roczne',multi:true,v:'3M',t:'Wybierasz jednego gracza i jeden dowolny kolor. Płaci Ci czynsz',q:3},
 ]},
 
-{id:'akcje',type:'action',title:'Karty akcji',color:'#6B4E9E',note:'Zagrywasz na stół jako jedną z trzech kart w turze. Każdą możesz też położyć przed sobą jako pieniądze o wartości z rogu.',
+{id:'akcje',type:'action',title:'Karty akcji',color:'#6B4E9E',
+ note:'Zagrywasz na stół jako jedną z trzech kart w turze. Każdą możesz też położyć przed sobą jako pieniądze o wartości z rogu.',
  cards:[
-  {n:'Monikracja',v:'5M',c:A.breaker,t:'Zabierasz dowolnemu graczowi pełny komplet nieruchomości, razem z klimatyzacją i bookingiem',s:'odwołania rozpatruje ta sama osoba',art:'Monika przy kasie w Capri',q:2},
-  {n:'Dzisiaj Nie, Kochanie',v:'4M',c:A.jsn,t:'Anuluje dowolną akcję zagraną przeciwko Tobie. Zagrywasz w każdej chwili',s:'bez dyskusji, bez odwołania',art:'gest dłoni',q:2},
-  {n:'Nie Płacę VAT-u',v:'4M',c:A.jsn,t:'Anuluje dowolną akcję zagraną przeciwko Tobie. Zagrywasz w każdej chwili',s:'przychodu też nie zadeklarowałem',art:'pusta deklaracja',q:1},
-  {n:'Otodom o 23:40',v:'3M',c:A.sly,t:'Zabierasz jedną nieruchomość spoza pełnego kompletu',s:'grunt, działka, hektar. Godzina bez znaczenia',art:'telefon i ogłoszenie',q:2},
-  {n:'Pani Beata Ma Klucze',v:'3M',c:A.sly,t:'Zabierasz jedną nieruchomość spoza pełnego kompletu',s:'weszła bez zapowiedzi',art:'pęk kluczy',q:1},
-  {n:'Wspólna Decyzja',v:'3M',c:A.forced,t:'Wymieniasz się jedną nieruchomością z wybranym graczem. Żadna nie może być z pełnego kompletu',s:'podobno wszyscy się zgodzili',art:'uścisk dłoni',q:2},
-  {n:'Rotacja Leżaków',v:'3M',c:A.forced,t:'Wymieniasz się jedną nieruchomością z wybranym graczem. Żadna nie może być z pełnego kompletu',s:'ręczniki leżały od 6:40',art:'leżaki przy basenie',q:1},
-  {n:'Czynsz za Popowice',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'wynajmujesz, to płacisz',art:'przelew',q:1},
-  {n:'Potłuczone Kieliszki',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'komplet był na wyposażeniu',art:'kieliszek w kawałkach',q:1},
-  {n:'Zgubione Klucze',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'wymiana wkładki na koszt gościa',art:'zamek i wkładka',q:1},
-  {n:'6 Października',v:'2M',c:A.bday,t:'Każdy gracz daje Ci 2M w prezencie',s:'urodziny Goraja, zrzutka obowiązkowa',art:'tort',q:3},
-  {n:'Sezon w Los Alcázares',v:'1M',c:A.dbl,t:'Zagrywasz razem z kartą czynszu. Stawka x2',s:'lipiec, wszystko drożeje',art:'słońce i termometr',q:2},
-  {n:'Klimatyzacja',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'w apartamencie obowiązkowa',art:'jednostka klimatyzacji',q:2},
-  {n:'Klimatyzacja w Astrze',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'naprawa kosztowała tyle, co całe auto',art:'stara Astra',q:1},
-  {n:'Booking z Oceną 9.4',v:'4M',c:A.hotel,t:'Dokładasz do kompletu, który ma już klimatyzację. Czynsz rośnie o kolejne 4M',s:'ręczniki złożone w łabędzie',art:'pięć gwiazdek',q:1},
-  {n:'Superhost Sezonu',v:'4M',c:A.hotel,t:'Dokładasz do kompletu, który ma już klimatyzację. Czynsz rośnie o kolejne 4M',s:'odbiór kluczy o każdej porze',art:'odznaka superhosta',q:1},
-  {n:'Ślub!',v:'1M',c:A.pass,t:'Dobierz 2 karty. Możesz wskazać jednego gracza, który dobiera razem z Tobą',s:'od dziś wszystko dobieracie wspólnie',art:'obrączki',q:2},
-  {n:'Dywidenda z GPW',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'spółki dowiozły',art:'wykres w górę',q:2},
-  {n:'Zwrot Szklanek do Ikei',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'naklejki zostały, kasa wróciła',art:'szklanki w koszyku',q:2},
-  {n:'Obiad u Mamy',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'wychodzisz z pełnym brzuchem i słoikami',art:'słoiki',q:2},
-  {n:'Wolne Miejsce przed Gliwicką',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'ktoś odjechał, bierz zanim zajmą',art:'wolna koperta',q:2},
+  {n:'Monikracja',v:'5M',c:A.breaker,t:'Zabierasz dowolnemu graczowi pełny komplet nieruchomości, razem z klimatyzacją i bookingiem',s:'odwołania rozpatruje ta sama osoba',q:2},
+  {n:'Dzisiaj Nie, Kochanie',v:'4M',c:A.jsn,t:'Anuluje dowolną akcję zagraną przeciwko Tobie. Zagrywasz w każdej chwili',s:'bez dyskusji, bez odwołania',q:2},
+  {n:'Nie Płacę VAT-u',v:'4M',c:A.jsn,t:'Anuluje dowolną akcję zagraną przeciwko Tobie. Zagrywasz w każdej chwili',s:'przychodu też nie zadeklarowałem',q:1},
+  {n:'Otodom o 23:40',v:'3M',c:A.sly,t:'Zabierasz jedną nieruchomość spoza pełnego kompletu',s:'grunt, działka, hektar. Godzina bez znaczenia',q:2},
+  {n:'Pani Beata Ma Klucze',v:'3M',c:A.sly,t:'Zabierasz jedną nieruchomość spoza pełnego kompletu',s:'weszła bez zapowiedzi',q:1},
+  {n:'Wspólna Decyzja',v:'3M',c:A.forced,t:'Wymieniasz się jedną nieruchomością z wybranym graczem. Żadna nie może być z pełnego kompletu',s:'podobno wszyscy się zgodzili',q:2},
+  {n:'Rotacja Leżaków',v:'3M',c:A.forced,t:'Wymieniasz się jedną nieruchomością z wybranym graczem. Żadna nie może być z pełnego kompletu',s:'ręczniki leżały od 6:40',q:1},
+  {n:'Czynsz za Popowice',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'wynajmujesz, to płacisz',q:1},
+  {n:'Potłuczone Kieliszki',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'komplet był na wyposażeniu',q:1},
+  {n:'Zgubione Klucze',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'wymiana wkładki na koszt gościa',q:1},
+  {n:'6 Października',v:'2M',c:A.bday,t:'Każdy gracz daje Ci 2M w prezencie',s:'urodziny Goraja, zrzutka obowiązkowa',q:3},
+  {n:'Sezon w Los Alcázares',v:'1M',c:A.dbl,t:'Zagrywasz razem z kartą czynszu. Stawka x2',s:'lipiec, wszystko drożeje',q:2},
+  {n:'Klimatyzacja',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'w apartamencie obowiązkowa',q:2},
+  {n:'Klimatyzacja w Astrze',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'naprawa kosztowała tyle, co metr kawalerki',q:1},
+  {n:'Booking z Oceną 9.4',v:'4M',c:A.hotel,t:'Dokładasz do kompletu, który ma już klimatyzację. Czynsz rośnie o kolejne 4M',s:'ręczniki złożone w łabędzie',q:1},
+  {n:'Superhost Sezonu',v:'4M',c:A.hotel,t:'Dokładasz do kompletu, który ma już klimatyzację. Czynsz rośnie o kolejne 4M',s:'odbiór kluczy o każdej porze',q:1},
+  {n:'Ślub!',v:'1M',c:A.pass,t:'Dobierz 2 karty. Możesz wskazać gracza, który dobiera razem z Tobą',s:'od dziś wszystko dobieracie wspólnie',q:2},
+  {n:'Dywidenda z GPW',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'spółki dowiozły',q:2},
+  {n:'Zwrot Szklanek do Ikei',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'naklejki zostały, kasa wróciła',q:2},
+  {n:'Obiad u Mamy',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'wychodzisz z pełnym brzuchem i słoikami',q:2},
+  {n:'Wolne Miejsce przed Gliwicką',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'ktoś odjechał, bierz zanim zajmą',q:2},
 ]},
 
 {id:'przypaly',type:'action',title:'Karty przypału - dodatek GORIpoly',color:'#B00020',
- note:'Tego nie ma w oryginale. Zagrywasz je na wybranego gracza jako jedną z trzech kart w turze, a on obrywa. Można się bronić kartą "Dzisiaj nie, kochanie". Poza podstawową talią, więc nie ruszają balansu.',
+ note:'Tego nie ma w oryginale. Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Można się bronić kartą "Dzisiaj nie, kochanie". Poza podstawową talią, więc nie ruszają balansu.',
  cards:[
-  {n:'Nocka na Lotnisku w Alicante',v:'2M',c:A.oops,t:'Wybrany gracz opuszcza następną turę',s:'auto padło w drodze po odbiór. Rano cały terminal dla siebie',art:'ławka i walizka',q:1},
-  {n:'Pielgrzymka: Sekcja Ekologiczna',v:'2M',c:A.oops,t:'Wybrany gracz opuszcza następną turę',s:'rozkładasz śmietniki, sprzątasz po wszystkich, regenerujesz się wieczorem',art:'worek na śmieci',q:1},
-  {n:'Kontrola z Urzędu Skarbowego',v:'2M',c:A.oops,t:'Wybrany gracz odkłada 5M do banku',s:'przychód sam się nie zadeklaruje',art:'wezwanie na przesłuchanie',q:1},
-  {n:'Zebranie Rady Osiedla',v:'2M',c:A.oops,t:'Wybrany gracz odkłada 2M do banku',s:'trzy godziny o segregacji. Terapia płatna z własnej kieszeni',art:'sala i mikrofon',q:1},
-  {n:'Beata i Niezadowoleni Goście',v:'2M',c:A.oops,t:'Wybrany gracz odkłada 2M do banku',s:'ocena 6.1 i długi komentarz',art:'jedna gwiazdka',q:1},
-  {n:'Sierpień bez Rezerwacji',v:'2M',c:A.oops,t:'Wybrany gracz odkłada 2M do banku',s:'apartament stoi pusty w szczycie sezonu',art:'pusty kalendarz',q:1},
+  {n:'Nocka na Lotnisku w Alicante',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz opuszcza następną turę',s:'auto padło w drodze po odbiór. Rano cały terminal dla siebie',q:1},
+  {n:'Pielgrzymka: Sekcja Ekologiczna',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz opuszcza następną turę',s:'rozkładasz śmietniki, sprzątasz po wszystkich, regenerujesz się wieczorem',q:1},
+  {n:'Kontrola z Urzędu Skarbowego',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 5M do banku',s:'przychód sam się nie zadeklaruje',q:1},
+  {n:'Zebranie Rady Osiedla',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'trzy godziny o segregacji. Terapia z własnej kieszeni',q:1},
+  {n:'Beata i Niezadowoleni Goście',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'ocena 6.1 i długi komentarz',q:1},
+  {n:'Sierpień bez Rezerwacji',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'apartament stoi pusty w szczycie sezonu',q:1},
 ]},
 
-{id:'pieniadze',type:'money',title:'Pieniądze',color:'#2E8540',note:'Nominały 1:1 z oryginałem, razem 57M w banku. Docelowo z ludkiem Goraja zamiast standardowej grafiki.',
+{id:'pieniadze',type:'money',title:'Pieniądze',color:'#C9A227',
+ note:'Nominały 1:1 z oryginałem, razem 57M w banku.',
  cards:[{v:1,q:6},{v:2,q:5},{v:3,q:3},{v:4,q:3},{v:5,q:2},{v:10,q:1}]},
 
 {id:'zasady',type:'rules',title:'Karty zasad',color:'#1D1D1B',note:'Cztery karty w pudełku, tak jak w oryginale.',
@@ -434,36 +498,37 @@ const SECTIONS = [
   {n:'Jak Zacząć',q:1,items:[
     'Tasujesz, każdy dostaje 5 kart na rękę. Reszta to talia.',
     'Wygrywa ten, kto zbierze 3 pełne komplety w trzech różnych kolorach.',
-    'Na początku swojej tury dobierasz 2 karty. Jeśli nie masz nic na ręce, dobierasz 5.',
-    'W turze zagrywasz maksymalnie 3 karty. Możesz nie zagrać żadnej.']},
+    'Na początku tury dobierasz 2 karty. Bez kart na ręce dobierasz 5.',
+    'W turze zagrywasz maksymalnie 3 karty.']},
   {n:'Jak Zagrywasz',q:1,items:[
     'Nieruchomość i jokera kładziesz przed sobą na stół.',
     'Dowolną kartę możesz zamiast tego położyć jako pieniądze.',
-    'Akcję zagrywasz na stół i po użyciu idzie na stos odrzuconych.',
-    'Na koniec tury maksymalnie 7 kart na ręce, resztę odrzucasz.']},
+    'Akcja po użyciu idzie na stos odrzuconych.',
+    'Na koniec tury maksymalnie 7 kart na ręce.']},
   {n:'Jak Płacisz',q:1,items:[
     'Płacisz pieniędzmi i nieruchomościami ze stołu, nigdy z ręki.',
-    'Nie masz ile trzeba? Oddajesz wszystko co masz i sprawa zamknięta.',
-    'Nie ma wydawania reszty. Zapłacone to zapłacone.',
-    'Nieruchomość, którą dostałeś w zapłacie, ląduje w Twoim komplecie.']},
-  {n:'Czego Nie Ma w Oryginale',q:1,items:[
-    'Karty przypału zagrywasz na wybranego gracza, tracą turę albo płacą do banku.',
-    '"Ślub!" pozwala wskazać gracza, który dobiera 2 karty razem z Tobą.',
+    'Nie masz ile trzeba? Oddajesz wszystko i sprawa zamknięta.',
+    'Nie ma wydawania reszty.',
+    'Nieruchomość dostana w zapłacie ląduje w Twoim komplecie.']},
+  {n:'Nasze Dodatki',q:1,items:[
+    'Karty przypału zagrywasz na gracza: traci turę albo płaci do banku.',
+    '"Ślub!" pozwala wskazać gracza, który dobiera 2 karty z Tobą.',
     'Broni się przed tym "Dzisiaj nie, kochanie".',
     'Reszta talii jest 1:1 z Monopoly Deal.']},
 ]},
+
+{id:'rewers',type:'back',title:'Rewers talii',color:'#E02A2A',
+ note:'Wspólny tył wszystkich kart. Docelowo z panoramą i logo, na razie szkic.',
+ cards:[{n:'Rewers',q:110}]},
 ];
 
 /* ============================ RENDER ============================ */
 function cardSlot(c, sec){
-  const html = RENDER[sec.type](c, sec);
-  const q = c.q || 1;
-  return `<div class="slot">${html}<div class="qty">${q} szt.</div></div>`;
+  return `<div class="slot">${RENDER[sec.type](c,sec)}<div class="qty">${c.q||1} szt.</div></div>`;
 }
-
 function sectionHTML(sec){
   const sw = C[sec.color] || sec.color;
-  const total = sec.cards.reduce((a,c)=>a+(c.q||1),0) + (sec.alt?0:0);
+  const total = sec.cards.reduce((a,c)=>a+(c.q||1),0);
   return `<section id="${sec.id}">
     <div class="sec-head">
       <div class="swatch" style="background:${sw}"></div>
@@ -481,8 +546,8 @@ document.getElementById('app').innerHTML = SECTIONS.map(sectionHTML).join('');
 document.getElementById('nav').innerHTML = SECTIONS.map(s=>
   `<a href="#${s.id}">${esc(s.title.split(' - ')[0])}</a>`).join('');
 
-const core = SECTIONS.filter(s=>s.id!=='przypaly')
-  .reduce((a,s)=>a+s.cards.reduce((x,c)=>x+(c.q||1),0),0);
+const skip = new Set(['przypaly','rewers']);
+const core = SECTIONS.filter(s=>!skip.has(s.id)).reduce((a,s)=>a+s.cards.reduce((x,c)=>x+(c.q||1),0),0);
 const extra = SECTIONS.find(s=>s.id==='przypaly').cards.reduce((a,c)=>a+(c.q||1),0);
 document.getElementById('tally').textContent =
   `Talia podstawowa: ${core} kart (1:1 ze strukturą Monopoly Deal). Dodatek GORIpoly: ${extra} kart przypału.`;
