@@ -14,6 +14,7 @@ Personalizowana wersja Monopoly Deal na wieczór kawalerski Bartka Goraja.
 - `GORIPOLY-podglad.pdf` - podglądowy eksport, po jednym wzorze z każdej karty
 - `index.html` - wszystkie 110 kart z opisami, do przeglądania na telefonie
 - `KARTY.md` - ta sama lista w formie tekstowej, do wygodnego edytowania
+- `ILUSTRACJE.md` - prompty do wygenerowania ilustracji na karty + prompt na rewers
 - `goripoly-brief.md` - brief projektowy (ton, kolory, wymogi druku)
 - `archiwum/` - pierwsza wersja porownania oryginal vs GORIpoly
 

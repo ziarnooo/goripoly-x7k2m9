@@ -191,11 +191,18 @@ Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się prze
 
 ---
 
+## Ilustracje
+
+Prompty do wygenerowania grafik na karty (Nano Banana) siedzą w `ILUSTRACJE.md` - razem
+z blokiem opisującym postać Goraja, który trzeba wklejać do każdego generowania, żeby
+maskotka wyglądała tak samo wszędzie. Tam też pełny prompt na rewers.
+
 ## Zasoby graficzne
 
 - `logo-goripoly.png` - logotyp GORIPOLY. **Jedno źródło dla całego projektu**: banknoty, nagłówki stron, rewers. Zmiana logo to podmiana tego pliku, nic więcej.
 - `bartek.png` - maskotka. Tło przezroczyste, w kółkach kapelusz wystaje ponad okrąg.
 - `rewers.jpg` - rewers talii, wersja tymczasowa.
+- `art/<id>.png` - miejsce na gotowe ilustracje kart akcji (patrz `ILUSTRACJE.md`).
 
 ## Gdzie są karty
 

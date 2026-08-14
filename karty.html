@@ -13,10 +13,10 @@
 
 <!-- ====== symbole SVG ====== -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="m-glyph" viewBox="0 0 90 82">
-    <path d="M6 82V0h16.5l22.5 40L67.5 0H84v82H67.5V36L49.5 68H40.5L22.5 36v46z"/>
-    <rect x="0" y="24" width="90" height="9"/>
-    <rect x="0" y="47" width="90" height="9"/>
+  <symbol id="m-glyph" viewBox="0 0 102 82">
+    <path d="M6.8 82V0h18.7l25.5 40L76.5 0h18.7v82H76.5V36L56.1 68H45.9L25.5 36v46z"/>
+    <rect x="0" y="24" width="102" height="9"/>
+    <rect x="0" y="47" width="102" height="9"/>
   </symbol>
 
   <symbol id="ico-breaker" viewBox="0 0 100 100">
@@ -186,7 +186,14 @@ const WILDS = [
 const WILD_ALL = {n:'Goraj Załatwi', q:2,
   t:'Wchodzi do dowolnego kompletu. Nie ma wartości pieniężnej, nie zapłacisz nią'};
 
-const MONEY = [[1,6,'#C8E6A0'],[2,5,'#F4C89A'],[3,3,'#9FCBEA'],[4,3,'#D9AFE0'],[5,2,'#F1E07A'],[10,1,'#F08A24']];
+const MONEY = [
+  [1,  6, '#EAEAEA', '#6E7276'],
+  [2,  5, '#FBE3C8', '#D2761B'],
+  [3,  3, '#D8EFD8', '#2E8B4A'],
+  [4,  3, '#D6E7F7', '#1F6FB2'],
+  [5,  2, '#E3D9F0', '#6B4E9E'],
+  [10, 1, '#F8D9CE', '#C0392B']
+];
 
 /* karty akcji - kolor i piktogram wg typu oryginału */
 const ACTIONS = [
@@ -290,16 +297,17 @@ function lum(hex){
 const ink  = hex => lum(hex) > 0.55 ? '#111111' : '#FFFFFF';   /* tekst na pasku */
 const numc = hex => lum(hex) > 0.60 ? '#111111' : hex;         /* cyfra w ikonce */
 
-function amt(v, cls){return `<span class="amt ${cls||''}"><svg class="m" viewBox="0 0 90 82"><use href="#m-glyph"/></svg><b>${v}</b></span>`}
+function amt(v, cls){return `<span class="amt ${cls||''}"><svg class="m" viewBox="0 0 102 82"><use href="#m-glyph"/></svg><b>${v}</b></span>`}
 function badge(v, cls){
   if(v===null) return `<div class="badge badge--none ${cls||''}"><b>BEZ<br>WART.</b></div>`;
   return `<div class="badge ${cls||''}">${amt(v)}</div>`;
 }
 function nameCls(n){return n.length > 17 ? 'sm' : ''}
+function actSize(n){const L=n.length; return L<=9?5.6:L<=14?5:L<=20?4.4:L<=26?4:3.6}
 function embSize(n){const L=n.length; return L<=9?6:L<=14?5:L<=20?4.2:L<=30?3.6:3.1}
 
 /* wachlarz ikonek: karta z cyfra na wierzchu, pozostale w prawo i w gore */
-function fan(n, full, d){
+function fan(n, d){
   const dx=+(d.fw*0.26).toFixed(2), dy=+(d.fh*0.107).toFixed(2);
   const box=`width:${d.fw}mm;height:${d.fh}mm`;
   let s='';
@@ -308,9 +316,6 @@ function fan(n, full, d){
       <div class="fan__bar"></div></div>`;
   }
   s+=`<div class="fan__card" style="${box};z-index:9"><div class="fan__bar"></div><div class="fan__num">${n}</div></div>`;
-  if(full) s+=`<svg class="sparks" viewBox="0 0 5 6" style="left:${(d.fw*0.87).toFixed(2)}mm;top:${(-d.fh*0.17).toFixed(2)}mm;width:${(d.fw*0.8).toFixed(2)}mm;height:${(d.fh*0.72).toFixed(2)}mm"><g stroke="#111" stroke-width=".45" stroke-linecap="round">
-    <line x1=".6" y1="1.4" x2="2.2" y2=".4"/><line x1="1" y1="3" x2="2.8" y2="3"/>
-    <line x1=".6" y1="4.6" x2="2.2" y2="5.6"/></g></svg>`;
   return `<div class="fan" style="${box};--bar:${(d.fh*0.21).toFixed(2)}mm;--num:${(d.fh*0.33).toFixed(2)}mm">${s}</div>`;
 }
 
@@ -322,7 +327,7 @@ function rentLadder(key, mini){
     : (n>3 ? {fw:5.2,fh:7.0,pitch:9.8} : {fw:6.2,fh:8.4,pitch:11});
   let rows='';
   s.rents.forEach((r,i)=>{
-    rows+=`<li class="rent-row" style="--pitch:${d.pitch}mm">${fan(i+1, i===n-1, d)}<span class="rent">${amt(r)}</span></li>`;
+    rows+=`<li class="rent-row" style="--pitch:${d.pitch}mm">${fan(i+1, d)}<span class="rent">${amt(r)}</span></li>`;
   });
   return `<div class="body"><ol class="rent-list">${rows}</ol>
     ${mini?'':'<p class="complete-set">Komplet</p>'}</div>`;
@@ -381,20 +386,7 @@ function wildAllCard(){
         <p>${esc(WILD_ALL.t)}</p>
         <div class="mascot"><img src="bartek.png" alt="Goraj"></div>
       </div>
-      ${badge(null)}
-    </div>
-  </article>`;
-}
-
-function moneyCard([v,q,color]){
-  return `<article class="card card--money" data-t="money" style="--money:${color}">
-    <div class="key">
-      <div class="dots"></div>
-      ${v===10?'<div class="rays" style="border-radius:50%;background:repeating-conic-gradient(#fff 0 11.25deg,transparent 11.25deg 22.5deg)"></div>':''}
-      <span class="money-corner money-corner--tl">${amt(v)}</span>
-      <span class="money-corner money-corner--br">${amt(v)}</span>
-      <div class="coin">${amt(v)}</div>
-      <div class="money-band"><img src="logo-goripoly.png" alt="GORIPOLY"></div>
+      ${badge(0)}
     </div>
   </article>`;
 }
@@ -404,11 +396,13 @@ function actionCard(a, type){
     <div class="key">
       <div class="chevron"></div>
       <div class="rent-head">${type==='oops'?'Karta przypału':'Karta akcji'}</div>
-      <div class="emblem">
-        <svg viewBox="0 0 100 100"><use href="#ico-${a.ico}"/></svg>
-        <b style="--nsize:${embSize(a.n)}mm">${esc(a.n)}</b>
+      <div class="emblem">${a.art
+        ? `<img src="art/${a.art}.png" alt="">`
+        : `<svg viewBox="0 0 100 100"><use href="#ico-${a.ico}"/></svg>`}</div>
+      <div class="act-body">
+        <h3 class="act-name" style="--nsize:${actSize(a.n)}mm">${esc(a.n)}</h3>
+        <p class="effect">${esc(a.t)}<i>${esc(a.f)}</i></p>
       </div>
-      <p class="effect">${esc(a.t)}<i>${esc(a.f)}</i></p>
     </div>
     ${badge(a.v,'badge--action')}
   </article>`;
@@ -433,6 +427,19 @@ function rentCard(r){
     </div>
     ${badge(r.v,'badge--action')}
     ${badge(r.v,'badge--rent-b')}
+  </article>`;
+}
+
+function moneyCard([v,q,light,strong]){
+  const corner = pos => `<span class="bill-corner ${pos}">${amt(v)}</span>`;
+  return `<article class="card card--money" data-t="money" style="--light:${light};--strong:${strong}">
+    <div class="key">
+      <img class="bill-figure bill-figure--t" src="bartek.png" alt="">
+      <img class="bill-figure bill-figure--b" src="bartek.png" alt="">
+      <div class="bill-frame"></div>
+      ${corner('tl')}${corner('tr')}${corner('bl')}${corner('br')}
+      <div class="bill-diamond"><span class="bill-val">${amt(v)}</span></div>
+    </div>
   </article>`;
 }
 
