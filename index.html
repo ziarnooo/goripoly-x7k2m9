@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#E02A2A">
+<title>GORIpoly - wszystkie karty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mono-red:#E02A2A; --ink:#1D1D1B; --paper:#F7F5EF; --card:#FFF; --muted:#6b675c;
+    --brown:#955436; --ltblue:#AAE0FA; --pink:#D93A96; --orange:#F7941D;
+    --red:#ED1B24; --yellow:#FEF200; --green:#1FB25A; --dkblue:#0072BB;
+    --rail:#1D1D1B; --util:#BFDCAE; --act:#6B4E9E; --money:#2E8540;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-text-size-adjust:100%}
+  body{background:var(--paper);color:var(--ink);font-family:'Archivo',system-ui,-apple-system,sans-serif;padding-bottom:64px}
+
+  header{background:var(--mono-red);padding:28px 16px 34px;text-align:center;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:8px;
+    background:repeating-linear-gradient(90deg,var(--ink) 0 18px,transparent 18px 36px)}
+  .logo{display:inline-block;background:#fff;border:4px solid var(--ink);border-radius:999px;
+    padding:10px 26px;transform:rotate(-2deg);box-shadow:5px 5px 0 rgba(0,0,0,.25)}
+  .logo h1{font-family:'Archivo Black',sans-serif;font-size:clamp(26px,8vw,46px);letter-spacing:.5px;color:var(--mono-red)}
+  .logo h1 span{color:var(--ink)}
+  header p{color:#fff;font-weight:700;margin-top:12px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+
+  main{max-width:1080px;margin:0 auto;padding:0 12px}
+
+  .intro{background:#fff;border:3px dashed var(--mono-red);border-radius:14px;
+    padding:16px 16px;margin:22px auto 0;font-size:14px;line-height:1.55}
+  .intro b{color:var(--mono-red)}
+  .intro ul{margin:8px 0 0 18px}
+  .intro li{margin-bottom:4px}
+  .cta{display:inline-block;margin-top:12px;background:var(--mono-red);color:#fff;text-decoration:none;
+    font-weight:700;font-size:13px;padding:10px 16px;border-radius:999px;border:3px solid var(--ink)}
+
+  .toolbar{position:sticky;top:0;z-index:20;background:var(--paper);padding:12px 0 8px;margin-top:18px;
+    display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .toolbar::-webkit-scrollbar{display:none}
+  .toolbar a{flex:none;font-size:12px;font-weight:700;text-decoration:none;color:var(--ink);
+    background:#fff;border:2px solid var(--ink);border-radius:999px;padding:7px 12px;white-space:nowrap}
+
+  section{margin-top:30px;scroll-margin-top:60px}
+  .sec-head{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+  .swatch{width:18px;height:18px;border:3px solid var(--ink);border-radius:4px;flex:none}
+  .sec-head h2{font-family:'Archivo Black',sans-serif;font-size:16px;text-transform:uppercase;letter-spacing:.03em}
+  .sec-note{font-size:13px;color:var(--muted);margin-bottom:12px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  @media(min-width:560px){.grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}}
+
+  .card{background:var(--card);border:3px solid var(--ink);border-radius:11px;overflow:hidden;
+    display:flex;flex-direction:column;min-height:172px;position:relative;box-shadow:3px 3px 0 rgba(29,29,27,.14)}
+  .band{padding:9px 34px 8px 9px;border-bottom:3px solid var(--ink);min-height:58px;
+    display:flex;flex-direction:column;justify-content:center;gap:2px;position:relative}
+  .band .name{font-family:'Archivo Black',sans-serif;font-size:12.5px;line-height:1.15;text-transform:uppercase;word-break:break-word}
+  .band .sub{font-size:10px;font-weight:600;opacity:.9;line-height:1.25}
+  .band.light{color:var(--ink)} .band.dark{color:#fff}
+  .val{position:absolute;top:7px;right:7px;background:#fff;color:var(--ink);border:2px solid var(--ink);
+    border-radius:999px;font-family:'Archivo Black',sans-serif;font-size:10px;padding:2px 6px}
+  .body{flex:1;padding:8px 10px 20px;display:flex;flex-direction:column;justify-content:center;gap:3px}
+  .row{display:flex;justify-content:space-between;font-size:11px;font-weight:600;color:#4d493f}
+  .row b{font-weight:700;color:var(--ink)}
+  .txt{font-size:11.5px;line-height:1.4;color:#4d493f}
+  .orig{position:absolute;bottom:5px;left:9px;right:9px;font-size:8.5px;font-weight:700;letter-spacing:.04em;
+    text-transform:uppercase;color:#a39e90;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .flag{position:absolute;top:-1px;left:-1px;font-size:9px;font-weight:700;padding:2px 6px;
+    border:2px solid var(--ink);border-radius:0 0 8px 0;background:#fff}
+  .flag.zmiana{background:#FFE27A} .flag.nowa{background:#BFE3FF} .flag.pytanie{background:#FFB3B3}
+  .count{position:absolute;top:7px;left:7px;background:var(--ink);color:#fff;font-size:9px;font-weight:700;
+    border-radius:999px;padding:2px 6px}
+
+  .qbox{margin-top:34px;background:#fff;border:3px solid var(--ink);border-radius:14px;padding:16px}
+  .qbox h2{font-family:'Archivo Black',sans-serif;font-size:16px;text-transform:uppercase;margin-bottom:10px}
+  .qbox ol{margin-left:18px;font-size:14px;line-height:1.6}
+  .qbox li{margin-bottom:6px}
+  footer{text-align:center;font-size:12px;color:var(--muted);margin-top:34px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><h1>GORI<span>POLY</span></h1></div>
+  <p>Edycja kawalerska Bartka Goraja</p>
+</header>
+
+<main>
+  <div class="intro">
+    <b>Co to jest:</b> personalizowana wersja Monopoly Deal na wieczór kawalerski Goraja. Mechanika, wartości i liczba kart 1:1 jak w oryginale, podmieniamy tylko nazwy i podpisy.<br><br>
+    <b>Czego potrzebuję od Was:</b>
+    <ul>
+      <li>przeczytajcie nazwy i podpisy, wywalcie to co słabe</li>
+      <li>dorzućcie własne żarty, im bardziej insiderskie tym lepiej</li>
+      <li>odpowiedzcie na pytania na dole strony</li>
+    </ul>
+    <a class="cta" id="issue-link" href="#pytania">Zgłoś uwagę / dorzuć żart</a>
+    <div style="font-size:12px;color:var(--muted);margin-top:8px">Żółta plakietka = zmienione w ostatniej turze. Niebieska = nowa propozycja. Czerwona = czekam na Waszą odpowiedź.</div>
+  </div>
+
+  <nav class="toolbar" id="nav"></nav>
+  <div id="app"></div>
+
+  <div class="qbox" id="pytania">
+    <h2>Pytania otwarte</h2>
+    <ol>
+      <li>Popowice: wpisujemy metraż (39 m²) czy sam "Port Popowice"?</li>
+      <li>Beach bar pod Mostem Milenijnym: jak się nazywa to miejsce?</li>
+      <li>Plaża w Los Alcázares: która to? La Concha, Del Espejo, Las Palmeras, Manzanares, Carrión?</li>
+      <li>Gliwicka 220D/9: numer się zgadza?</li>
+      <li>Deal Breaker: "Wiśniewska zarządziła", "Monikracja" czy "Monika podporządkowuje"?</li>
+      <li>Sprzątaczka w Los Alcázares: jak jej na imię? Ma być karta.</li>
+      <li>Karty uniwersalne (wild): dajemy im nazwy czy zostawiamy same pasy kolorów jak w oryginale?</li>
+      <li>Banknoty: personalizujemy (twarz Goraja) czy generyczne?</li>
+      <li>Dodatek "house rules" z kartami na których się traci: wchodzimy czy trzymamy się sztywno oryginału?</li>
+    </ol>
+  </div>
+
+  <footer>
+    Talia: 28 nieruchomości + 11 uniwersalnych + 13 czynszów + 36 akcji + 20 pieniędzy + 2 zasady = 110 kart<br>
+    Deliverable: PDF do druku, karty 56 x 87 mm ze spadami.
+  </footer>
+</main>
+
+<script>
+const V = {brown:'--brown',ltblue:'--ltblue',pink:'--pink',orange:'--orange',red:'--red',
+  yellow:'--yellow',green:'--green',dkblue:'--dkblue',rail:'--rail',util:'--util'};
+
+const DATA = [
+{id:'brazowe',title:'Brązowe - Olkusz: korzenie',color:'brown',light:false,
+ note:'Wartość 1M, czynsz 1/2M. Fundamenty imperium.',
+ rent:[['1 karta','1M'],['2 karty','2M']],val:'1M',
+ cards:[
+  {n:'Szopa na Jasnej',s:'głęboko na działce, wchodzisz na własne ryzyko',o:'ul. Konopacka',f:'zmiana'},
+  {n:'Trawnik na Jasnej',s:'duży, będzie co kosić',o:'ul. Stawki',f:'zmiana'},
+]},
+{id:'blekitne',title:'Błękitne - Olkusz: rodzina',color:'ltblue',light:true,
+ note:'1M, czynsz 1/2/3M. Capri wypadło stąd, bo lepiej działa jako media.',
+ rent:[['1 karta','1M'],['2 karty','2M'],['3 karty','3M']],val:'1M',
+ cards:[
+  {n:'Dom na Jasnej',s:'Olkusz HQ',o:'ul. Radzymińska'},
+  {n:'Dom Mamy na Nowowiejskiej',s:'obiad zawsze o 14:00',o:'ul. Jagiellońska',f:'zmiana'},
+  {n:'Teściowie na Skwerze',s:'dwa przystanki od wszystkiego',o:'ul. Targowa',f:'zmiana'},
+]},
+{id:'rozowe',title:'Różowe - Wrocław: dodatki lokatorskie',color:'pink',light:false,
+ note:'2M, czynsz 1/2/4M. Prawdziwy majątek to nie metry.',
+ rent:[['1 karta','1M'],['2 karty','2M'],['3 karty','4M']],val:'2M',
+ cards:[
+  {n:'Komórka Lokatorska',s:'pojemność: nieskończona',o:'ul. Płowiecka'},
+  {n:'Miejsce Parkingowe',s:'luksus, o którym Katowice marzą',o:'ul. Marsa'},
+  {n:'Miejsce na Rower',s:'strzeżone lepiej niż mieszkanie',o:'ul. Grochowska'},
+]},
+{id:'pomaranczowe',title:'Pomarańczowe - Wrocław: Port Popowice',color:'orange',light:true,
+ note:'2M, czynsz 1/3/5M.',
+ rent:[['1 karta','1M'],['2 karty','3M'],['3 karty','5M']],val:'2M',
+ cards:[
+  {n:'Mieszkanie na Porcie Popowice',s:'metraż do ustalenia: wpisujemy 39 m² czy nie?',o:'ul. Obozowa',f:'pytanie'},
+  {n:'Beach Bar pod Milenijnym',s:'potrzebna prawdziwa nazwa knajpy',o:'ul. Górczewska',f:'pytanie'},
+  {n:'Siłownia i Basen Orbita',s:'karnet, z którego korzysta się sezonowo',o:'ul. Wolska',f:'zmiana'},
+]},
+{id:'czerwone',title:'Czerwone - Katowice: Gliwicka',color:'red',light:false,
+ note:'3M, czynsz 2/3/6M.',
+ rent:[['1 karta','2M'],['2 karty','3M'],['3 karty','6M']],val:'3M',
+ cards:[
+  {n:'Mieszkanie na Gliwickiej',s:'Gliwicka 220D/9. Przyszłe mieszkanie z żoną, najcenniejsze aktywo w talii',o:'ul. Mickiewicza',f:'zmiana'},
+  {n:'Piwnica na Gliwickiej',s:'to, co się nie mieści na górze',o:'ul. Słowackiego',f:'zmiana'},
+  {n:'Zawsze Dostępne Miejsce na Gliwickiej',s:'ostatnio widziane w 2019',o:'pl. Wilsona',f:'zmiana'},
+]},
+{id:'zolte',title:'Żółte - Hiszpania: sąsiedztwo',color:'yellow',light:true,
+ note:'3M, czynsz 2/4/6M.',
+ rent:[['1 karta','2M'],['2 karty','4M'],['3 karty','6M']],val:'3M',
+ cards:[
+  {n:'Mieszkanie Teściowej',s:'Los Alcázares, blisko. Za blisko?',o:'ul. Świętokrzyska'},
+  {n:'Mieszkanie Teścia',s:'azyl po drugiej stronie kompleksu',o:'Krakowskie Przedmieście'},
+  {n:'Mieszkanie Beaty',s:'"szefowej" wspólnoty',o:'ul. Nowy Świat',f:'zmiana'},
+]},
+{id:'zielone',title:'Zielone - Los Alcázares: życie w kompleksie',color:'green',light:false,
+ note:'4M, czynsz 2/4/7M.',
+ rent:[['1 karta','2M'],['2 karty','4M'],['3 karty','7M']],val:'4M',
+ cards:[
+  {n:'Taras przed Apartamentem',s:'z widokiem, dopóki nikt nie zaparkuje',o:'pl. Trzech Krzyży',f:'zmiana'},
+  {n:'Basen w Kompleksie',s:'ręcznik na leżaku od 6:40, właściciel nieznany',o:'ul. Marszałkowska',f:'zmiana'},
+  {n:'Plaża (nazwa?)',s:'5 minut spacerem. Która to dokładnie plaża?',o:'Al. Jerozolimskie',f:'pytanie'},
+]},
+{id:'granatowe',title:'Granatowe - Premium',color:'dkblue',light:false,
+ note:'4M, czynsz 3/8M. Najdroższa grupa w talii.',
+ rent:[['1 karta','3M'],['2 karty','8M']],val:'4M',
+ cards:[
+  {n:'Apartament Los Alcázares',s:'perła w koronie Goraja',o:'ul. Belwederska'},
+  {n:'Piwnica do Apartamentu',s:'hiszpańska, klimatyzowana naturalnie',o:'Aleje Ujazdowskie',f:'zmiana'},
+]},
+{id:'dworce',title:'Czarne - Trasy Goraja',color:'rail',light:false,
+ note:'2M, czynsz 1/2/3/4M. W oryginale dworce.',
+ rent:[['1 karta','1M'],['2 karty','2M'],['3 karty','3M'],['4 karty','4M']],val:'2M',
+ cards:[
+  {n:'Lotnisko Alicante',s:'trzy godziny od własnej piwnicy',o:'Dworzec Centralny',f:'zmiana'},
+  {n:'A4 z korkami',s:'Katowice-Wrocław, czas przejazdu: zależy',o:'Dworzec Gdański',f:'zmiana'},
+  {n:'DK94 do Olkusza',s:'droga na obiad',o:'Dworzec Wschodni'},
+  {n:'Dworzec Wrocław Główny',s:'peron 3, pociąg opóźniony',o:'Dworzec Zachodni',f:'zmiana'},
+]},
+{id:'media',title:'Jasnozielone - Usługi niezbędne do życia',color:'util',light:true,
+ note:'2M, czynsz 1/2M. W oryginale elektrownia i wodociągi.',
+ rent:[['1 karta','1M'],['2 karty','2M']],val:'2M',
+ cards:[
+  {n:'Capri',s:'restauracja teściowej. Kto wejdzie, ten płaci za obiad',o:'Elektrownia'},
+  {n:'Ryanair do Alicante',s:'bagaż podręczny 40x20x25',o:'Wodociągi'},
+]},
+];
+
+const WILD = {id:'wild',title:'Uniwersalne (wild) - 11 kart',color:'act',light:false,
+ note:'Karty z dwoma pasami kolorów, grasz nimi jako jedna z dwóch grup. Dwie tęczowe pasują wszędzie, ale nie mają wartości. W oryginale nie mają nazw, więc podpisy są opcjonalne.',
+ cards:[
+  {n:'Klucze do apartamentu',s:'granat lub zieleń',v:'4M',c:1,f:'nowa'},
+  {n:'Transfer z lotniska',s:'zieleń lub trasy',v:'4M',c:1,f:'nowa'},
+  {n:'Lot i obiad w pakiecie',s:'media lub trasy',v:'4M',c:1,f:'nowa'},
+  {n:'Klucze do Olkusza',s:'błękit lub brąz',v:'1M',c:1,f:'nowa'},
+  {n:'Wypad do domu',s:'błękit lub trasy',v:'4M',c:1,f:'nowa'},
+  {n:'Klucze do Wrocławia',s:'róż lub pomarańcz',v:'2M',c:2,f:'nowa'},
+  {n:'Klucze do Katowic i Hiszpanii',s:'czerwień lub żółć',v:'3M',c:2,f:'nowa'},
+  {n:'Goraj załatwi',s:'dowolny kolor, wartość 0M',v:'0M',c:2,f:'nowa'},
+]};
+
+const RENT = {id:'czynsze',title:'Czynsze - 13 kart',color:'money',light:false,
+ note:'Pary kolorów jak w oryginale, nie da się ich mieszać. Tęczowe działają na dowolny kolor.',
+ cards:[
+  {n:'Czynsz z kompleksu',s:'granat + zieleń. Wspólnota już policzyła',v:'1M',c:2,f:'nowa'},
+  {n:'Czynsz z Gliwickiej i Hiszpanii',s:'czerwień + żółć. Dwa mieszkania, jedno konto',v:'1M',c:2,f:'nowa'},
+  {n:'Czynsz z Popowic',s:'róż + pomarańcz. Wraz z opłatą za komórkę',v:'1M',c:2,f:'nowa'},
+  {n:'Czynsz z Olkusza',s:'błękit + brąz. U mamy się nie płaci, u reszty tak',v:'1M',c:2,f:'nowa'},
+  {n:'Rozliczenie za dojazdy',s:'trasy + media. Paliwo, bilet, bagaż podręczny',v:'1M',c:2,f:'nowa'},
+  {n:'Rozliczenie roczne',s:'dowolny kolor, wybierasz osobę. Bez dyskusji',v:'3M',c:3,f:'nowa'},
+]};
+
+const ACTIONS = {id:'akcje',title:'Akcje - 36 kart',color:'act',light:false,
+ note:'Mechanika bez zmian, tylko nazwa i podpis. Liczba w rogu to liczba sztuk w talii.',
+ cards:[
+  {n:'Wiśniewska zarządziła',s:'Zabierz przeciwnikowi pełny komplet. Odwołania rozpatruje ta sama osoba',v:'5M',c:2,o:'Zerwanie umowy / Deal Breaker',f:'nowa'},
+  {n:'Dzisiaj nie, kochanie',s:'Anuluje dowolną akcję zagraną przeciwko Tobie. Bez dyskusji',v:'4M',c:3,o:'Nic z tego! / Just Say No',f:'zmiana'},
+  {n:'Pani Beata ma klucze',s:'Weszła bez zapowiedzi. Zabierz 1 nieruchomość spoza kompletu',v:'3M',c:3,o:'Podstępna zamiana / Sly Deal',f:'nowa'},
+  {n:'Wspólna decyzja',s:'Wymień się nieruchomością z przeciwnikiem. Podobno wszyscy się zgodzili',v:'3M',c:4,o:'Wymuszona wymiana / Forced Deal',f:'nowa'},
+  {n:'Czynsz za Popowice',s:'Wynajmujesz, to płacisz. Wybrany gracz daje Ci 5M',v:'3M',c:1,o:'Dłużnik / Debt Collector',f:'nowa'},
+  {n:'Potłuczone kieliszki',s:'Komplet był na wyposażeniu. Wybrany gracz daje Ci 5M',v:'3M',c:1,o:'Dłużnik / Debt Collector',f:'nowa'},
+  {n:'Zgubione klucze do apartamentu',s:'Wymiana wkładki na koszt gościa. Wybrany gracz daje Ci 5M',v:'3M',c:1,o:'Dłużnik / Debt Collector',f:'nowa'},
+  {n:'6 października',s:'Urodziny Goraja. Każdy gracz dorzuca się po 2M',v:'2M',c:3,o:'Urodziny / Birthday',f:'nowa'},
+  {n:'Sezon w Los Alcázares',s:'Lipiec. Stawka czynszu x2',v:'1M',c:2,o:'Podwójny czynsz / Double Rent',f:'nowa'},
+  {n:'Klimatyzacja',s:'Dokładasz do pełnego kompletu. +3M do czynszu',v:'3M',c:3,o:'Dom / House',f:'nowa'},
+  {n:'Booking z oceną 9.4',s:'Dokładasz do kompletu z domem. +4M do czynszu. Ręczniki w łabędzie',v:'4M',c:3,o:'Hotel',f:'nowa'},
+  {n:'Ślub!',s:'Dobierz 2 karty. Od dziś wszystko dobieracie wspólnie',v:'1M',c:2,o:'Przejdź przez Start / Pass Go'},
+  {n:'Dywidenda z GPW',s:'Spółki dowiozły. Dobierz 2 karty',v:'1M',c:2,o:'Przejdź przez Start / Pass Go',f:'nowa'},
+  {n:'Obiad u mamy',s:'Wychodzisz z pełnym brzuchem i słoikami. Dobierz 2 karty',v:'1M',c:2,o:'Przejdź przez Start / Pass Go',f:'nowa'},
+  {n:'Rezerwacja na cały sierpień',s:'Apartament wynajęty w jeden dzień. Dobierz 2 karty',v:'1M',c:2,o:'Przejdź przez Start / Pass Go',f:'nowa'},
+  {n:'Wolne miejsce przed Gliwicką',s:'Ktoś odjechał. Dobierz 2 karty, zanim ktoś zajmie',v:'1M',c:2,o:'Przejdź przez Start / Pass Go',f:'nowa'},
+]};
+
+const HOUSE = {id:'dodatek',title:'Dodatek: karty na których się traci',color:'red',light:false,
+ note:'Oryginalny Monopoly Deal nie ma kart "tracisz pieniądze". Te trzy są spoza talii, jako opcjonalny dodatek. Powiedzcie czy wchodzimy.',
+ cards:[
+  {n:'Nocka na lotnisku w Alicante',s:'Auto padło w drodze po odbiór. Tracisz turę, ale rano masz cały terminal dla siebie',v:'-',c:1,f:'nowa'},
+  {n:'Beata i niezadowoleni goście',s:'Opinia 6.1 na Booking. Odłóż 2M do banku',v:'-',c:1,f:'nowa'},
+  {n:'Sierpień bez rezerwacji',s:'Apartament stoi pusty. Odłóż 2M do banku',v:'-',c:1,f:'nowa'},
+]};
+
+const MONEY = {id:'pieniadze',title:'Pieniądze - 20 kart',color:'money',light:false,
+ note:'Nominały jak w oryginale. Do decyzji: personalizujemy banknoty (twarz Goraja, "Bank Rodziny Goraj") czy zostają generyczne.',
+ cards:[
+  {n:'1M',s:'sześć sztuk',v:'1M',c:6,f:'pytanie'},
+  {n:'2M',s:'pięć sztuk',v:'2M',c:5,f:'pytanie'},
+  {n:'3M',s:'trzy sztuki',v:'3M',c:3,f:'pytanie'},
+  {n:'4M',s:'trzy sztuki',v:'4M',c:3,f:'pytanie'},
+  {n:'5M',s:'dwie sztuki',v:'5M',c:2,f:'pytanie'},
+  {n:'10M',s:'jedna sztuka, wersja złota',v:'10M',c:1,f:'pytanie'},
+]};
+
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+
+function cardHTML(c, sec){
+  const bg = V[sec.color] ? `var(${V[sec.color]})` : `var(--${sec.color})`;
+  const val = c.v || sec.val;
+  const flag = c.f ? `<span class="flag ${c.f}">${c.f==='zmiana'?'zmiana':c.f==='nowa'?'nowa':'pytanie'}</span>` : '';
+  const cnt = c.c ? `<span class="count">x${c.c}</span>` : '';
+  let body;
+  if(sec.rent){
+    body = sec.rent.map(r=>`<div class="row"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('');
+  } else {
+    body = `<div class="txt">${esc(c.s||'')}</div>`;
+  }
+  const sub = sec.rent && c.s ? `<span class="sub">${esc(c.s)}</span>` : '';
+  return `<div class="card">
+    <div class="band ${sec.light?'light':'dark'}" style="background:${bg}">
+      ${cnt}<span class="name">${esc(c.n)}</span>${sub}${val?`<span class="val">${val}</span>`:''}
+    </div>
+    <div class="body">${body}</div>
+    ${flag}
+    ${c.o?`<span class="orig">oryginał: ${esc(c.o)}</span>`:''}
+  </div>`;
+}
+
+function sectionHTML(sec){
+  const bg = V[sec.color] ? `var(${V[sec.color]})` : `var(--${sec.color})`;
+  return `<section id="${sec.id}">
+    <div class="sec-head"><div class="swatch" style="background:${bg}"></div><h2>${esc(sec.title)}</h2></div>
+    ${sec.note?`<p class="sec-note">${esc(sec.note)}</p>`:''}
+    <div class="grid">${sec.cards.map(c=>cardHTML(c,sec)).join('')}</div>
+  </section>`;
+}
+
+const ALL = [...DATA, WILD, RENT, ACTIONS, HOUSE, MONEY];
+document.getElementById('app').innerHTML = ALL.map(sectionHTML).join('');
+document.getElementById('nav').innerHTML = ALL.map(s=>{
+  const short = s.title.split(' - ')[0];
+  return `<a href="#${s.id}">${esc(short)}</a>`;
+}).join('') + '<a href="#pytania">Pytania</a>';
+
+// link do zgłaszania uwag ustawiany automatycznie na repo, w którym stoi strona
+(function(){
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+  if(m){
+    const repo = location.pathname.split('/').filter(Boolean)[0];
+    if(repo){
+      const a = document.getElementById('issue-link');
+      a.href = `https://github.com/${m[1]}/${repo}/issues/new`;
+      a.textContent = 'Zgłoś uwagę / dorzuć żart';
+      a.target = '_blank'; a.rel = 'noopener';
+    }
+  }
+})();
+</script>
+</body>
+</html>
