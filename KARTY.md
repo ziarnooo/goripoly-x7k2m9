@@ -191,10 +191,17 @@ Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się prze
 
 ---
 
+## Gdzie są karty
+
+- Wygląd do druku: `karty.html` (+ `karty.css`). Milimetry, keyline 3,5 mm od cięcia, spad 3 mm, symbol waluty jako SVG, wachlarz ikonek, arkusz A4 po 9 kart.
+- Podgląd z opisami i zasadami: `index.html`.
+- Treść kart: ten plik. Zmiana nazwy = poprawka tutaj i w tablicach danych w `karty.html`.
+
 ## Odstępstwa od oryginału (świadome)
 
 1. **Karty przypału** - 6 kart, których w Monopoly Deal nie ma. Osobny dodatek, można grać bez nich.
 2. **"Ślub!"** - działa jak Pass Go, ale pozwala wskazać gracza, który dobiera 2 karty razem z Tobą.
+3. **Podpis na dole karty nieruchomości** - w oryginale dół karty jest pusty. U nas siedzi tam żart, bo bez niego cała talia traci sens. Łatwo zdjąć: `.flavor{display:none}` w `karty.css`.
 
 Reszta jest 1:1.
 

@@ -1,0 +1,284 @@
+/* GORIPOLY - karty do druku. Wszystkie wymiary w mm.
+   Netto 56 x 87 mm, spad 3 mm z każdej strony -> element karty 62 x 93 mm.
+   Keyline: 3,5 mm od linii cięcia, czyli 6,5 mm od krawędzi elementu. */
+
+:root{
+  --card-w:62mm; --card-h:93mm;
+  --trim:3mm;                /* spad */
+  --key-inset:6.5mm;         /* 3 mm spadu + 3,5 mm */
+  --stroke:0.45mm;
+  --r-cut:3mm; --r-key:1.5mm;
+
+  --band-h:14mm;
+  --badge-d:8.6mm;
+  --col-left:33%;
+  --col-right:72%;
+
+  --ink:#111111;
+  --disp:'Poppins','Montserrat','Archivo',system-ui,sans-serif;
+
+  --brown:#8B4A2B; --lblue:#AFDDF2; --pink:#D5286E; --orange:#F08A24;
+  --red:#E1231C; --yellow:#F5E23A; --green:#17A24A; --dblue:#0069B4;
+  --rail:#1F1F1F; --util:#B9D9B2;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
+
+/* ---------------- podgląd na ekranie ---------------- */
+.bar{position:sticky;top:0;z-index:50;background:#111;padding:3mm 4mm;display:flex;gap:2mm;
+  flex-wrap:wrap;align-items:center;border-bottom:1px solid #000}
+.bar h1{font-size:4mm;font-weight:900;letter-spacing:.01em;margin-right:3mm}
+.bar h1 em{font-style:normal;color:#E1231C}
+.bar button{background:#333;color:#eee;border:1px solid #555;border-radius:1mm;
+  padding:1.6mm 3mm;font:inherit;font-size:3mm;font-weight:700;cursor:pointer}
+.bar button:hover{background:#444}
+.bar button.on{background:#0069B4;border-color:#3aa0e0}
+.note{padding:4mm 4mm 0;font-size:3.2mm;font-weight:600;color:#bbb;max-width:220mm}
+.note a{color:#7ec5ff}
+
+.sheet{display:flex;flex-wrap:wrap;gap:3mm;padding:4mm;align-items:flex-start;justify-content:flex-start}
+.slot{display:flex;flex-direction:column;align-items:center}
+.slot.dup{display:none}
+.all-copies .slot.dup{display:flex}
+.slot figcaption{font-size:2.6mm;font-weight:700;color:#999;padding-top:1mm;text-align:center;max-width:var(--card-w)}
+
+/* ---------------- karta ---------------- */
+.card{
+  width:var(--card-w);height:var(--card-h);position:relative;background:#fff;
+  color:var(--ink);overflow:hidden;flex:none;
+}
+/* linia cięcia - tylko na ekranie, nie drukuje się */
+.card::after{
+  content:"";position:absolute;inset:var(--trim);border:0.2mm dashed rgba(0,120,255,.5);
+  border-radius:var(--r-cut);pointer-events:none;z-index:40;
+}
+.guides-off .card::after{display:none}
+
+.key{
+  position:absolute;inset:var(--key-inset);
+  border:var(--stroke) solid var(--ink);border-radius:var(--r-key);
+  overflow:hidden;background:transparent;
+}
+
+/* ---------------- symbol waluty ---------------- */
+.amt{display:inline-flex;align-items:flex-start;gap:.5mm;line-height:1}
+.amt .m{height:calc(var(--num) * .45);width:calc(var(--num) * .66);flex:none;margin-top:.1mm;fill:currentColor}
+.amt b{font-size:var(--num);font-weight:800;line-height:.82;letter-spacing:-.01em}
+
+/* ---------------- pasek tytułowy ---------------- */
+.band{
+  position:absolute;top:0;left:0;right:0;height:var(--band-h);
+  background:var(--set);color:var(--set-ink);
+  border-bottom:var(--stroke) solid var(--ink);
+  display:flex;align-items:center;justify-content:center;padding:0 2mm;
+}
+.band h2{
+  font-size:3.6mm;font-weight:800;text-transform:uppercase;text-align:center;
+  line-height:1.02;letter-spacing:-.01em;
+}
+.band h2.sm{font-size:3.1mm}
+
+/* ---------------- badge nominału ---------------- */
+.badge{
+  position:absolute;width:var(--badge-d);height:var(--badge-d);border-radius:50%;
+  background:#fff;border:.5mm solid var(--ink);z-index:6;
+  display:flex;align-items:center;justify-content:center;color:var(--ink);
+}
+.badge--prop{left:calc(6.5mm - var(--badge-d)/2);top:calc(var(--band-h) - var(--badge-d)/2)}
+.badge .m{position:absolute;top:1.2mm;left:1.5mm;height:1.9mm;width:2.8mm;fill:var(--ink)}
+.badge b{font-size:4.6mm;font-weight:800;line-height:1;margin-top:1.9mm}
+.badge--none b{font-size:1.9mm;font-weight:800;margin-top:0;text-align:center;line-height:1.05}
+
+/* ---------------- kolumny ---------------- */
+.cols{
+  position:absolute;left:0;right:0;top:23.5mm;transform:translateY(-100%);
+  display:flex;align-items:flex-end;
+}
+.col-head{
+  position:absolute;transform:translateX(-50%);text-align:center;
+  font-size:2.3mm;font-weight:700;text-transform:uppercase;letter-spacing:.04em;line-height:1.06;
+}
+.col-head--left{left:var(--col-left)}
+.col-head--right{left:var(--col-right)}
+
+/* ---------------- drabinka czynszu ---------------- */
+.body{position:absolute;left:0;right:0;top:25.5mm}
+.rent-list{list-style:none}
+.rent-row{position:relative;height:var(--pitch)}
+.rent{position:absolute;left:var(--col-right);top:50%;transform:translate(-50%,-50%);--num:6.2mm}
+
+.fan{position:absolute;left:var(--col-left);top:50%;transform:translate(-50%,-50%);
+  width:6.2mm;height:8.4mm}
+.fan__card{
+  position:absolute;left:0;bottom:0;width:6.2mm;height:8.4mm;background:#fff;
+  border:var(--stroke) solid var(--ink);border-radius:.8mm;overflow:hidden;
+  transform-origin:bottom right;
+  display:flex;flex-direction:column;align-items:center;
+}
+.fan__bar{height:1.8mm;width:100%;background:var(--set);flex:none}
+.fan__num{flex:1;display:flex;align-items:center;justify-content:center;
+  font-size:2.8mm;font-weight:700;color:var(--set-num)}
+.sparks{position:absolute;left:5.4mm;top:-1.4mm;width:5mm;height:6mm;overflow:visible}
+
+.complete-set{
+  position:relative;left:var(--col-left);transform:translateX(-50%);width:22mm;
+  margin-top:2mm;text-align:center;font-size:2.3mm;font-weight:800;
+  text-transform:uppercase;line-height:1.05;letter-spacing:.02em;
+}
+
+/* podpis - jedyne odstępstwo od oryginału, żarty muszą gdzieś być */
+.flavor{
+  position:absolute;left:3mm;right:3mm;bottom:2.6mm;text-align:center;
+  font-size:2.5mm;font-weight:600;font-style:italic;line-height:1.2;color:#6f6a60;
+}
+
+/* ---------------- joker dwukolorowy ---------------- */
+.card--wild2 .half{position:absolute;left:0;right:0;height:35.5mm;overflow:hidden}
+.card--wild2 .half--a{top:0}
+.card--wild2 .half--b{bottom:0;transform:rotate(180deg)}
+.card--wild2 .half .band{height:9mm}
+.card--wild2 .half .band h2{font-size:3mm}
+.card--wild2 .half .band h2.sm{font-size:2.5mm}
+.card--wild2 .half .badge{--badge-d:7mm;left:calc(5mm - 3.5mm);top:calc(9mm - 3.5mm)}
+.card--wild2 .half .badge b{font-size:3.6mm;margin-top:1.5mm}
+.card--wild2 .half .badge .m{height:1.5mm;width:2.2mm;top:.9mm;left:1.1mm}
+.card--wild2 .body{top:10.5mm}
+.card--wild2 .fan{width:4.4mm;height:6mm}
+.card--wild2 .fan__card{width:4.4mm;height:6mm}
+.card--wild2 .fan__bar{height:1.3mm}
+.card--wild2 .fan__num{font-size:2.1mm}
+.card--wild2 .rent{--num:4.2mm}
+.card--wild2 .sparks{left:3.9mm;top:-1mm;width:3.6mm;height:4.4mm}
+.wild-strip{
+  position:absolute;left:0;right:0;top:35.5mm;height:8mm;background:#fff;
+  border-top:var(--stroke) solid var(--ink);border-bottom:var(--stroke) solid var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4mm;z-index:5;
+}
+.wild-strip b{font-size:3.4mm;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.wild-strip i{font-size:2.2mm;font-weight:600;font-style:italic;color:#555}
+
+/* ---------------- joker wszystkie kolory ---------------- */
+.card--wildall .key{background:#111111;color:#fff}
+.wildall{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  padding:4mm 3mm 3mm;text-align:center}
+.wildall svg.title{width:40mm;height:17mm}
+.wildall p{font-size:2.8mm;font-weight:600;line-height:1.25;color:#fff;margin-top:1mm;padding:0 2mm}
+.mascot{
+  width:26mm;height:26mm;border-radius:50%;background:#fff;border:.6mm solid var(--ink);
+  margin-top:auto;overflow:hidden;display:flex;align-items:flex-end;justify-content:center;flex:none;
+}
+.mascot img{width:104%;height:auto;display:block;margin-bottom:-1mm}
+
+/* ---------------- pieniądze ---------------- */
+.card--money .key{background:var(--money);overflow:hidden}
+.dots{position:absolute;inset:0;opacity:.10;
+  background-image:radial-gradient(circle at .3mm .3mm, #000 0 .3mm, transparent .31mm);
+  background-size:2.4mm 2.4mm}
+.money-corner{position:absolute;font-size:4mm;font-weight:800;--num:4mm}
+.money-corner--tl{top:2mm;left:2.4mm}
+.money-corner--br{bottom:2mm;right:2.4mm;transform:rotate(180deg)}
+.coin{
+  position:absolute;left:50%;top:24mm;transform:translateX(-50%);
+  width:34mm;height:34mm;border-radius:50%;background:#fff;border:1mm solid var(--ink);
+  display:flex;align-items:center;justify-content:center;--num:16mm;z-index:3;
+}
+.rays{position:absolute;left:50%;top:24mm;transform:translateX(-50%);width:46mm;height:34mm;
+  margin-top:-6mm;height:46mm;z-index:2;opacity:.20}
+.money-band{
+  position:absolute;left:0;right:0;bottom:9mm;height:8mm;background:#111;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:4mm;font-weight:900;letter-spacing:.12em;z-index:4;
+}
+
+/* ---------------- karty akcji ---------------- */
+.card--action .key{background:var(--c);overflow:hidden}
+.chevron{position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,rgba(255,255,255,.12) 0 .4mm,transparent .4mm 2mm)}
+.action-tag{
+  position:absolute;top:2.4mm;right:2.6mm;transform:rotate(-8deg);z-index:5;
+  font-size:5.2mm;font-weight:900;color:#fff;letter-spacing:.02em;text-transform:uppercase;
+  -webkit-text-stroke:.4mm var(--ink);paint-order:stroke fill;
+}
+.badge--action{left:4mm;top:4mm}   /* zachodzi na keyline, ale zostaje 1 mm od linii cięcia */
+.emblem{
+  position:absolute;left:50%;top:19mm;transform:translateX(-50%);
+  width:30mm;height:30mm;border-radius:50%;border:.7mm solid var(--ink);
+  background:color-mix(in srgb, var(--c) 62%, #fff);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:.6mm;padding:2mm;z-index:3;
+}
+.emblem svg{width:11mm;height:11mm;flex:none}
+.emblem b{font-size:var(--nsize,6mm);font-weight:900;text-transform:uppercase;
+  text-align:center;line-height:1.02;letter-spacing:-.01em;color:var(--ink)}
+.effect{
+  position:absolute;left:3.4mm;right:3.4mm;top:50mm;bottom:2.6mm;overflow:hidden;text-align:center;
+  font-size:2.8mm;font-weight:600;line-height:1.26;color:var(--ink);z-index:3;
+}
+.effect i{display:block;font-size:2.5mm;font-style:italic;color:rgba(17,17,17,.62);margin-top:1mm}
+
+/* ---------------- karty czynszu ---------------- */
+.card--rent .key{background:#F2E6C8;overflow:hidden}
+.card--rent.all .key{background:#111111;color:#fff}
+.rent-head{
+  position:absolute;left:0;right:0;top:2.6mm;text-align:center;
+  font-size:2.6mm;font-weight:900;letter-spacing:.14em;text-transform:uppercase;z-index:4;
+}
+.rent-head--flip{top:auto;bottom:2.6mm;transform:rotate(180deg)}
+.badge--rent-b{right:4mm;bottom:4mm;transform:rotate(180deg)}
+.rent-emblem{
+  position:absolute;left:50%;top:18mm;transform:translateX(-50%);
+  width:32mm;height:32mm;border-radius:50%;border:.7mm solid var(--ink);
+  overflow:hidden;z-index:3;display:flex;
+}
+.rent-emblem .h{flex:1}
+.rent-emblem .label{
+  position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:9mm;background:#fff;
+  border-top:.4mm solid var(--ink);border-bottom:.4mm solid var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink);
+}
+.rent-emblem .label b{font-size:5.4mm;font-weight:900;letter-spacing:-.01em;line-height:1}
+.rent-emblem .label i{font-size:2.2mm;font-weight:700;font-style:normal;letter-spacing:.06em}
+.card--rent .effect{top:51mm;bottom:7mm}
+.card--rent.all .effect{color:#fff}
+.card--rent.all .effect i{color:rgba(255,255,255,.7)}
+
+/* ---------------- karty zasad ---------------- */
+.card--rules .key{background:#fff}
+.rules-title{
+  position:absolute;left:0;right:0;top:0;height:12mm;background:#111;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:4.4mm;font-weight:900;text-transform:uppercase;letter-spacing:.02em;text-align:center;padding:0 3mm;
+}
+.rules-list{position:absolute;left:3.4mm;right:3.4mm;top:15mm;display:flex;flex-direction:column;gap:2.4mm}
+.rules-list li{display:flex;gap:1.6mm;font-size:2.9mm;font-weight:600;line-height:1.25;list-style:none}
+.rules-list li b{font-weight:900;color:#E1231C;flex:none}
+
+/* ---------------- rewers ---------------- */
+.card--back{background:#1B7A3E}
+.card--back .key{border-color:transparent;inset:0;border-radius:0}
+.back-dots{position:absolute;inset:0;opacity:.10;
+  background-image:radial-gradient(circle at .3mm .3mm,#fff 0 .3mm,transparent .31mm);
+  background-size:2.4mm 2.4mm}
+.wedge{position:absolute;width:0;height:0;border-style:solid}
+.wedge--tl{top:0;left:0;border-width:34mm 0 0 26mm;border-color:#12294A transparent transparent transparent}
+.wedge--br{bottom:0;right:0;border-width:0 0 34mm 26mm;border-color:transparent transparent #12294A transparent}
+.back-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:44mm;height:44mm;display:flex;align-items:center;justify-content:center}
+.back-center .mascot{width:34mm;height:34mm;margin:0}
+.back-center .mascot img{filter:grayscale(1) brightness(.55) sepia(1) hue-rotate(175deg) saturate(3)}
+.arc{position:absolute;inset:0;width:44mm;height:44mm}
+.arc text{font-size:4mm;font-weight:900;letter-spacing:.2em;fill:#fff;font-family:var(--disp)}
+
+/* ---------------- druk ---------------- */
+@media print{
+  @page{size:A4;margin:6mm}
+  body{background:#fff}
+  .bar,.note,.slot figcaption{display:none !important}
+  .sheet{display:grid;grid-template-columns:repeat(3,62mm);gap:0;padding:0;justify-content:center}
+  .slot{display:block}
+  .slot.dup{display:none}
+  .all-copies .slot.dup{display:block}
+  .card::after{display:none}
+  .card{page-break-inside:avoid;break-inside:avoid}
+}

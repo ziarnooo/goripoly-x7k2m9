@@ -6,7 +6,10 @@ Personalizowana wersja Monopoly Deal na wieczór kawalerski Bartka Goraja.
 
 ## Co tu jest
 
-- `index.html` - wszystkie 110 kart, do przeglądania na telefonie
+- `karty.html` + `karty.css` - **karty w wersji do druku**: 56 x 87 mm, spad 3 mm, keyline, arkusze A4 po 9 sztuk. Przycisk "Powiel wg nakładu" ustawia liczbę kopii zgodnie z talią, "Drukuj / PDF" eksportuje.
+- `bartek.png` - maskotka (Goraj w cylindrze), używana na jokerze i rewersie
+- `GORIPOLY-podglad.pdf` - podglądowy eksport, po jednym wzorze z każdej karty
+- `index.html` - wszystkie 110 kart z opisami, do przeglądania na telefonie
 - `KARTY.md` - ta sama lista w formie tekstowej, do wygodnego edytowania
 - `goripoly-brief.md` - brief projektowy (ton, kolory, wymogi druku)
 - `archiwum/` - pierwsza wersja porownania oryginal vs GORIpoly

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GORIPOLY - karty do druku</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="karty.css">
+</head>
+<body>
+
+<!-- ====== symbole SVG ====== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="m-glyph" viewBox="0 0 120 82">
+    <path d="M8 82V0h22l30 40L90 0h22v82H90V36L66 68H54L30 36v46z"/>
+    <rect x="0" y="24" width="120" height="9"/>
+    <rect x="0" y="47" width="120" height="9"/>
+  </symbol>
+
+  <symbol id="ico-breaker" viewBox="0 0 100 100">
+    <g fill="#fff" stroke="#111" stroke-width="5" stroke-linejoin="round">
+      <rect x="14" y="34" width="32" height="46" rx="3"/>
+      <rect x="26" y="26" width="32" height="46" rx="3"/>
+    </g>
+    <g fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M62 66c10-4 18-12 22-22"/><path d="M84 44l2 14M84 44l-13 3"/>
+    </g>
+  </symbol>
+
+  <symbol id="ico-jsn" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="32" fill="#fff" stroke="#111" stroke-width="5"/>
+    <g fill="none" stroke="#111" stroke-width="5" stroke-linecap="round">
+      <path d="M38 66V44M46 66V38M54 66V40M62 66V48"/>
+      <path d="M34 62c2 10 10 14 20 14s16-6 18-14"/>
+    </g>
+    <path d="M26 26l48 48" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="ico-sly" viewBox="0 0 100 100">
+    <rect x="30" y="20" width="34" height="46" rx="3" fill="#fff" stroke="#111" stroke-width="5"
+      transform="rotate(-14 47 43)"/>
+    <g fill="none" stroke="#111" stroke-width="5" stroke-linecap="round">
+      <path d="M28 74c8 8 24 10 38 4"/><path d="M66 62l6 12-13 2"/>
+    </g>
+  </symbol>
+
+  <symbol id="ico-forced" viewBox="0 0 100 100">
+    <g fill="none" stroke="#111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 38h56"/><path d="M64 26l13 12-13 12"/>
+      <path d="M80 66H24"/><path d="M36 54L23 66l13 12"/>
+    </g>
+  </symbol>
+
+  <symbol id="ico-debt" viewBox="0 0 100 100">
+    <rect x="14" y="32" width="50" height="30" rx="3" fill="#fff" stroke="#111" stroke-width="5"/>
+    <circle cx="39" cy="47" r="8" fill="none" stroke="#111" stroke-width="5"/>
+    <g fill="none" stroke="#111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M72 47h16"/><path d="M80 39l9 8-9 8"/>
+    </g>
+  </symbol>
+
+  <symbol id="ico-bday" viewBox="0 0 100 100">
+    <rect x="18" y="50" width="64" height="30" rx="4" fill="#fff" stroke="#111" stroke-width="5"/>
+    <path d="M18 62h64" fill="none" stroke="#111" stroke-width="5"/>
+    <g fill="none" stroke="#111" stroke-width="5" stroke-linecap="round">
+      <path d="M34 50V36M50 50V32M66 50V36"/>
+    </g>
+    <g fill="#E1231C"><circle cx="34" cy="31" r="4"/><circle cx="50" cy="27" r="4"/><circle cx="66" cy="31" r="4"/></g>
+  </symbol>
+
+  <symbol id="ico-dbl" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="32" fill="#fff" stroke="#111" stroke-width="5"/>
+    <text x="50" y="63" text-anchor="middle" font-family="Poppins,sans-serif" font-size="34" font-weight="900" fill="#111">x2</text>
+  </symbol>
+
+  <symbol id="ico-pass" viewBox="0 0 100 100">
+    <path d="M22 70a28 28 0 1 1 50-17" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+    <path d="M74 34l2 20-19-6z" fill="#111"/>
+    <text x="44" y="86" text-anchor="middle" font-family="Poppins,sans-serif" font-size="22" font-weight="900" fill="#111">GO</text>
+  </symbol>
+
+  <symbol id="ico-house" viewBox="0 0 100 100">
+    <path d="M16 52L50 22l34 30v30H16z" fill="#E1231C" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+    <rect x="62" y="26" width="10" height="16" fill="#E1231C" stroke="#111" stroke-width="5"/>
+    <rect x="42" y="60" width="16" height="22" fill="#fff" stroke="#111" stroke-width="4"/>
+  </symbol>
+
+  <symbol id="ico-hotel" viewBox="0 0 100 100">
+    <path d="M20 36h60l-8-14H28z" fill="#E1231C" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+    <rect x="20" y="36" width="60" height="46" fill="#E1231C" stroke="#111" stroke-width="5"/>
+    <g fill="#fff" stroke="#111" stroke-width="3.5">
+      <rect x="30" y="46" width="12" height="12"/><rect x="58" y="46" width="12" height="12"/>
+      <rect x="42" y="64" width="16" height="18"/>
+    </g>
+  </symbol>
+
+  <symbol id="ico-oops" viewBox="0 0 100 100">
+    <path d="M50 18l36 62H14z" fill="#fff" stroke="#111" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M50 40v20" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="50" cy="70" r="4" fill="#111"/>
+  </symbol>
+</svg>
+
+<div class="bar">
+  <h1><em>GORI</em>POLY - karty do druku</h1>
+  <button data-f="all" class="on">Wszystko</button>
+  <button data-f="prop">Nieruchomości</button>
+  <button data-f="wild">Jokery</button>
+  <button data-f="rent">Czynsze</button>
+  <button data-f="action">Akcje</button>
+  <button data-f="building">Budynki</button>
+  <button data-f="oops">Przypały</button>
+  <button data-f="money">Pieniądze</button>
+  <button data-f="rules">Zasady</button>
+  <button data-f="back">Rewers</button>
+  <button id="dup">Powiel wg nakładu</button>
+  <button id="g">Linie cięcia</button>
+  <button onclick="print()">Drukuj / PDF</button>
+</div>
+
+<p class="note">
+  Karty 56 x 87 mm ze spadem 3 mm (element 62 x 93 mm), keyline 3,5 mm od cięcia. Niebieska przerywana linia to linia cięcia - widać ją tylko na ekranie.
+  Druk: 9 kart na A4, marginesy 6 mm. Podgląd talii z opisami: <a href="index.html">index.html</a>.
+</p>
+
+<div class="sheet" id="sheet"></div>
+
+<script>
+/* =========================== DANE =========================== */
+const SETS = {
+  brown : {c:'#8B4A2B', val:1, rents:[1,2],     size:2},
+  lblue : {c:'#AFDDF2', val:1, rents:[1,2,3],   size:3},
+  pink  : {c:'#D5286E', val:2, rents:[1,2,4],   size:3},
+  orange: {c:'#F08A24', val:2, rents:[1,3,5],   size:3},
+  red   : {c:'#E1231C', val:3, rents:[2,3,6],   size:3},
+  yellow: {c:'#F5E23A', val:3, rents:[2,4,6],   size:3},
+  green : {c:'#17A24A', val:4, rents:[2,4,7],   size:3},
+  dblue : {c:'#0069B4', val:4, rents:[3,8],     size:2},
+  rail  : {c:'#1F1F1F', val:2, rents:[1,2,3,4], size:4},
+  util  : {c:'#B9D9B2', val:2, rents:[1,2],     size:2}
+};
+
+const PROPS = [
+  ['brown','Szopa na Jasnej','głęboko na działce, wchodzisz na własne ryzyko'],
+  ['brown','Trawnik na Jasnej','duży, będzie co kosić'],
+  ['lblue','Dom na Jasnej','Olkusz HQ'],
+  ['lblue','Dom Mamy na Nowowiejskiej','obiad zawsze o 14:00'],
+  ['lblue','Teściowie na Skwerze','dwa przystanki od wszystkiego'],
+  ['pink','Komórka Lokatorska','pojemność: nieskończona'],
+  ['pink','Miejsce Parkingowe','luksus, o którym Katowice marzą'],
+  ['pink','Miejsce na Rower','strzeżone lepiej niż mieszkanie'],
+  ['orange','Mieszkanie na Porcie Popowice','widok, komórka, cisza'],
+  ['orange','Hotspot','beach bar pod Mostem Milenijnym'],
+  ['orange','Siłownia i Basen Orbita','karnet całoroczny, sezon dwumiesięczny'],
+  ['red','Mieszkanie na Gliwickiej','Gliwicka 220D/9, przyszłe mieszkanie z żoną'],
+  ['red','Piwnica na Gliwickiej','to, co się nie mieści na górze'],
+  ['red','Zawsze Dostępne Miejsce','na Gliwickiej, ostatnio widziane w 2019'],
+  ['yellow','Mieszkanie Teściowej','blisko. Za blisko?'],
+  ['yellow','Mieszkanie Teścia','azyl po drugiej stronie kompleksu'],
+  ['yellow','Mieszkanie Beaty','"szefowej" wspólnoty'],
+  ['green','Taras przed Apartamentem','z widokiem, dopóki nikt nie zaparkuje'],
+  ['green','Basen w Kompleksie','ręcznik na leżaku od 6:40, właściciel nieznany'],
+  ['green','Plaża Las Salinas','5 minut spacerem, kajty na horyzoncie'],
+  ['dblue','Apartament Los Alcázares','perła w koronie Goraja'],
+  ['dblue','Piwnica do Apartamentu','klimatyzowana naturalnie'],
+  ['rail','Lotnisko Alicante','trzy godziny od własnej piwnicy'],
+  ['rail','A4 z korkami','Katowice - Wrocław, czas przejazdu: zależy'],
+  ['rail','DK94 do Olkusza','droga na obiad'],
+  ['rail','Dworzec Wrocław Główny','peron 3, pociąg opóźniony'],
+  ['util','Capri','restauracja teściowej. Kto wejdzie, ten płaci za obiad'],
+  ['util','Ryanair do Alicante','bagaż podręczny 40 x 20 x 25']
+];
+
+/* [zestaw A, zestaw B, wartość, sztuk, nazwa] */
+const WILDS = [
+  ['dblue','green', 4,1,'Klucze do Apartamentu'],
+  ['green','rail',  4,1,'Transfer z Lotniska'],
+  ['lblue','rail',  4,1,'Wypad do Domu'],
+  ['rail','util',   2,1,'Lot i Obiad w Pakiecie'],
+  ['lblue','brown', 1,1,'Klucze do Olkusza'],
+  ['pink','orange', 2,2,'Klucze do Wrocławia'],
+  ['red','yellow',  3,2,'Klucze do Katowic i Hiszpanii']
+];
+const WILD_ALL = {n:'Goraj Załatwi', q:2,
+  t:'Wchodzi do dowolnego kompletu. Nie ma wartości pieniężnej, nie zapłacisz nią'};
+
+const MONEY = [[1,6,'#C8E6A0'],[2,5,'#F4C89A'],[3,3,'#9FCBEA'],[4,3,'#D9AFE0'],[5,2,'#F1E07A'],[10,1,'#F08A24']];
+
+/* karty akcji - kolor i piktogram wg typu oryginału */
+const ACTIONS = [
+  {k:'breaker',c:'#7A1FA2',ico:'breaker',v:5,q:2,n:'Monikracja',
+   t:'Zabierz dowolnemu graczowi pełny komplet nieruchomości, razem z klimatyzacją i bookingiem.',f:'odwołania rozpatruje ta sama osoba'},
+  {k:'jsn',c:'#00A6A6',ico:'jsn',v:4,q:2,n:'Dzisiaj Nie, Kochanie',
+   t:'Zagraj w dowolnym momencie, gdy ktoś zagra przeciwko Tobie kartę akcji. Anuluje jej działanie.',f:'bez dyskusji, bez odwołania'},
+  {k:'jsn',c:'#00A6A6',ico:'jsn',v:4,q:1,n:'Nie Płacę VAT-u',
+   t:'Zagraj w dowolnym momencie, gdy ktoś zagra przeciwko Tobie kartę akcji. Anuluje jej działanie.',f:'przychodu też nie zadeklarowałem'},
+  {k:'sly',c:'#E85D9B',ico:'sly',v:3,q:2,n:'Otodom o 23:40',
+   t:'Podkradnij jedną nieruchomość z niepełnego kompletu innego gracza.',f:'grunt, działka, hektar. Godzina bez znaczenia'},
+  {k:'sly',c:'#E85D9B',ico:'sly',v:3,q:1,n:'Pani Beata Ma Klucze',
+   t:'Podkradnij jedną nieruchomość z niepełnego kompletu innego gracza.',f:'weszła bez zapowiedzi'},
+  {k:'forced',c:'#F2A93B',ico:'forced',v:3,q:2,n:'Wspólna Decyzja',
+   t:'Wymień się nieruchomością z innym graczem. Żadna nie może być z pełnego kompletu.',f:'podobno wszyscy się zgodzili'},
+  {k:'forced',c:'#F2A93B',ico:'forced',v:3,q:1,n:'Rotacja Leżaków',
+   t:'Wymień się nieruchomością z innym graczem. Żadna nie może być z pełnego kompletu.',f:'ręczniki leżały od 6:40'},
+  {k:'debt',c:'#4A5FC1',ico:'debt',v:3,q:1,n:'Czynsz za Popowice',
+   t:'Wybrany gracz płaci Ci 5M.',f:'wynajmujesz, to płacisz'},
+  {k:'debt',c:'#4A5FC1',ico:'debt',v:3,q:1,n:'Potłuczone Kieliszki',
+   t:'Wybrany gracz płaci Ci 5M.',f:'komplet był na wyposażeniu'},
+  {k:'debt',c:'#4A5FC1',ico:'debt',v:3,q:1,n:'Zgubione Klucze',
+   t:'Wybrany gracz płaci Ci 5M.',f:'wymiana wkładki na koszt gościa'},
+  {k:'bday',c:'#E8318A',ico:'bday',v:2,q:3,n:'6 Października',
+   t:'Wszyscy gracze dają Ci po 2M w prezencie.',f:'urodziny Goraja, zrzutka obowiązkowa'},
+  {k:'dbl',c:'#8DC63F',ico:'dbl',v:1,q:2,n:'Sezon w Los Alcázares',
+   t:'Zagraj razem z kartą czynszu, żeby podwoić stawkę. Liczy się jako druga akcja.',f:'lipiec, wszystko drożeje'},
+  {k:'pass',c:'#E1231C',ico:'pass',v:1,q:2,n:'Ślub!',
+   t:'Dobierz 2 dodatkowe karty. Możesz wskazać gracza, który dobiera razem z Tobą.',f:'od dziś wszystko dobieracie wspólnie'},
+  {k:'pass',c:'#E1231C',ico:'pass',v:1,q:2,n:'Dywidenda z GPW',
+   t:'Dobierz 2 dodatkowe karty z talii.',f:'spółki dowiozły'},
+  {k:'pass',c:'#E1231C',ico:'pass',v:1,q:2,n:'Zwrot Szklanek do Ikei',
+   t:'Dobierz 2 dodatkowe karty z talii.',f:'naklejki zostały, kasa wróciła'},
+  {k:'pass',c:'#E1231C',ico:'pass',v:1,q:2,n:'Obiad u Mamy',
+   t:'Dobierz 2 dodatkowe karty z talii.',f:'wychodzisz z pełnym brzuchem i słoikami'},
+  {k:'pass',c:'#E1231C',ico:'pass',v:1,q:2,n:'Wolne Miejsce przed Gliwicką',
+   t:'Dobierz 2 dodatkowe karty z talii.',f:'ktoś odjechał, bierz zanim zajmą'}
+];
+
+const BUILDINGS = [
+  {c:'#8DC63F',ico:'house',v:3,q:2,n:'Klimatyzacja',
+   t:'Dołóż do pełnego kompletu, żeby podnieść czynsz o 3M. Nie działa na trasy i usługi.',f:'w apartamencie obowiązkowa'},
+  {c:'#8DC63F',ico:'house',v:3,q:1,n:'Klimatyzacja w Astrze',
+   t:'Dołóż do pełnego kompletu, żeby podnieść czynsz o 3M. Nie działa na trasy i usługi.',f:'naprawa kosztowała tyle, co metr kawalerki'},
+  {c:'#8DC63F',ico:'hotel',v:4,q:1,n:'Booking z Oceną 9.4',
+   t:'Dołóż do kompletu, który ma już klimatyzację, żeby podnieść czynsz o kolejne 4M.',f:'ręczniki złożone w łabędzie'},
+  {c:'#8DC63F',ico:'hotel',v:4,q:1,n:'Superhost Sezonu',
+   t:'Dołóż do kompletu, który ma już klimatyzację, żeby podnieść czynsz o kolejne 4M.',f:'odbiór kluczy o każdej porze'}
+];
+
+/* nasz dodatek, poza oryginalną talią */
+const OOPS = [
+  {c:'#B00020',ico:'oops',v:2,q:1,n:'Nocka na Lotnisku w Alicante',
+   t:'Wybrany gracz opuszcza następną turę.',f:'auto padło w drodze po odbiór'},
+  {c:'#B00020',ico:'oops',v:2,q:1,n:'Pielgrzymka: Sekcja Ekologiczna',
+   t:'Wybrany gracz opuszcza następną turę.',f:'rozkładasz śmietniki, sprzątasz po wszystkich'},
+  {c:'#B00020',ico:'oops',v:2,q:1,n:'Kontrola z Urzędu Skarbowego',
+   t:'Wybrany gracz odkłada 5M do banku.',f:'przychód sam się nie zadeklaruje'},
+  {c:'#B00020',ico:'oops',v:2,q:1,n:'Zebranie Rady Osiedla',
+   t:'Wybrany gracz odkłada 2M do banku.',f:'trzy godziny o segregacji'},
+  {c:'#B00020',ico:'oops',v:2,q:1,n:'Beata i Niezadowoleni Goście',
+   t:'Wybrany gracz odkłada 2M do banku.',f:'ocena 6.1 i długi komentarz'},
+  {c:'#B00020',ico:'oops',v:2,q:1,n:'Sierpień bez Rezerwacji',
+   t:'Wybrany gracz odkłada 2M do banku.',f:'apartament stoi pusty w szczycie sezonu'}
+];
+
+const RENTS = [
+  ['brown','lblue',1,2,'Czynsz z Olkusza'],
+  ['pink','orange',1,2,'Czynsz z Wrocławia'],
+  ['red','yellow',1,2,'Czynsz z Gliwickiej i Hiszpanii'],
+  ['green','dblue',1,2,'Czynsz z Kompleksu'],
+  ['rail','util',1,2,'Rozliczenie za Dojazdy']
+];
+const RENT_ALL = {v:3,q:3,n:'Rozliczenie Roczne'};
+
+const RULES = [
+  ['Jak zacząć',['Tasujesz, każdy dostaje 5 kart na rękę. Reszta to talia.',
+    'Wygrywa ten, kto zbierze 3 pełne komplety w trzech różnych kolorach.',
+    'Na początku tury dobierasz 2 karty. Bez kart na ręce dobierasz 5.',
+    'W turze zagrywasz maksymalnie 3 karty.']],
+  ['Jak zagrywasz',['Nieruchomość i jokera kładziesz przed sobą na stół.',
+    'Dowolną kartę możesz zamiast tego położyć jako pieniądze.',
+    'Akcja po użyciu idzie na stos odrzuconych.',
+    'Na koniec tury maksymalnie 7 kart na ręce.']],
+  ['Jak płacisz',['Płacisz pieniędzmi i nieruchomościami ze stołu, nigdy z ręki.',
+    'Nie masz ile trzeba? Oddajesz wszystko i sprawa zamknięta.',
+    'Nie ma wydawania reszty.',
+    'Nieruchomość dostana w zapłacie ląduje w Twoim komplecie.']],
+  ['Nasze dodatki',['Karty przypału zagrywasz na gracza: traci turę albo płaci do banku.',
+    '"Ślub!" pozwala wskazać gracza, który dobiera 2 karty razem z Tobą.',
+    'Broni się przed tym "Dzisiaj nie, kochanie".',
+    'Reszta talii jest 1:1 z Monopoly Deal.']]
+];
+
+/* =========================== POMOCNICZE =========================== */
+function esc(s){return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
+function lum(hex){
+  const r=parseInt(hex.slice(1,3),16)/255, g=parseInt(hex.slice(3,5),16)/255, b=parseInt(hex.slice(5,7),16)/255;
+  return 0.2126*r + 0.7152*g + 0.0722*b;
+}
+const ink  = hex => lum(hex) > 0.55 ? '#111111' : '#FFFFFF';   /* tekst na pasku */
+const numc = hex => lum(hex) > 0.60 ? '#111111' : hex;         /* cyfra w ikonce */
+
+function amt(v, cls){return `<span class="amt ${cls||''}"><svg class="m" viewBox="0 0 120 82"><use href="#m-glyph"/></svg><b>${v}</b></span>`}
+function badge(v, cls){
+  if(v===null) return `<div class="badge badge--none ${cls||''}"><b>BEZ<br>WART.</b></div>`;
+  return `<div class="badge ${cls||''}"><svg class="m" viewBox="0 0 120 82"><use href="#m-glyph"/></svg><b>${v}</b></div>`;
+}
+function nameCls(n){return n.length > 17 ? 'sm' : ''}
+function embSize(n){const L=n.length; return L<=9?6:L<=14?5:L<=20?4.2:L<=30?3.6:3.1}
+
+/* wachlarz ikonek: karta z cyfrą na wierzchu, pozostałe w prawo i w górę */
+function fan(n, full){
+  let s='';
+  for(let i=n-1;i>=1;i--){
+    s+=`<div class="fan__card" style="transform:translate(${(1.6*i).toFixed(2)}mm,${(-0.9*i).toFixed(2)}mm) rotate(${-7*i}deg);z-index:${9-i}">
+      <div class="fan__bar"></div></div>`;
+  }
+  s+=`<div class="fan__card" style="z-index:9"><div class="fan__bar"></div><div class="fan__num">${n}</div></div>`;
+  if(full) s+=`<svg class="sparks" viewBox="0 0 5 6"><g stroke="#111" stroke-width=".45" stroke-linecap="round">
+    <line x1=".6" y1="1.4" x2="2.2" y2=".4"/><line x1="1" y1="3" x2="2.8" y2="3"/>
+    <line x1=".6" y1="4.6" x2="2.2" y2="5.6"/></g></svg>`;
+  return `<div class="fan">${s}</div>`;
+}
+
+function rentLadder(key, mini){
+  const s=SETS[key], n=s.size;
+  const pitch = mini ? (n>3?6:n>2?7.5:9) : (n>3?8.5:11);
+  let rows='';
+  s.rents.forEach((r,i)=>{
+    rows+=`<li class="rent-row" style="--pitch:${pitch}mm">${fan(i+1, i===n-1)}<span class="rent">${amt(r)}</span></li>`;
+  });
+  return `<div class="body"><ol class="rent-list">${rows}</ol>
+    ${mini?'':'<p class="complete-set">Pełny<br>komplet</p>'}</div>`;
+}
+
+function setVars(key){
+  const s=SETS[key];
+  return `--set:${s.c};--set-ink:${ink(s.c)};--set-num:${numc(s.c)}`;
+}
+
+/* =========================== KARTY =========================== */
+function propCard([key,name,flavor]){
+  const s=SETS[key];
+  return `<article class="card card--property" data-t="prop" style="${setVars(key)}">
+    <div class="key">
+      <header class="band"><h2 class="${nameCls(name)}">${esc(name)}</h2></header>
+      ${badge(s.val,'badge--prop')}
+      <div class="cols">
+        <span class="col-head col-head--left">Karty<br>w kolorze</span>
+        <span class="col-head col-head--right">Czynsz</span>
+      </div>
+      ${rentLadder(key)}
+      <p class="flavor">${esc(flavor)}</p>
+    </div>
+  </article>`;
+}
+
+function wildCard([a,b,v,q,name]){
+  const half=(key,cls)=>`<div class="half half--${cls}" style="${setVars(key)}">
+      <header class="band"><h2 class="${nameCls(name)}">${esc(name)}</h2></header>
+      ${badge(v)}
+      ${rentLadder(key,true)}
+    </div>`;
+  return `<article class="card card--wild2" data-t="wild">
+    <div class="key">
+      ${half(a,'a')}
+      <div class="wild-strip"><b>Nieruchomość joker</b><i>(kartę czytasz z obu stron)</i></div>
+      ${half(b,'b')}
+    </div>
+  </article>`;
+}
+
+function wildAllCard(){
+  const stops=['#E1231C','#F08A24','#F5E23A','#17A24A','#00C2C7','#0069B4','#7A1FA2','#D5286E'];
+  const grad=stops.map((c,i)=>`<stop offset="${(i/(stops.length-1)*100).toFixed(0)}%" stop-color="${c}"/>`).join('');
+  return `<article class="card card--wildall" data-t="wild">
+    <div class="key">
+      <div class="wildall">
+        <svg class="title" viewBox="0 0 200 80">
+          <defs><linearGradient id="rainbow" x1="0" y1="0" x2="1" y2="0">${grad}</linearGradient></defs>
+          <text x="100" y="34" text-anchor="middle" font-family="Poppins,sans-serif" font-size="34"
+            font-weight="900" fill="url(#rainbow)" rotate="-4 4 -3 3 -4">JOKER</text>
+          <text x="100" y="68" text-anchor="middle" font-family="Poppins,sans-serif" font-size="20"
+            font-weight="900" fill="url(#rainbow)" rotate="3 -3 4 -4 3 -3 4 -3 3 -4 4 -3 3">${esc(WILD_ALL.n.toUpperCase())}</text>
+        </svg>
+        <p>${esc(WILD_ALL.t)}</p>
+        <div class="mascot"><img src="bartek.png" alt="Goraj"></div>
+      </div>
+      ${badge(null)}
+    </div>
+  </article>`;
+}
+
+function moneyCard([v,q,color]){
+  return `<article class="card card--money" data-t="money" style="--money:${color}">
+    <div class="key">
+      <div class="dots"></div>
+      ${v===10?'<div class="rays" style="border-radius:50%;background:repeating-conic-gradient(#fff 0 11.25deg,transparent 11.25deg 22.5deg)"></div>':''}
+      <span class="money-corner money-corner--tl">${amt(v)}</span>
+      <span class="money-corner money-corner--br">${amt(v)}</span>
+      <div class="coin">${amt(v)}</div>
+      <div class="money-band">GORIPOLY</div>
+    </div>
+  </article>`;
+}
+
+function actionCard(a, type){
+  return `<article class="card card--action" data-t="${type}" style="--c:${a.c}">
+    <div class="key">
+      <div class="chevron"></div>
+      <span class="action-tag">${type==='oops'?'Przypał':'Akcja'}</span>
+      <div class="emblem">
+        <svg viewBox="0 0 100 100"><use href="#ico-${a.ico}"/></svg>
+        <b style="--nsize:${embSize(a.n)}mm">${esc(a.n)}</b>
+      </div>
+      <p class="effect">${esc(a.t)}<i>${esc(a.f)}</i></p>
+    </div>
+    ${badge(a.v,'badge--action')}
+  </article>`;
+}
+
+function rentCard(r){
+  const all = r.all;
+  const halves = all
+    ? `<div class="h" style="flex:1;background:conic-gradient(${Object.keys(SETS).map((k,i)=>`${SETS[k].c} ${i*36}deg ${(i+1)*36}deg`).join(',')})"></div>`
+    : `<div class="h" style="background:${SETS[r.a].c}"></div><div class="h" style="background:${SETS[r.b].c}"></div>`;
+  const eff = all
+    ? 'Jeden wybrany gracz płaci Ci czynsz za nieruchomości w jednym dowolnym kolorze.'
+    : 'Wszyscy gracze płacą Ci czynsz za nieruchomości w jednym z tych dwóch kolorów.';
+  return `<article class="card card--rent ${all?'all':''}" data-t="rent">
+    <div class="key">
+      <div class="rent-head">Karta akcji</div>
+      <div class="rent-emblem">${halves}
+        <div class="label"><b>CZYNSZ</b>${all?'<i>WSZYSTKIE KOLORY</i>':''}</div>
+      </div>
+      <p class="effect">${esc(eff)}<i>${esc(r.n)}</i></p>
+      <div class="rent-head rent-head--flip">Karta akcji</div>
+    </div>
+    ${badge(r.v,'badge--action')}
+    ${badge(r.v,'badge--rent-b')}
+  </article>`;
+}
+
+function rulesCard([title, items]){
+  return `<article class="card card--rules" data-t="rules">
+    <div class="key">
+      <div class="rules-title">${esc(title)}</div>
+      <ol class="rules-list">${items.map((t,i)=>`<li><b>${i+1}</b><span>${esc(t)}</span></li>`).join('')}</ol>
+    </div>
+  </article>`;
+}
+
+function backCard(){
+  return `<article class="card card--back" data-t="back">
+    <div class="key">
+      <div class="back-dots"></div>
+      <div class="wedge wedge--tl"></div>
+      <div class="wedge wedge--br"></div>
+      <div class="back-center">
+        <svg class="arc" viewBox="0 0 100 100">
+          <defs>
+            <path id="arcT" d="M6,50 a44,44 0 0 1 88,0" fill="none"/>
+            <path id="arcB" d="M94,50 a44,44 0 0 1 -88,0" fill="none"/>
+          </defs>
+          <text font-size="9"><textPath href="#arcT" startOffset="50%" text-anchor="middle">GORIPOLY</textPath></text>
+          <text font-size="9"><textPath href="#arcB" startOffset="50%" text-anchor="middle">GORIPOLY</textPath></text>
+        </svg>
+        <div class="mascot"><img src="bartek.png" alt="Goraj"></div>
+      </div>
+    </div>
+  </article>`;
+}
+
+/* =========================== RENDER =========================== */
+function slot(html, caption, q){
+  q = q || 1;
+  let s='';
+  for(let i=0;i<q;i++){
+    s+=`<figure class="slot ${i?'dup':''}">${html}<figcaption>${esc(caption)}</figcaption></figure>`;
+  }
+  return s;
+}
+
+let out='';
+PROPS.forEach(p=>{ out+=slot(propCard(p), p[1], 1); });
+WILDS.forEach(w=>{ out+=slot(wildCard(w), `${w[4]} - ${w[3]} szt.`, w[3]); });
+out+=slot(wildAllCard(), `${WILD_ALL.n} - ${WILD_ALL.q} szt.`, WILD_ALL.q);
+RENTS.forEach(r=>{ out+=slot(rentCard({a:r[0],b:r[1],v:r[2],n:r[4]}), `${r[4]} - ${r[3]} szt.`, r[3]); });
+out+=slot(rentCard({all:true,v:RENT_ALL.v,n:RENT_ALL.n}), `${RENT_ALL.n} - ${RENT_ALL.q} szt.`, RENT_ALL.q);
+ACTIONS.forEach(a=>{ out+=slot(actionCard(a,'action'), `${a.n} - ${a.q} szt.`, a.q); });
+BUILDINGS.forEach(a=>{ out+=slot(actionCard(a,'building'), `${a.n} - ${a.q} szt.`, a.q); });
+OOPS.forEach(a=>{ out+=slot(actionCard(a,'oops'), `${a.n} - ${a.q} szt.`, a.q); });
+MONEY.forEach(m=>{ out+=slot(moneyCard(m), `${m[0]}M - ${m[1]} szt.`, m[1]); });
+RULES.forEach(r=>{ out+=slot(rulesCard(r), r[0]); });
+out+=slot(backCard(), 'Rewers - 110 szt.');
+document.getElementById('sheet').innerHTML = out;
+
+/* filtry + linie cięcia */
+document.querySelectorAll('.bar [data-f]').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('.bar [data-f]').forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    const f=b.dataset.f;
+    document.querySelectorAll('.slot').forEach(s=>{
+      const t=s.querySelector('.card').dataset.t;
+      s.style.display = (f==='all'||f===t) ? '' : 'none';
+    });
+  };
+});
+document.getElementById('g').onclick=()=>document.body.classList.toggle('guides-off');
+document.getElementById('dup').onclick=e=>{
+  document.body.classList.toggle('all-copies');
+  e.target.classList.toggle('on', document.body.classList.contains('all-copies'));
+};
+</script>
+</body>
+</html>
