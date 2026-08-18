@@ -37,6 +37,11 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .note{padding:4mm 4mm 0;font-size:3.2mm;font-weight:600;color:#bbb;max-width:220mm}
 .note a{color:#7ec5ff}
 
+/* znaczniki ciecia - poza spadem, tylko w druku */
+.marks{position:absolute;left:-3mm;top:-3mm;width:68mm;height:99mm;z-index:60;
+  pointer-events:none;display:none}
+.print-marks .marks{display:block}
+
 .sheet{display:flex;flex-wrap:wrap;gap:3mm;padding:4mm;align-items:flex-start;justify-content:flex-start}
 .slot{display:flex;flex-direction:column;align-items:center}
 .slot.dup{display:none}
@@ -211,24 +216,57 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 
 /* ---------------- karty akcji ---------------- */
 .card--action .key{background:var(--c);overflow:hidden}
-.chevron{position:absolute;inset:0;
-  background:repeating-linear-gradient(45deg,rgba(255,255,255,.12) 0 .4mm,transparent .4mm 2mm)}
-.badge--action{left:4mm;top:4mm}   /* zachodzi na keyline, ale zostaje 1 mm od linii cięcia */
+
+/* wzorek tła - inny dla każdego typu akcji, delikatny, żeby nie zjadał tekstu */
+.pat{position:absolute;inset:0;z-index:1;pointer-events:none}
+.pat--breaker{background-image:
+  repeating-linear-gradient(45deg,rgba(0,0,0,.10) 0 .3mm,transparent .3mm 2.2mm),
+  repeating-linear-gradient(-45deg,rgba(0,0,0,.10) 0 .3mm,transparent .3mm 2.2mm)}
+.pat--jsn{background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.10) 0 .5mm,transparent .5mm 2.6mm)}
+.pat--sly{background-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.13) 0 .38mm,transparent .4mm);
+  background-size:2.6mm 2.6mm}
+.pat--forced{background-image:
+  linear-gradient(135deg,rgba(0,0,0,.09) 25%,transparent 25%),
+  linear-gradient(225deg,rgba(0,0,0,.09) 25%,transparent 25%),
+  linear-gradient(45deg,rgba(0,0,0,.09) 25%,transparent 25%),
+  linear-gradient(315deg,rgba(0,0,0,.09) 25%,transparent 25%);
+  background-position:1.6mm 0,1.6mm 0,0 0,0 0;background-size:3.2mm 3.2mm}
+.pat--debt{background-image:
+  repeating-linear-gradient(0deg,rgba(0,0,0,.09) 0 .25mm,transparent .25mm 2.6mm),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.09) 0 .25mm,transparent .25mm 2.6mm)}
+.pat--bday{background-image:
+  radial-gradient(circle at 25% 25%,rgba(0,0,0,.13) 0 .35mm,transparent .37mm),
+  radial-gradient(circle at 75% 65%,rgba(255,255,255,.55) 0 .35mm,transparent .37mm);
+  background-size:3.4mm 3.4mm}
+.pat--dbl{background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.09) 0 .9mm,transparent .9mm 3mm)}
+.pat--pass{background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.5) 0 1.4mm,transparent 1.4mm 4.2mm)}
+.pat--build{background-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.10) 0 .55mm,transparent .57mm);
+  background-size:3.6mm 3.6mm}
+.pat--oops{background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.13) 0 1.6mm,transparent 1.6mm 4.4mm)}
+
+/* pasek z typem karty - jedyne miejsce z mocnym kolorem, biały tekst na akcencie */
+.card--action .rent-head{
+  top:0;height:7mm;background:var(--a);color:#fff;
+  border-bottom:var(--stroke) solid var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.5mm;letter-spacing:.12em;
+}
+.badge--action{left:4mm;top:2.4mm}   /* siedzi na pasku, 1 mm od linii cięcia */
 .emblem{
-  position:absolute;left:50%;top:11mm;transform:translateX(-50%);
+  position:absolute;left:50%;top:12mm;transform:translateX(-50%);
   width:27mm;height:27mm;border-radius:50%;border:.7mm solid var(--ink);
-  background:color-mix(in srgb, var(--c) 58%, #fff);
+  background:#fff;box-shadow:inset 0 0 0 .55mm var(--a);
   display:grid;place-items:center;z-index:3;
 }
-.emblem svg{width:16mm;height:16mm}
-.emblem img{width:22mm;height:22mm;object-fit:contain;display:block}
+.emblem svg{width:15mm;height:15mm;display:block}
+.emblem img{width:21mm;height:21mm;object-fit:contain;display:block}
 .act-name{
   text-align:center;font-size:var(--nsize,5mm);font-weight:900;text-transform:uppercase;
   line-height:1.06;letter-spacing:-.01em;color:var(--ink);margin-bottom:1.6mm;
 }
 /* nazwa i opis w jednym pionowym bloku - dluzsza nazwa spycha opis nizej, nie nachodzi */
 .act-body{
-  position:absolute;left:3mm;right:3mm;top:39.5mm;bottom:2.6mm;z-index:3;
+  position:absolute;left:3mm;right:3mm;top:41mm;bottom:2.6mm;z-index:3;
   display:flex;flex-direction:column;overflow:hidden;
 }
 .card--action .effect{position:static;left:auto;right:auto;top:auto;bottom:auto}
@@ -236,7 +274,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   position:absolute;left:3.4mm;right:3.4mm;top:52mm;bottom:2.4mm;overflow:hidden;text-align:center;
   font-size:2.7mm;font-weight:600;line-height:1.24;color:var(--ink);z-index:3;
 }
-.effect i{display:block;font-size:2.4mm;font-weight:300;font-style:italic;color:rgba(17,17,17,.78);margin-top:.9mm}
+.effect i{display:block;font-size:2.4mm;font-weight:300;font-style:italic;color:rgba(17,17,17,.72);margin-top:.9mm}
 
 /* ---------------- karty czynszu ---------------- */
 .card--rent .key{background:#F2E6C8;overflow:hidden}
@@ -294,13 +332,21 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 
 /* ---------------- druk ---------------- */
 @media print{
-  @page{size:A4;margin:6mm}
+  @page{size:A4;margin:3mm}
   body{background:#fff}
   .bar,.note,.slot figcaption{display:none !important}
-  .sheet{display:grid;grid-template-columns:repeat(3,62mm);gap:0;padding:0;justify-content:center}
-  .slot{display:block}
+  /* 3 x 3 na A4. Element karty ma 62 x 93 mm (netto 56 x 87 + 3 mm spadu z każdej strony),
+     odstęp 2 mm zostawia miejsce na znaczniki cięcia. */
+  .sheet{display:grid;grid-template-columns:repeat(3,62mm);gap:2mm;padding:0;
+    justify-content:center;align-content:start}
+  .slot{display:block;position:relative}
   .slot.dup{display:none}
   .all-copies .slot.dup{display:block}
   .card::after{display:none}
   .card{page-break-inside:avoid;break-inside:avoid}
+  .print-marks .marks{display:block}
+  /* tryb "1 karta na stronę" - do wysyłki na produkcję */
+  .one-per-page .sheet{display:block;padding:0}
+  .one-per-page .slot{page-break-after:always;break-after:page}
+  .one-per-page .marks{display:none}
 }

@@ -215,9 +215,10 @@ const ALLCOLORS = ['brown','ltblue','pink','orange','red','yellow','green','dkbl
 const PLNAME = {brown:'brązowy',ltblue:'błękitny',pink:'różowy',orange:'pomarańczowy',red:'czerwony',
   yellow:'żółty',green:'zielony',dkblue:'granatowy',rail:'trasa',util:'usługi'};
 
-const A = {pass:'#1FB25A',sly:'#C0392B',forced:'#1B7A8C',debt:'#7A5230',bday:'#E91E8C',
-  jsn:'#6B4E9E',house:'#2E8540',hotel:'#E85D04',breaker:'#2B2B2B',dbl:'#F2A007',
-  oops:'#B00020',rules:'#1D1D1B',wild:'#4A4A48',rent:'#2E8540',money:'#C9A227'};
+/* akcenty spójne z paletą kart do druku (karty.html -> PALETTE) */
+const A = {pass:'#BF3524',sly:'#B82E6B',forced:'#B9720B',debt:'#2F4C9B',bday:'#95208A',
+  jsn:'#0A7A72',house:'#2C7A34',hotel:'#1F6B4A',breaker:'#5B2E91',dbl:'#5A8A18',
+  oops:'#9E1B27',rules:'#1D1D1B',wild:'#4A4A48',rent:'#2E8540',money:'#C9A227'};
 
 function esc(s){return String(s==null?'':s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))}
 function embSize(n){const L=n.length;return L<=9?8.4:L<=14?7:L<=20?5.9:L<=28?5:L<=38?4.3:3.8}
@@ -351,32 +352,32 @@ const SECTIONS = [
 {id:'brazowe',type:'prop',title:'Brązowe - Olkusz: korzenie',color:'brown',val:'1M',rents:['1M','2M'],
  note:'Najtańsza grupa. Pełny komplet to 2 karty.',
  cards:[
-  {n:'Szopa na Jasnej',s:'głęboko na działce, wchodzisz na własne ryzyko'},
+  {n:'Szopa na Jasnej',s:'wchodzisz na własne ryzyko'},
   {n:'Trawnik na Jasnej',s:'duży, będzie co kosić'},
 ]},
 
 {id:'blekitne',type:'prop',title:'Błękitne - Olkusz: rodzina',color:'ltblue',val:'1M',rents:['1M','2M','3M'],
  note:'Komplet to 3 karty.',
  cards:[
-  {n:'Dom na Jasnej',s:'Olkusz HQ'},
-  {n:'Dom Mamy na Nowowiejskiej',s:'obiad zawsze o 14:00'},
-  {n:'Teściowie na Skwerze',s:'dwa przystanki od wszystkiego'},
+  {n:'Dom na Jasnej',s:'Olkusz HQ, pies w gratisie'},
+  {n:'Dom Mamy na Nowowiejskiej',s:'lodówka zawsze pełna'},
+  {n:'Mieszkanie na Skwerze',s:'dwa przystanki od wszystkiego'},
 ]},
 
 {id:'rozowe',type:'prop',title:'Różowe - Wrocław: dodatki lokatorskie',color:'pink',val:'2M',rents:['1M','2M','4M'],
  note:'Prawdziwy majątek to nie metry.',
  cards:[
-  {n:'Komórka Lokatorska',s:'pojemność: nieskończona'},
-  {n:'Miejsce Parkingowe',s:'luksus, o którym Katowice marzą'},
-  {n:'Miejsce na Rower',s:'strzeżone lepiej niż mieszkanie'},
+  {n:'Komórka na Porcie',s:'osobna księga wieczysta, w razie czego kawalerka w centrum'},
+  {n:'Miejsce Parkingowe na Porcie',s:'luksus, o którym Katowice marzą'},
+  {n:'Miejsce na Rower na Porcie',s:'strzeżone lepiej niż mieszkanie'},
 ]},
 
 {id:'pomaranczowe',type:'prop',title:'Pomarańczowe - Wrocław: Port Popowice',color:'orange',val:'2M',rents:['1M','3M','5M'],
  note:'Pod spodem warianty zamienne - do wyboru, którą trójkę drukujemy.',
  cards:[
-  {n:'Mieszkanie na Porcie Popowice',s:'widok, komórka, cisza'},
+  {n:'Mieszkanie na Porcie Popowice',s:'pierwsza inwestycja zostaje w sercu na zawsze'},
   {n:'Hotspot',s:'beach bar pod Mostem Milenijnym'},
-  {n:'Siłownia i Basen Orbita',s:'karnet całoroczny, sezon dwumiesięczny'},
+  {n:'Siłownia i Basen Orbita',s:'karnet całoroczny, wejścia: dwa'},
  ],
  alt:{label:'Warianty zamienne', cards:[
   {n:'Mieszkanie na Grunwaldzie',s:'balkon w całości oddany gołębiom'},
@@ -385,45 +386,45 @@ const SECTIONS = [
 
 {id:'czerwone',type:'prop',title:'Czerwone - Katowice: Gliwicka',color:'red',val:'3M',rents:['2M','3M','6M'],
  cards:[
-  {n:'Mieszkanie na Gliwickiej',s:'Gliwicka 220D/9, przyszłe mieszkanie z żoną'},
+  {n:'Mieszkanie na Gliwickiej',s:'Gliwicka 220D/9, pierwsze mieszkanie jako małżeństwo'},
   {n:'Piwnica na Gliwickiej',s:'to, co się nie mieści na górze'},
-  {n:'Zawsze Dostępne Miejsce',s:'na Gliwickiej, ostatnio widziane w 2019'},
+  {n:'Zawsze Dostępne Miejsce na Gliwickiej',s:'widziane ostatnio, zanim powstała kopalnia'},
 ]},
 
 {id:'zolte',type:'prop',title:'Żółte - Hiszpania: sąsiedztwo',color:'yellow',val:'3M',rents:['2M','4M','6M'],
  cards:[
-  {n:'Mieszkanie Teściowej',s:'blisko. Za blisko?'},
-  {n:'Mieszkanie Teścia',s:'azyl po drugiej stronie kompleksu'},
+  {n:'Mieszkanie Teściowej w Hiszpanii',s:'blisko. Za blisko?'},
+  {n:'Mieszkanie Teścia w Hiszpanii',s:'azyl po drugiej stronie kompleksu'},
   {n:'Mieszkanie Beaty',s:'"szefowej" wspólnoty'},
 ]},
 
 {id:'zielone',type:'prop',title:'Zielone - Los Alcázares: życie w kompleksie',color:'green',val:'4M',rents:['2M','4M','7M'],
  cards:[
-  {n:'Taras przed Apartamentem',s:'z widokiem, dopóki nikt nie zaparkuje'},
-  {n:'Basen w Kompleksie',s:'ręcznik na leżaku od 6:40, właściciel nieznany'},
-  {n:'Plaża Las Salinas',s:'5 minut spacerem, kajty na horyzoncie'},
+  {n:'Taras w Hiszpanii',s:'poranna kawka z żoną, kajciarze na horyzoncie'},
+  {n:'Basen w Hiszpańskim Kompleksie',s:'ręcznik na leżaku od rana, miejsce zaklepane'},
+  {n:'Plaża Las Salinas',s:'5 minut spacerem, do ćwiczenia kajta'},
 ]},
 
 {id:'granatowe',type:'prop',title:'Granatowe - Premium',color:'dkblue',val:'4M',rents:['3M','8M'],
  note:'Najdroższa grupa w talii. Komplet to 2 karty.',
  cards:[
-  {n:'Apartament Los Alcázares',s:'perła w koronie Goraja'},
-  {n:'Piwnica do Apartamentu',s:'klimatyzowana naturalnie'},
+  {n:'Apartament Los Alcázares',s:'perła w koronie'},
+  {n:'Piwnica do Apartamentu',s:'chłodzona wodą prosto ze ściany'},
 ]},
 
 {id:'trasy',type:'prop',title:'Czarne - Trasy Goraja',color:'rail',val:'2M',rents:['1M','2M','3M','4M'],
  note:'W oryginale koleje. Komplet to 4 karty.',
  cards:[
-  {n:'Lotnisko Alicante',s:'trzy godziny od własnej piwnicy'},
-  {n:'A4 z korkami',s:'Katowice - Wrocław, czas przejazdu: zależy'},
-  {n:'DK94 do Olkusza',s:'droga na obiad'},
+  {n:'Lotnisko Alicante',s:'przylot 23:50, ostatni autobus 23:40'},
+  {n:'Zakorkowana A4',s:'a po ilu wypadkach Ty się uśmiechniesz?'},
+  {n:'Trasa Rowerowa na Działkę',s:'działka rolna pod Żywcem, na razie tylko w Otodomie'},
   {n:'Dworzec Wrocław Główny',s:'peron 3, pociąg opóźniony'},
 ]},
 
 {id:'media',type:'prop',title:'Jasnozielone - Usługi niezbędne do życia',color:'util',val:'2M',rents:['1M','2M'],
  note:'W oryginale elektrownia i wodociągi.',
  cards:[
-  {n:'Capri',s:'restauracja teściowej. Kto wejdzie, ten płaci za obiad'},
+  {n:'Capri',s:'zawsze coś dobrego do zjedzenia, a jak co to wracasz na kelnera'},
   {n:'Ryanair do Alicante',s:'bagaż podręczny 40 x 20 x 25'},
 ]},
 
@@ -432,12 +433,12 @@ const SECTIONS = [
  cards:[
   {n:'Klucze do Apartamentu',a:'dkblue',b:'green',v:'4M',q:1},
   {n:'Transfer z Lotniska',a:'rail',b:'green',v:'4M',q:1},
-  {n:'Wypad do Domu',a:'rail',b:'ltblue',v:'4M',q:1},
+  {n:'Wycieczka do Olkusza',a:'rail',b:'ltblue',v:'4M',q:1},
   {n:'Lot i Obiad w Pakiecie',a:'rail',b:'util',v:'2M',q:1},
-  {n:'Klucze do Olkusza',a:'ltblue',b:'brown',v:'1M',q:1},
+  {n:'Przejście przez Emalię',a:'ltblue',b:'brown',v:'1M',q:1},
   {n:'Klucze do Wrocławia',a:'pink',b:'orange',v:'2M',q:2},
-  {n:'Klucze do Katowic i Hiszpanii',a:'red',b:'yellow',v:'3M',q:2},
-  {n:'Goraj Załatwi',multi:true,t:'Wchodzi do dowolnego kompletu. Nie ma wartości pieniężnej, nie zapłacisz nią',q:2},
+  {n:'Teściowa Sfinansuje',a:'red',b:'yellow',v:'3M',q:2},
+  {n:'Nie Daj Się Sprowokować',multi:true,t:'Wchodzi do dowolnego kompletu. Nie ma wartości pieniężnej, nie zapłacisz nią',q:2},
 ]},
 
 {id:'czynsze',type:'rent',title:'Czynsze',color:'#2E8540',
@@ -446,33 +447,33 @@ const SECTIONS = [
   {n:'Czynsz z Olkusza',a:'brown',b:'ltblue',v:'1M',t:'Wszyscy płacą Ci czynsz za brązowe albo błękitne',q:2},
   {n:'Czynsz z Wrocławia',a:'pink',b:'orange',v:'1M',t:'Wszyscy płacą Ci czynsz za różowe albo pomarańczowe',q:2},
   {n:'Czynsz z Gliwickiej i Hiszpanii',a:'red',b:'yellow',v:'1M',t:'Wszyscy płacą Ci czynsz za czerwone albo żółte',q:2},
-  {n:'Czynsz z Kompleksu',a:'dkblue',b:'green',v:'1M',t:'Wszyscy płacą Ci czynsz za granatowe albo zielone',q:2},
-  {n:'Rozliczenie za Dojazdy',a:'rail',b:'util',v:'1M',t:'Wszyscy płacą Ci czynsz za trasy albo usługi',q:2},
+  {n:'Przelew z Bookinga',a:'dkblue',b:'green',v:'1M',t:'Wszyscy płacą Ci czynsz za granatowe albo zielone',q:2},
+  {n:'Kilometrówka z Pracy',a:'rail',b:'util',v:'1M',t:'Wszyscy płacą Ci czynsz za trasy albo usługi',q:2},
   {n:'Rozliczenie Roczne',multi:true,v:'3M',t:'Wybierasz jednego gracza i jeden dowolny kolor. Płaci Ci czynsz',q:3},
 ]},
 
 {id:'akcje',type:'action',title:'Karty akcji',color:'#6B4E9E',
  note:'Zagrywasz na stół jako jedną z trzech kart w turze. Każdą możesz też położyć przed sobą jako pieniądze o wartości z rogu.',
  cards:[
-  {n:'Monikracja',v:'5M',c:A.breaker,t:'Zabierasz dowolnemu graczowi pełny komplet nieruchomości, razem z klimatyzacją i bookingiem',s:'odwołania rozpatruje ta sama osoba',q:2},
-  {n:'Dzisiaj Nie, Kochanie',v:'4M',c:A.jsn,t:'Anuluje dowolną akcję zagraną przeciwko Tobie. Zagrywasz w każdej chwili',s:'bez dyskusji, bez odwołania',q:2},
-  {n:'Nie Płacę VAT-u',v:'4M',c:A.jsn,t:'Anuluje dowolną akcję zagraną przeciwko Tobie. Zagrywasz w każdej chwili',s:'przychodu też nie zadeklarowałem',q:1},
-  {n:'Otodom o 23:40',v:'3M',c:A.sly,t:'Zabierasz jedną nieruchomość spoza pełnego kompletu',s:'grunt, działka, hektar. Godzina bez znaczenia',q:2},
-  {n:'Pani Beata Ma Klucze',v:'3M',c:A.sly,t:'Zabierasz jedną nieruchomość spoza pełnego kompletu',s:'weszła bez zapowiedzi',q:1},
-  {n:'Wspólna Decyzja',v:'3M',c:A.forced,t:'Wymieniasz się jedną nieruchomością z wybranym graczem. Żadna nie może być z pełnego kompletu',s:'podobno wszyscy się zgodzili',q:2},
-  {n:'Rotacja Leżaków',v:'3M',c:A.forced,t:'Wymieniasz się jedną nieruchomością z wybranym graczem. Żadna nie może być z pełnego kompletu',s:'ręczniki leżały od 6:40',q:1},
-  {n:'Czynsz za Popowice',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'wynajmujesz, to płacisz',q:1},
+  {n:'Monikracja',v:'5M',c:A.breaker,t:'Zabierasz dowolnemu graczowi pełny komplet nieruchomości, razem z klimatyzacją i bookingiem',s:'możesz próbować się przeciwstawić',q:2},
+  {n:'Dzisiaj Nie, Kochanie',v:'4M',c:A.jsn,t:'Anuluje dowolną akcję zagraną przeciwko Tobie. Zagrywasz w każdej chwili',s:'bez dyskusji, do odwołania',q:2},
+  {n:'Podatkom Mówię NIE',v:'4M',c:A.jsn,t:'Anuluje dowolną akcję zagraną przeciwko Tobie. Zagrywasz w każdej chwili',s:'przychodu też nie zadeklarowałem',q:1},
+  {n:'Otodom w Łóżku o 23:40',v:'3M',c:A.sly,t:'Zabierasz jedną nieruchomość spoza pełnego kompletu',s:'działka rolna pod Żywcem, trzeci raz w tym tygodniu',q:2},
+  {n:'Beata Ma Klucze do Hiszpanii',v:'3M',c:A.sly,t:'Zabierasz jedną nieruchomość spoza pełnego kompletu',s:'weszła bez zapowiedzi',q:1},
+  {n:'Wspólna Decyzja',v:'3M',c:A.forced,t:'Wymieniasz się jedną nieruchomością z wybranym graczem. Nie ruszasz pełnych kompletów',s:'wszyscy po równo niezadowoleni',q:2},
+  {n:'Rotacja Leżaków',v:'3M',c:A.forced,t:'Wymieniasz się jedną nieruchomością z wybranym graczem. Nie ruszasz pełnych kompletów',s:'ręczniki leżały od 6:40',q:1},
+  {n:'Booking Się Pomylił',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'przelew przyszedł dwa razy',q:1},
   {n:'Potłuczone Kieliszki',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'komplet był na wyposażeniu',q:1},
   {n:'Zgubione Klucze',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'wymiana wkładki na koszt gościa',q:1},
   {n:'6 Października',v:'2M',c:A.bday,t:'Każdy gracz daje Ci 2M w prezencie',s:'urodziny Goraja, zrzutka obowiązkowa',q:3},
   {n:'Sezon w Los Alcázares',v:'1M',c:A.dbl,t:'Zagrywasz razem z kartą czynszu. Stawka x2',s:'lipiec, wszystko drożeje',q:2},
-  {n:'Klimatyzacja',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'w apartamencie obowiązkowa',q:2},
-  {n:'Klimatyzacja w Astrze',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'naprawa kosztowała tyle, co metr kawalerki',q:1},
+  {n:'Jednostka Klimatyzacji',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'dziura na kable w żelbecie już wykuta',q:2},
+  {n:'Klimatyzacja w Astrze',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'kosztowała jak metr kwadratowy na Jasnej',q:1},
   {n:'Booking z Oceną 9.4',v:'4M',c:A.hotel,t:'Dokładasz do kompletu, który ma już klimatyzację. Czynsz rośnie o kolejne 4M',s:'ręczniki złożone w łabędzie',q:1},
-  {n:'Superhost Sezonu',v:'4M',c:A.hotel,t:'Dokładasz do kompletu, który ma już klimatyzację. Czynsz rośnie o kolejne 4M',s:'odbiór kluczy o każdej porze',q:1},
-  {n:'Ślub!',v:'1M',c:A.pass,t:'Dobierz 2 karty. Możesz wskazać gracza, który dobiera razem z Tobą',s:'od dziś wszystko dobieracie wspólnie',q:2},
-  {n:'Dywidenda z GPW',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'spółki dowiozły',q:2},
-  {n:'Zwrot Szklanek do Ikei',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'naklejki zostały, kasa wróciła',q:2},
+  {n:'Superhost Sezonu',v:'4M',c:A.hotel,t:'Dokładasz do kompletu, który ma już klimatyzację. Czynsz rośnie o kolejne 4M',s:'skrzynka na klucze otwierana kodem z apki',q:1},
+  {n:'Ślub!',v:'1M',c:A.pass,t:'Dobierz 2 karty. Wskaż gracza, który dobiera razem z Tobą',s:'od dziś wszystko robimy wspólnie',q:2},
+  {n:'Dywidenda z GPW',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'na szczęście na IKE, podatku nie ma',q:2},
+  {n:'Zwrot Szklanek do Ikei',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'paragon był, naklejki wróciły, Dagmara przepchnęła',q:2},
   {n:'Obiad u Mamy',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'wychodzisz z pełnym brzuchem i słoikami',q:2},
   {n:'Wolne Miejsce przed Gliwicką',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'ktoś odjechał, bierz zanim zajmą',q:2},
 ]},
@@ -480,11 +481,11 @@ const SECTIONS = [
 {id:'przypaly',type:'action',title:'Karty przypału - dodatek GORIpoly',color:'#B00020',
  note:'Tego nie ma w oryginale. Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Można się bronić kartą "Dzisiaj nie, kochanie". Poza podstawową talią, więc nie ruszają balansu.',
  cards:[
-  {n:'Nocka na Lotnisku w Alicante',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz opuszcza następną turę',s:'auto padło w drodze po odbiór. Rano cały terminal dla siebie',q:1},
-  {n:'Pielgrzymka: Sekcja Ekologiczna',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz opuszcza następną turę',s:'rozkładasz śmietniki, sprzątasz po wszystkich, regenerujesz się wieczorem',q:1},
-  {n:'Kontrola z Urzędu Skarbowego',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 5M do banku',s:'przychód sam się nie zadeklaruje',q:1},
-  {n:'Zebranie Rady Osiedla',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'trzy godziny o segregacji. Terapia z własnej kieszeni',q:1},
-  {n:'Beata i Niezadowoleni Goście',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'ocena 6.1 i długi komentarz',q:1},
+  {n:'Nocka na Lotnisku w Alicante',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz opuszcza następną turę',s:'samolot uciekł, następny dopiero rano',q:1},
+  {n:'Pielgrzymka: Sekcja Ekologiczna',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz opuszcza następną turę',s:'ktoś musi złożyć pole namiotowe',q:1},
+  {n:'Kontrola z Urzędu Skarbowego',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 5M do banku',s:'wszystko się zgadza, tylko trwa',q:1},
+  {n:'Zebranie Rady Osiedla',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'stres i cringe w gratisie',q:1},
+  {n:'Beata i Niezadowoleni Goście',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'nie wieje, nie popływasz',q:1},
   {n:'Sierpień bez Rezerwacji',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'apartament stoi pusty w szczycie sezonu',q:1},
 ]},
 
@@ -492,28 +493,23 @@ const SECTIONS = [
  note:'Nominały 1:1 z oryginałem, razem 57M w banku.',
  cards:[{v:1,q:6},{v:2,q:5},{v:3,q:3},{v:4,q:3},{v:5,q:2},{v:10,q:1}]},
 
-{id:'zasady',type:'rules',title:'Karty zasad',color:'#1D1D1B',note:'Cztery karty w pudełku, tak jak w oryginale.',
+{id:'zasady',type:'rules',title:'Karty zasad',color:'#1D1D1B',note:'Trzy karty ze skrótem zasad, do wyciągnięcia na stół.',
  cards:[
-  {n:'Jak Zacząć',q:1,items:[
+  {n:'Rozpoczęcie',q:1,items:[
     'Tasujesz, każdy dostaje 5 kart na rękę. Reszta to talia.',
     'Wygrywa ten, kto zbierze 3 pełne komplety w trzech różnych kolorach.',
     'Na początku tury dobierasz 2 karty. Bez kart na ręce dobierasz 5.',
     'W turze zagrywasz maksymalnie 3 karty.']},
-  {n:'Jak Zagrywasz',q:1,items:[
+  {n:'Przebieg Ruchu',q:1,items:[
     'Nieruchomość i jokera kładziesz przed sobą na stół.',
     'Dowolną kartę możesz zamiast tego położyć jako pieniądze.',
     'Akcja po użyciu idzie na stos odrzuconych.',
     'Na koniec tury maksymalnie 7 kart na ręce.']},
-  {n:'Jak Płacisz',q:1,items:[
+  {n:'Opłaty',q:1,items:[
     'Płacisz pieniędzmi i nieruchomościami ze stołu, nigdy z ręki.',
     'Nie masz ile trzeba? Oddajesz wszystko i sprawa zamknięta.',
     'Nie ma wydawania reszty.',
     'Nieruchomość dostana w zapłacie ląduje w Twoim komplecie.']},
-  {n:'Nasze Dodatki',q:1,items:[
-    'Karty przypału zagrywasz na gracza: traci turę albo płaci do banku.',
-    '"Ślub!" pozwala wskazać gracza, który dobiera 2 karty z Tobą.',
-    'Broni się przed tym "Dzisiaj nie, kochanie".',
-    'Reszta talii jest 1:1 z Monopoly Deal.']},
 ]},
 
 {id:'rewers',type:'back',title:'Rewers talii',color:'#E02A2A',
