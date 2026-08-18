@@ -307,8 +307,13 @@ function actionCard(c){
 }
 
 /* ---------- pieniądze ---------- */
+/* kolory nominałów spójne z kartami do druku (karty.html -> MONEY) */
+const MONEYC = {1:['#F2E7B8','#B79A3A'],2:['#F6CBB0','#C2703F'],3:['#DDE3C0','#7C8C4A'],
+  4:['#AFD3E2','#3D7E9C'],5:['#C6A8DC','#6B4E9E'],10:['#F2A93B','#B06A0C']};
+
 function moneyCard(c){
-  return `<div class="mcard" style="--acc:${A.money};background:#FBF3D8">
+  const [bg,acc] = MONEYC[c.v] || ['#FBF3D8', A.money];
+  return `<div class="mcard" style="--acc:${acc};background:${bg}">
     <div class="frame"></div>
     <span class="badge tl">${c.v}M</span><span class="badge br">${c.v}M</span>
     <div class="ribbon on-light" style="background:#F3E2A9">Bank rodziny Goraj</div>
@@ -359,15 +364,15 @@ const SECTIONS = [
 {id:'blekitne',type:'prop',title:'Błękitne - Olkusz: rodzina',color:'ltblue',val:'1M',rents:['1M','2M','3M'],
  note:'Komplet to 3 karty.',
  cards:[
-  {n:'Dom na Jasnej',s:'Olkusz HQ, pies w gratisie'},
+  {n:'Dom na Jasnej',s:'pies za dopłatą, remont zrobią wynajmujący'},
   {n:'Dom Mamy na Nowowiejskiej',s:'lodówka zawsze pełna'},
-  {n:'Mieszkanie na Skwerze',s:'dwa przystanki od wszystkiego'},
+  {n:'Dom Teściów na Skwerze',s:'dwa przystanki od wszystkiego'},
 ]},
 
 {id:'rozowe',type:'prop',title:'Różowe - Wrocław: dodatki lokatorskie',color:'pink',val:'2M',rents:['1M','2M','4M'],
  note:'Prawdziwy majątek to nie metry.',
  cards:[
-  {n:'Komórka na Porcie',s:'osobna księga wieczysta, w razie czego kawalerka w centrum'},
+  {n:'Komórka na Porcie',s:'osobna księga wieczysta, w razie czego można sprzedać jako kawalerkę'},
   {n:'Miejsce Parkingowe na Porcie',s:'luksus, o którym Katowice marzą'},
   {n:'Miejsce na Rower na Porcie',s:'strzeżone lepiej niż mieszkanie'},
 ]},
@@ -402,7 +407,7 @@ const SECTIONS = [
  cards:[
   {n:'Taras w Hiszpanii',s:'poranna kawka z żoną, kajciarze na horyzoncie'},
   {n:'Basen w Hiszpańskim Kompleksie',s:'ręcznik na leżaku od rana, miejsce zaklepane'},
-  {n:'Plaża Las Salinas',s:'5 minut spacerem, do ćwiczenia kajta'},
+  {n:'Plaża Las Salinas',s:'5 minut spacerem, do ćwiczenia kite\'a'},
 ]},
 
 {id:'granatowe',type:'prop',title:'Granatowe - Premium',color:'dkblue',val:'4M',rents:['3M','8M'],
@@ -424,7 +429,7 @@ const SECTIONS = [
 {id:'media',type:'prop',title:'Jasnozielone - Usługi niezbędne do życia',color:'util',val:'2M',rents:['1M','2M'],
  note:'W oryginale elektrownia i wodociągi.',
  cards:[
-  {n:'Capri',s:'zawsze coś dobrego do zjedzenia, a jak co to wracasz na kelnera'},
+  {n:'Capri',s:'możesz zjeść za darmo, ale sztućce musisz powycierać'},
   {n:'Ryanair do Alicante',s:'bagaż podręczny 40 x 20 x 25'},
 ]},
 

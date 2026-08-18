@@ -159,7 +159,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .card--wildall .key{background:#111111;color:#fff}
 .wildall{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
   padding:4mm 3mm 3mm;text-align:center}
-.wildall svg.title{width:40mm;height:17mm}
+.wildall svg.title{width:41mm;height:13.9mm;margin-top:1.5mm}
 .wildall p{font-size:2.8mm;font-weight:300;line-height:1.25;color:#fff;margin-top:1mm;padding:0 2mm}
 .mascot{
   --disc:26mm;
@@ -179,40 +179,55 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 }
 
 /* ---------------- pieniądze ---------------- */
-.card--money .key{background:var(--light);overflow:hidden}
+/* Anatomia banknotu przeniesiona na format talii (56 x 87 mm pionowo, pole
+   wewnątrz keylinu to dokładnie 49 x 80 mm): ozdobna ramka + guilloche,
+   panel, okrąg centralny z nominałem, cztery odznaki narożne, tekst boczny. */
+.card--money .key{background:var(--bg);overflow:hidden;color:var(--ink)}
+.card--money .guil{position:absolute;inset:0;width:100%;height:100%;z-index:1}
 
-/* podobizna Goraja w tle, monochromatycznie w kolorze nominalu */
+.bill-panel{
+  position:absolute;inset:4.8mm;z-index:2;border-radius:.8mm;
+  background:var(--panel);border:.2mm solid rgba(26,26,26,.45);
+}
+
+/* podobizna Goraja jak znak wodny: nad i pod okręgiem, dolna do góry nogami */
 .bill-figure{
-  position:absolute;left:50%;width:30mm;height:auto;z-index:1;
-  filter:grayscale(1) contrast(1.25);opacity:.30;mix-blend-mode:multiply;
+  position:absolute;left:50%;width:auto;height:11mm;z-index:3;
+  filter:grayscale(1) contrast(1.2);opacity:.22;mix-blend-mode:multiply;
 }
-.bill-figure--t{top:1.5mm;transform:translateX(-50%)}
-.bill-figure--b{bottom:1.5mm;transform:translateX(-50%) rotate(180deg)}
+.bill-figure--t{top:12.6mm;transform:translateX(-50%)}
+.bill-figure--b{bottom:12.6mm;transform:translateX(-50%) rotate(180deg)}
 
-/* ozdobna podwojna ramka banknotu */
-.bill-frame{
-  position:absolute;inset:1.6mm;z-index:2;pointer-events:none;
-  border:.5mm solid var(--strong);border-radius:1mm;
+.bill-circle{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:32mm;height:32mm;border-radius:50%;z-index:4;
+  background:var(--circle);border:.5mm solid var(--ink);
+  display:grid;place-items:center;
 }
-.bill-frame::after{
-  content:"";position:absolute;inset:1.1mm;border:.2mm solid var(--strong);border-radius:.6mm;
-}
+.bill-val{--num:11mm;color:var(--ink)}
 
-.bill-corner{position:absolute;z-index:4;color:var(--strong);--num:3mm}
-.bill-corner.tl{top:3.4mm;left:3.6mm}
-.bill-corner.tr{top:3.4mm;right:3.6mm}
-.bill-corner.bl{bottom:3.4mm;left:3.6mm;transform:rotate(180deg)}
-.bill-corner.br{bottom:3.4mm;right:3.6mm;transform:rotate(180deg)}
-
-/* romb z nominalem na srodku */
-.bill-diamond{
-  position:absolute;left:50%;top:50%;width:25mm;height:25mm;z-index:5;
-  transform:translate(-50%,-50%) rotate(45deg);
-  background:var(--strong);border:.45mm solid #fff;
-  box-shadow:0 0 0 .45mm var(--strong);
-  display:flex;align-items:center;justify-content:center;
+/* odznaka narożna: kreska przechodzi przez środek i wychodzi poza okrąg,
+   na zewnątrz karty ucina ją overflow na .key */
+.bill-badge{
+  position:absolute;width:8.4mm;height:8.4mm;border-radius:50%;z-index:5;
+  border:.45mm solid var(--ink);background:var(--bg);
+  display:grid;place-items:center;--num:2.9mm;color:var(--ink);
 }
-.bill-val{transform:rotate(-45deg);color:#fff;--num:9mm}
+.bill-badge::before{
+  content:"";position:absolute;top:50%;left:-9mm;right:-9mm;height:.45mm;
+  background:var(--ink);transform:translateY(-50%);z-index:-1;
+}
+.bill-badge.tl{left:3.3mm;top:3.3mm}
+.bill-badge.tr{right:3.3mm;top:3.3mm;transform:rotate(180deg)}
+.bill-badge.bl{left:3.3mm;bottom:3.3mm;transform:rotate(180deg)}
+.bill-badge.br{right:3.3mm;bottom:3.3mm}
+
+.bill-side{
+  position:absolute;right:1.9mm;top:50%;transform:translateY(-50%);z-index:5;
+  writing-mode:vertical-rl;
+  font-size:1.7mm;font-weight:700;text-transform:uppercase;letter-spacing:.2em;
+  color:var(--ink);opacity:.6;
+}
 
 /* ---------------- karty akcji ---------------- */
 .card--action .key{background:var(--c);overflow:hidden}

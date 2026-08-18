@@ -147,10 +147,10 @@ const SETS = {
 const PROPS = [
   ['brown','Szopa na Jasnej','wchodzisz na własne ryzyko'],
   ['brown','Trawnik na Jasnej','duży, będzie co kosić'],
-  ['lblue','Dom na Jasnej','Olkusz HQ, pies w gratisie'],
+  ['lblue','Dom na Jasnej','pies za dopłatą, remont zrobią wynajmujący'],
   ['lblue','Dom Mamy na Nowowiejskiej','lodówka zawsze pełna'],
-  ['lblue','Mieszkanie na Skwerze','dwa przystanki od wszystkiego'],
-  ['pink','Komórka na Porcie','osobna księga wieczysta, w razie czego kawalerka w centrum'],
+  ['lblue','Dom Teściów na Skwerze','dwa przystanki od wszystkiego'],
+  ['pink','Komórka na Porcie','osobna księga wieczysta, w razie czego można sprzedać jako kawalerkę'],
   ['pink','Miejsce Parkingowe na Porcie','luksus, o którym Katowice marzą'],
   ['pink','Miejsce na Rower na Porcie','strzeżone lepiej niż mieszkanie'],
   ['orange','Mieszkanie na Porcie Popowice','pierwsza inwestycja zostaje w sercu na zawsze'],
@@ -164,14 +164,14 @@ const PROPS = [
   ['yellow','Mieszkanie Beaty','"szefowej" wspólnoty'],
   ['green','Taras w Hiszpanii','poranna kawka z żoną, kajciarze na horyzoncie'],
   ['green','Basen w Hiszpańskim Kompleksie','ręcznik na leżaku od rana, miejsce zaklepane'],
-  ['green','Plaża Las Salinas','5 minut spacerem, do ćwiczenia kajta'],
+  ['green','Plaża Las Salinas','5 minut spacerem, do ćwiczenia kite\'a'],
   ['dblue','Apartament Los Alcázares','perła w koronie'],
   ['dblue','Piwnica do Apartamentu','chłodzona wodą prosto ze ściany'],
   ['rail','Lotnisko Alicante','przylot 23:50, ostatni autobus 23:40'],
   ['rail','Zakorkowana A4','a po ilu wypadkach Ty się uśmiechniesz?'],
   ['rail','Trasa Rowerowa na Działkę','działka rolna pod Żywcem, na razie tylko w Otodomie'],
   ['rail','Dworzec Wrocław Główny','peron 3, pociąg opóźniony'],
-  ['util','Capri','zawsze coś dobrego do zjedzenia, a jak co to wracasz na kelnera'],
+  ['util','Capri','możesz zjeść za darmo, ale sztućce musisz powycierać'],
   ['util','Ryanair do Alicante','bagaż podręczny 40 x 20 x 25']
 ];
 
@@ -188,14 +188,17 @@ const WILDS = [
 const WILD_ALL = {n:'Nie Daj Się Sprowokować', q:2,
   t:'Wchodzi do dowolnego kompletu. Nie ma wartości pieniężnej, nie zapłacisz nią'};
 
+/* Nominaly: [wartosc, sztuk, tlo, panel, okrag]. Atrament wszedzie ten sam,
+   dzieki temu jedna linijka przemalowuje caly banknot. */
 const MONEY = [
-  [1,  6, '#EAEAEA', '#6E7276'],
-  [2,  5, '#FBE3C8', '#D2761B'],
-  [3,  3, '#D8EFD8', '#2E8B4A'],
-  [4,  3, '#D6E7F7', '#1F6FB2'],
-  [5,  2, '#E3D9F0', '#6B4E9E'],
-  [10, 1, '#F8D9CE', '#C0392B']
+  [1,  6, '#F2E7B8', '#EFE0A2', '#F5EDC9'],
+  [2,  5, '#F6CBB0', '#F2BC9C', '#F9DAC6'],
+  [3,  3, '#DDE3C0', '#D0D9AC', '#E7EBD2'],
+  [4,  3, '#AFD3E2', '#98C6DA', '#C6E0EB'],
+  [5,  2, '#C6A8DC', '#B694D2', '#D6BFE7'],
+  [10, 1, '#F2A93B', '#EE9E22', '#F6C069']
 ];
+const MONEY_INK = '#1A1A1A';
 
 /* Paleta kart akcji: [tło pastelowe, akcent]. Tło zawsze jasne, żeby czarny tekst
    był czytelny; akcent siedzi na pasku nagłówka, obwódce ikonki i we wzorku tła. */
@@ -394,18 +397,16 @@ function wildAllCard(){
     if(d<diff){diff=d; best=i}
   }
   const lines=[w.slice(0,best).join(' '), w.slice(best).join(' ')].filter(Boolean);
-  const fs = Math.min(17, 320/Math.max(...lines.map(l=>l.length)));
+  const fs = Math.min(21, 330/Math.max(...lines.map(l=>l.length)));
   const rot = n => Array.from({length:n},(_,i)=>[3,-3,4,-4][i%4]).join(' ');
   const nameSvg = lines.map((l,i)=>
-    `<text x="100" y="${58+i*19}" text-anchor="middle" font-family="Poppins,sans-serif" font-size="${fs.toFixed(1)}"
+    `<text x="100" y="${28+i*30}" text-anchor="middle" font-family="Poppins,sans-serif" font-size="${fs.toFixed(1)}"
       font-weight="900" fill="url(#rainbow)" rotate="${rot(l.length)}">${esc(l)}</text>`).join('');
   return `<article class="card card--wildall" data-t="wild">
     <div class="key">
       <div class="wildall">
-        <svg class="title" viewBox="0 0 200 84">
+        <svg class="title" viewBox="0 0 200 68">
           <defs><linearGradient id="rainbow" x1="0" y1="0" x2="1" y2="0">${grad}</linearGradient></defs>
-          <text x="100" y="32" text-anchor="middle" font-family="Poppins,sans-serif" font-size="32"
-            font-weight="900" fill="url(#rainbow)" rotate="-4 4 -3 3 -4">JOKER</text>
           ${nameSvg}
         </svg>
         <p>${esc(WILD_ALL.t)}</p>
@@ -456,15 +457,32 @@ function rentCard(r){
   </article>`;
 }
 
-function moneyCard([v,q,light,strong]){
-  const corner = pos => `<span class="bill-corner ${pos}">${amt(v)}</span>`;
-  return `<article class="card card--money" data-t="money" style="--light:${light};--strong:${strong}">
+function moneyCard([v,q,bg,panel,circle]){
+  /* Odznaka narozna: okrag z kreska przechodzaca przez srodek, wychodzaca poza
+     okrag z obu stron. Poza karte kreske przycina overflow na .key. */
+  const corner = pos => `<span class="bill-badge ${pos}">${amt(v)}</span>`;
+  /* Guilloche jako wektor - przy 300 dpi trzyma ostrosc, czego gradient CSS nie robi.
+     viewBox 49 x 80 = dokladnie pole wewnatrz keylinu, wiec jednostki to milimetry. */
+  const guil = `<svg class="guil" viewBox="0 0 49 80" aria-hidden="true">
+    <defs><pattern id="guil${v}" width="6" height="6" patternUnits="userSpaceOnUse">
+      <path d="M0 3Q1.5 .5 3 3T6 3" fill="none" stroke="${MONEY_INK}" stroke-width=".35" opacity=".65"/>
+      <path d="M0 3Q1.5 5.5 3 3T6 3" fill="none" stroke="${MONEY_INK}" stroke-width=".35" opacity=".65"/>
+    </pattern></defs>
+    <rect x="1.6" y="1.6" width="45.8" height="76.8" rx="1"
+      fill="none" stroke="${MONEY_INK}" stroke-width=".3"/>
+    <rect x="3.2" y="3.2" width="42.6" height="73.6" rx=".8"
+      fill="none" stroke="url(#guil${v})" stroke-width="1.4"/>
+  </svg>`;
+  return `<article class="card card--money" data-t="money"
+    style="--bg:${bg};--panel:${panel};--circle:${circle};--ink:${MONEY_INK}">
     <div class="key">
+      ${guil}
+      <div class="bill-panel"></div>
       <img class="bill-figure bill-figure--t" src="bartek.png" alt="">
       <img class="bill-figure bill-figure--b" src="bartek.png" alt="">
-      <div class="bill-frame"></div>
+      <div class="bill-circle"><span class="bill-val">${amt(v)}</span></div>
       ${corner('tl')}${corner('tr')}${corner('bl')}${corner('br')}
-      <div class="bill-diamond"><span class="bill-val">${amt(v)}</span></div>
+      <span class="bill-side">Bank rodziny Goraj</span>
     </div>
   </article>`;
 }

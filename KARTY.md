@@ -31,15 +31,15 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
-| Oriental Avenue | **Dom na Jasnej** | Olkusz HQ, pies w gratisie |
+| Oriental Avenue | **Dom na Jasnej** | pies za dopłatą, remont zrobią wynajmujący |
 | Vermont Avenue | **Dom Mamy na Nowowiejskiej** | lodówka zawsze pełna |
-| Connecticut Avenue | **Mieszkanie na Skwerze** | dwa przystanki od wszystkiego |
+| Connecticut Avenue | **Dom Teściów na Skwerze** | dwa przystanki od wszystkiego |
 
 ### Różowe - Wrocław: dodatki lokatorskie | 2M | 1M / 2M / 4M
 
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
-| St. Charles Place | **Komórka na Porcie** | osobna księga wieczysta, w razie czego kawalerka w centrum |
+| St. Charles Place | **Komórka na Porcie** | osobna księga wieczysta, w razie czego można sprzedać jako kawalerkę |
 | Virginia Avenue | **Miejsce Parkingowe na Porcie** | luksus, o którym Katowice marzą |
 | States Avenue | **Miejsce na Rower na Porcie** | strzeżone lepiej niż mieszkanie |
 
@@ -77,7 +77,7 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 |---|---|---|
 | North Carolina Avenue | **Taras w Hiszpanii** | poranna kawka z żoną, kajciarze na horyzoncie |
 | Pacific Avenue | **Basen w Hiszpańskim Kompleksie** | ręcznik na leżaku od rana, miejsce zaklepane |
-| Pennsylvania Avenue | **Plaża Las Salinas** | 5 minut spacerem, do ćwiczenia kajta |
+| Pennsylvania Avenue | **Plaża Las Salinas** | 5 minut spacerem, do ćwiczenia kite'a |
 
 ### Granatowe - Premium | 4M | 3M / 8M
 
@@ -99,7 +99,7 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
-| Electric Company | **Capri** | zawsze coś dobrego do zjedzenia, a jak co to wracasz na kelnera |
+| Electric Company | **Capri** | możesz zjeść za darmo, ale sztućce musisz powycierać |
 | Water Works | **Ryanair do Alicante** | bagaż podręczny 40 x 20 x 25 |
 
 ---
@@ -166,7 +166,21 @@ Rozkład zgadza się z oryginałem: Pass Go 10, Sly Deal 3, Forced Deal 3, Debt 
 
 ## 5. PIENIĄDZE (20, razem 57M)
 
-1M x6, 2M x5, 3M x3, 4M x3, 5M x2, 10M x1. Docelowo z ludkiem Goraja zamiast standardowej grafiki.
+1M x6, 2M x5, 3M x3, 4M x3, 5M x2, 10M x1.
+
+Anatomia banknotu (przełożona na format talii, czyli pionowo 56 x 87 mm): ozdobna ramka, pod nią
+pasmo guilloche rysowane wektorowo w SVG (nie gradientem CSS - gradient rozłazi się przy 300 DPI),
+panel wewnętrzny, okrąg centralny z nominałem, cztery odznaki narożne z kreską przechodzącą przez
+środek i wychodzącą poza okrąg, pionowy napis "Bank rodziny Goraj" przy prawej krawędzi.
+Goraj siedzi jako znak wodny nad i pod okręgiem, dolny do góry nogami.
+
+Znak nominału to litera M z dwiema poziomymi belkami (SVG `#m-glyph`) plus cyfra - jeden symbol
+używany na wszystkich typach kart.
+
+Paleta: niskie nominały jasne i pastelowe, wysokie nasycone. Każdy nominał ma trzy odcienie
+(tło / panel / okrąg) i wspólny atrament `#1A1A1A`, więc jedna linijka w tablicy `MONEY`
+przemalowuje cały banknot. Gdyby kiedyś doszły wyższe nominały: 20M róż `#E8A0B8`,
+50M turkus `#6FC3B8`, 100M zieleń `#7FBF6A`, 500M złamana biel `#E8E2D4` z ciemniejszą ramką.
 
 ---
 
@@ -174,7 +188,7 @@ Rozkład zgadza się z oryginałem: Pass Go 10, Sly Deal 3, Forced Deal 3, Debt 
 
 Rozpoczęcie / Przebieg ruchu / Opłaty. Treść w `index.html` i `karty.html`.
 
-Oryginał ma tu 4 karty - wypadła "Nasze dodatki", więc talia to 109 zamiast 110.
+Oryginał ma tu 4 karty - wypadła "Nasze dodatki", więc talia to 109 zamiast 110. Tak zostaje.
 
 ---
 
@@ -233,6 +247,5 @@ Reszta jest 1:1.
 1. Pomarańczowe: zostawiamy Hotspot i Orbitę czy wchodzą Grunwald / mieszkanie z Justyną i Zerykiem?
 2. Grafiki: ludek w stylu Monopoly z twarzą Goraja (Dominik podeśle materiał). Miejsca na kartach zarezerwowane.
 3. Rewers talii.
-4. "Mieszkanie na Skwerze" - nazwa robocza, stara ("Teściowie na Skwerze") odpadła. Czym to zastąpić?
-5. Karty zasad: zostały 3 zamiast 4. Albo dodrukować drugą "Rozpoczęcie" i wrócić do 110, albo zostawić 109.
-6. Działka rolna w Żywcu: na razie żyje jako podpis pod "Trasa Rowerowa na Działkę" i "Otodom w Łóżku o 23:40". Jak ma być osobną nieruchomością, to musi kogoś wypchnąć z talii.
+4. Karty zasad: zostały 3 zamiast 4, czyli talia ma 109 kart. Decyzja zapadła, zostaje 109.
+5. Działka rolna w Żywcu: na razie żyje jako podpis pod "Trasa Rowerowa na Działkę" i "Otodom w Łóżku o 23:40". Jak ma być osobną nieruchomością, to musi kogoś wypchnąć z talii.
