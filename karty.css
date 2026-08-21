@@ -207,20 +207,15 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 }
 .bill-val{--num:11mm;color:var(--ink)}
 
-/* odznaka narożna: kreska przechodzi przez środek i wychodzi poza okrąg,
-   na zewnątrz karty ucina ją overflow na .key */
+/* nominał w każdym z czterech rogów, wszystkie czytane poziomo */
 .bill-badge{
   position:absolute;width:8.4mm;height:8.4mm;border-radius:50%;z-index:5;
   border:.45mm solid var(--ink);background:var(--bg);
   display:grid;place-items:center;--num:2.9mm;color:var(--ink);
 }
-.bill-badge::before{
-  content:"";position:absolute;top:50%;left:-9mm;right:-9mm;height:.45mm;
-  background:var(--ink);transform:translateY(-50%);z-index:-1;
-}
 .bill-badge.tl{left:3.3mm;top:3.3mm}
-.bill-badge.tr{right:3.3mm;top:3.3mm;transform:rotate(180deg)}
-.bill-badge.bl{left:3.3mm;bottom:3.3mm;transform:rotate(180deg)}
+.bill-badge.tr{right:3.3mm;top:3.3mm}
+.bill-badge.bl{left:3.3mm;bottom:3.3mm}
 .bill-badge.br{right:3.3mm;bottom:3.3mm}
 
 .bill-side{
@@ -274,7 +269,8 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   background:#fff;box-shadow:inset 0 0 0 .55mm var(--a);
   display:grid;place-items:center;z-index:3;
 }
-.emblem svg{width:15mm;height:15mm;display:block}
+/* ikonki FA maja rozne szerokosci viewBoxa - rownamy je wysokoscia, nie szerokoscia */
+.emblem svg{height:13.5mm;width:18mm;display:block;fill:var(--ink)}
 .emblem img{width:21mm;height:21mm;object-fit:contain;display:block}
 .act-name{
   text-align:center;font-size:var(--nsize,5mm);font-weight:900;text-transform:uppercase;

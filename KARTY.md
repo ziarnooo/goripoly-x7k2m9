@@ -168,7 +168,9 @@ Rozkład zgadza się z oryginałem: Pass Go 10, Sly Deal 3, Forced Deal 3, Debt 
 
 ## 5. PIENIĄDZE (20, razem 57M)
 
-1M x6, 2M x5, 3M x3, 4M x3, 5M x2, 10M x1.
+1M x6, 2M x5, 3M x3, 4M x3, 5M x2, 10M x1. Razem 20 kart i 57M w banku, dokładnie jak w
+oryginalnym Monopoly Deal. Dziesiątka jest jedna i tak ma zostać - to ona wymusza rozdrabnianie
+płatności, bo nie ma wydawania reszty.
 
 Anatomia banknotu (przełożona na format talii, czyli pionowo 56 x 87 mm): ozdobna ramka, pod nią
 pasmo guilloche rysowane wektorowo w SVG (nie gradientem CSS - gradient rozłazi się przy 300 DPI),
@@ -210,6 +212,32 @@ Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się prze
 | **Ostatnia Fajka na Słowikach** | 2M | Wybrany gracz oddaje dwóm innym graczom po jednej nieruchomości spoza pełnego kompletu | miała iść na trzech, po pierwszym podaniu wpadła filtrem w psie gówno |
 
 ---
+
+## Ikonki
+
+Ikonki na kartach akcji i przypałów to **Font Awesome Free 6.7.2, styl Solid** (licencja CC BY 4.0,
+fontawesome.com). Nie rysujemy ich sami: jedna rodzina na całą talię trzyma spójne proporcje i
+grubości z definicji. Siedzą jako `<symbol>` w sprite na górze `karty.html`, każdy z komentarzem
+`fa-<nazwa>`, i są równane wysokością (13,5 mm), nie szerokością - viewBoxy w FA mają różne
+szerokości i równanie po szerokości spłaszczałoby część ikon.
+
+| Karta | Ikonka |
+|---|---|
+| Monikracja (Deal Breaker) | `layer-group` |
+| Dzisiaj Nie, Kochanie / Podatkom Mówię NIE | `ban` |
+| Otodom / Beata Ma Klucze (Sly Deal) | `user-secret` |
+| Wspólna Decyzja / Rotacja Leżaków (Forced Deal) | `right-left` |
+| Booking Się Pomylił / Kieliszki / Klucze | `hand-holding-dollar` |
+| 6 Października | `cake-candles` |
+| Sezon w Los Alcázares | `angles-up` |
+| Pass Go (Ślub, GPW, Ikea, Pączki, Wolne Miejsce) | `flag-checkered` |
+| Jednostka Klimatyzacji | `house` |
+| Booking z Oceną 9.4 / Superhost | `hotel` |
+| Karty przypału | `triangle-exclamation` |
+
+Podmiana na inną rodzinę to podmiana tego jednego bloku w `karty.html`. Uwaga: Duotone, Thumbprint,
+Whiteboard, Etch i Chisel to rodziny z **Font Awesome Pro** - żeby ich użyć, trzeba licencji i kitu.
+Solid jest darmowy i drukuje się najlepiej, bo to pełne kształty bez cienkich włosowych linii.
 
 ## Ilustracje
 
