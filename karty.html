@@ -148,7 +148,7 @@ const PROPS = [
   ['brown','Szopa na Jasnej','wchodzisz na własne ryzyko'],
   ['brown','Trawnik na Jasnej','duży, będzie co kosić'],
   ['lblue','Dom na Jasnej','pies za dopłatą, remont zrobią wynajmujący'],
-  ['lblue','Dom Mamy na Nowowiejskiej','lodówka zawsze pełna'],
+  ['lblue','Dom Mamy na Wiejskiej 33','lodówka zawsze pełna'],
   ['lblue','Dom Teściów na Skwerze','dwa przystanki od wszystkiego'],
   ['pink','Komórka na Porcie','osobna księga wieczysta, w razie czego można sprzedać jako kawalerkę'],
   ['pink','Miejsce Parkingowe na Porcie','luksus, o którym Katowice marzą'],
@@ -181,9 +181,9 @@ const WILDS = [
   ['green','rail',  4,1,'Transfer z Lotniska'],
   ['lblue','rail',  4,1,'Wycieczka do Olkusza'],
   ['rail','util',   2,1,'Lot i Obiad w Pakiecie'],
-  ['lblue','brown', 1,1,'Przejście przez Emalię'],
+  ['lblue','brown', 1,1,'Otwarte Przejście przez Emalię'],
   ['pink','orange', 2,2,'Klucze do Wrocławia'],
-  ['red','yellow',  3,2,'Teściowa Sfinansuje']
+  ['red','yellow',  3,2,'Weksel z Capri']
 ];
 const WILD_ALL = {n:'Nie Daj Się Sprowokować', q:2,
   t:'Wchodzi do dowolnego kompletu. Nie zapłacisz nią, ale święty spokój jest bezcenny'};
@@ -223,8 +223,8 @@ const ACTIONS = [
    t:'Zagraj, gdy ktoś zagra przeciwko Tobie kartę akcji. Anuluje jej działanie.',f:'bez dyskusji, do odwołania'},
   {k:'jsn',ico:'jsn',v:4,q:1,n:'Podatkom Mówię NIE',
    t:'Zagraj, gdy ktoś zagra przeciwko Tobie kartę akcji. Anuluje jej działanie.',f:'przychodu też nie zadeklarowałem'},
-  {k:'sly',ico:'sly',v:3,q:2,n:'Otodom w Łóżku o 23:40',
-   t:'Podkradnij jedną nieruchomość z niepełnego kompletu innego gracza.',f:'działka rolna pod Żywcem, trzeci raz w tym tygodniu'},
+  {k:'sly',ico:'sly',v:3,q:2,n:'Przeglądanie Otodomu na Kibelku',
+   t:'Podkradnij jedną nieruchomość z niepełnego kompletu innego gracza.',f:'żeby znaleźć działkę rolną pod Żywcem'},
   {k:'sly',ico:'sly',v:3,q:1,n:'Beata Ma Klucze do Hiszpanii',
    t:'Podkradnij jedną nieruchomość z niepełnego kompletu innego gracza.',f:'weszła bez zapowiedzi'},
   {k:'forced',ico:'forced',v:3,q:2,n:'Wspólna Decyzja',
@@ -237,8 +237,13 @@ const ACTIONS = [
    t:'Wybrany gracz płaci Ci 5M.',f:'komplet był na wyposażeniu'},
   {k:'debt',ico:'debt',v:3,q:1,n:'Zgubione Klucze',
    t:'Wybrany gracz płaci Ci 5M.',f:'wymiana wkładki na koszt gościa'},
-  {k:'bday',ico:'bday',v:2,q:3,n:'6 Października',
+  /* trzy sztuki, ta sama mechanika, trzy różne podpisy */
+  {k:'bday',ico:'bday',v:2,q:1,n:'6 Października',
    t:'Wszyscy gracze dają Ci po 2M w prezencie.',f:'urodziny Goraja, zrzutka obowiązkowa'},
+  {k:'bday',ico:'bday',v:2,q:1,n:'6 Października',
+   t:'Wszyscy gracze dają Ci po 2M w prezencie.',f:'urodziny Goraja, jest druga w nocy, masz jeszcze 4 godziny picia'},
+  {k:'bday',ico:'bday',v:2,q:1,n:'6 Października',
+   t:'Wszyscy gracze dają Ci po 2M w prezencie.',f:'urodziny Goraja, nie ma opcji, że kogoś nie było'},
   {k:'dbl',ico:'dbl',v:1,q:2,n:'Sezon w Los Alcázares',
    t:'Zagraj z kartą czynszu, żeby podwoić stawkę. Liczy się jako druga akcja.',f:'lipiec, wszystko drożeje'},
   {k:'pass',ico:'pass',v:1,q:2,n:'Ślub!',
@@ -277,7 +282,12 @@ const OOPS = [
   {k:'oops',ico:'oops',v:2,q:1,n:'Beata i Niezadowoleni Goście',
    t:'Wybrany gracz odkłada 2M do banku.',f:'nie wieje, nie popływasz'},
   {k:'oops',ico:'oops',v:2,q:1,n:'Sierpień bez Rezerwacji',
-   t:'Wybrany gracz odkłada 2M do banku.',f:'apartament stoi pusty w szczycie sezonu'}
+   t:'Wybrany gracz odkłada 2M do banku.',f:'apartament stoi pusty w szczycie sezonu'},
+  {k:'oops',ico:'oops',v:2,q:1,n:'Zakręt w Żuradzie',
+   t:'Wybrany gracz opuszcza następną turę.',f:'Grzanka, Smuga, Franek i Wojtek mogli tam zginąć, Goraj prowadził'},
+  {k:'oops',ico:'oops',v:2,q:1,n:'Ostatnia Fajka na Słowikach',
+   t:'Wybrany gracz oddaje dwóm innym graczom po jednej nieruchomości spoza pełnego kompletu.',
+   f:'miała iść na trzech, po pierwszym podaniu wpadła filtrem w psie gówno'}
 ];
 
 const RENTS = [
@@ -318,7 +328,7 @@ function badge(v, cls){
   if(v===null) return `<div class="badge badge--none ${cls||''}"><b>BEZ<br>WART.</b></div>`;
   return `<div class="badge ${cls||''}">${amt(v)}</div>`;
 }
-function nameCls(n){return n.length > 17 ? 'sm' : ''}
+function nameCls(n){return n.length > 26 ? 'xs' : n.length > 17 ? 'sm' : ''}
 function actSize(n){const L=n.length; return L<=9?5.6:L<=14?5:L<=20?4.4:L<=26?4:3.6}
 function embSize(n){const L=n.length; return L<=9?6:L<=14?5:L<=20?4.2:L<=30?3.6:3.1}
 

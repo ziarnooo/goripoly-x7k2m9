@@ -14,7 +14,7 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 | Akcje | 34 |
 | Pieniądze | 20 |
 
-**Dodatek GORIpoly: 6 kart przypału** (poza talią, nie ruszają balansu)
+**Dodatek GORIpoly: 8 kart przypału** (poza talią, nie ruszają balansu)
 
 ---
 
@@ -32,7 +32,7 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
 | Oriental Avenue | **Dom na Jasnej** | pies za dopłatą, remont zrobią wynajmujący |
-| Vermont Avenue | **Dom Mamy na Nowowiejskiej** | lodówka zawsze pełna |
+| Vermont Avenue | **Dom Mamy na Wiejskiej 33** | lodówka zawsze pełna |
 | Connecticut Avenue | **Dom Teściów na Skwerze** | dwa przystanki od wszystkiego |
 
 ### Różowe - Wrocław: dodatki lokatorskie | 2M | 1M / 2M / 4M
@@ -114,9 +114,9 @@ Dwustronne, kolory podzielone na pół, w turze można obrócić.
 | trasa / zieleń | 1 | 4M | **Transfer z Lotniska** |
 | trasa / błękit | 1 | 4M | **Wycieczka do Olkusza** |
 | trasa / usługi | 1 | 2M | **Lot i Obiad w Pakiecie** |
-| błękit / brąz | 1 | 1M | **Przejście przez Emalię** |
+| błękit / brąz | 1 | 1M | **Otwarte Przejście przez Emalię** |
 | róż / pomarańcz | 2 | 2M | **Klucze do Wrocławia** |
-| czerwień / żółć | 2 | 3M | **Teściowa Sfinansuje** |
+| czerwień / żółć | 2 | 3M | **Weksel z Capri** |
 | wszystkie 10 kolorów | 2 | brak wartości | **Nie Daj Się Sprowokować** |
 
 ---
@@ -141,14 +141,16 @@ Dwustronne, kolory podzielone na pół, w turze można obrócić.
 | Deal Breaker | 2 | 5M | **Monikracja** | możesz próbować się przeciwstawić |
 | Just Say No | 2 | 4M | **Dzisiaj Nie, Kochanie** | bez dyskusji, do odwołania |
 | Just Say No | 1 | 4M | **Podatkom Mówię NIE** | przychodu też nie zadeklarowałem |
-| Sly Deal | 2 | 3M | **Otodom w Łóżku o 23:40** | działka rolna pod Żywcem, trzeci raz w tym tygodniu |
+| Sly Deal | 2 | 3M | **Przeglądanie Otodomu na Kibelku** | żeby znaleźć działkę rolną pod Żywcem |
 | Sly Deal | 1 | 3M | **Beata Ma Klucze do Hiszpanii** | weszła bez zapowiedzi |
 | Forced Deal | 2 | 3M | **Wspólna Decyzja** | wszyscy po równo niezadowoleni |
 | Forced Deal | 1 | 3M | **Rotacja Leżaków** | ręczniki leżały od 6:40 |
 | Debt Collector | 1 | 3M | **Booking Się Pomylił** | przelew przyszedł dwa razy |
 | Debt Collector | 1 | 3M | **Potłuczone Kieliszki** | komplet był na wyposażeniu |
 | Debt Collector | 1 | 3M | **Zgubione Klucze** | wymiana wkładki na koszt gościa |
-| It's My Birthday | 3 | 2M | **6 Października** | urodziny Goraja, zrzutka obowiązkowa |
+| It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, zrzutka obowiązkowa |
+| It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, jest druga w nocy, masz jeszcze 4 godziny picia |
+| It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, nie ma opcji, że kogoś nie było |
 | Double The Rent | 2 | 1M | **Sezon w Los Alcázares** | lipiec, wszystko drożeje |
 | House | 2 | 3M | **Jednostka Klimatyzacji** | dziura na kable w żelbecie już wykuta |
 | House | 1 | 3M | **Klimatyzacja w Astrze** | kosztowała jak metr kwadratowy na Jasnej |
@@ -192,7 +194,7 @@ Oryginał ma tu 4 karty - wypadła "Nasze dodatki", więc talia to 109 zamiast 1
 
 ---
 
-## 7. DODATEK: KARTY PRZYPAŁU (6, poza talią)
+## 7. DODATEK: KARTY PRZYPAŁU (8, poza talią)
 
 Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się przed nimi "Dzisiaj nie, kochanie".
 
@@ -204,6 +206,8 @@ Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się prze
 | **Zebranie Rady Osiedla** | 2M | Wybrany gracz odkłada 2M do banku | stres i cringe w gratisie |
 | **Beata i Niezadowoleni Goście** | 2M | Wybrany gracz odkłada 2M do banku | nie wieje, nie popływasz |
 | **Sierpień bez Rezerwacji** | 2M | Wybrany gracz odkłada 2M do banku | apartament stoi pusty w szczycie sezonu |
+| **Zakręt w Żuradzie** | 2M | Wybrany gracz opuszcza następną turę | Grzanka, Smuga, Franek i Wojtek mogli tam zginąć, Goraj prowadził |
+| **Ostatnia Fajka na Słowikach** | 2M | Wybrany gracz oddaje dwóm innym graczom po jednej nieruchomości spoza pełnego kompletu | miała iść na trzech, po pierwszym podaniu wpadła filtrem w psie gówno |
 
 ---
 
@@ -228,9 +232,10 @@ maskotka wyglądała tak samo wszędzie. Tam też pełny prompt na rewers.
 
 ## Odstępstwa od oryginału (świadome)
 
-1. **Karty przypału** - 6 kart, których w Monopoly Deal nie ma. Osobny dodatek, można grać bez nich.
+1. **Karty przypału** - 8 kart, których w Monopoly Deal nie ma. Osobny dodatek, można grać bez nich.
 2. **"Ślub!"** - działa jak Pass Go, ale pozwala wskazać gracza, który dobiera 2 karty razem z Tobą.
-3. **Podpis na dole karty nieruchomości** - w oryginale dół karty jest pusty. U nas siedzi tam żart, bo bez niego cała talia traci sens. Łatwo zdjąć: `.flavor{display:none}` w `karty.css`.
+3. **Trzy wersje "6 Października"** - mechanika identyczna, ale każda sztuka ma inny podpis, bo trzy razy ten sam żart to o dwa razy za dużo.
+4. **Podpis na dole karty nieruchomości** - w oryginale dół karty jest pusty. U nas siedzi tam żart, bo bez niego cała talia traci sens. Łatwo zdjąć: `.flavor{display:none}` w `karty.css`.
 
 Reszta jest 1:1.
 
@@ -248,4 +253,4 @@ Reszta jest 1:1.
 2. Grafiki: ludek w stylu Monopoly z twarzą Goraja (Dominik podeśle materiał). Miejsca na kartach zarezerwowane.
 3. Rewers talii.
 4. Karty zasad: zostały 3 zamiast 4, czyli talia ma 109 kart. Decyzja zapadła, zostaje 109.
-5. Działka rolna w Żywcu: na razie żyje jako podpis pod "Trasa Rowerowa na Działkę" i "Otodom w Łóżku o 23:40". Jak ma być osobną nieruchomością, to musi kogoś wypchnąć z talii.
+5. Działka rolna w Żywcu: na razie żyje jako podpis pod "Trasa Rowerowa na Działkę" i "Przeglądanie Otodomu na Kibelku". Jak ma być osobną nieruchomością, to musi kogoś wypchnąć z talii.

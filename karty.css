@@ -141,6 +141,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .card--wild2 .half .band{height:8mm}
 .card--wild2 .half .band h2{font-size:3mm}
 .card--wild2 .half .band h2.sm{font-size:2.55mm}
+.card--wild2 .half .band h2.xs{font-size:2.15mm;line-height:1.05}
 .card--wild2 .half .badge{--badge-d:7mm;left:calc(5mm - 3.5mm);top:calc(8mm - 3.5mm)}
 .card--wild2 .half .badge .amt{--num:2.65mm}
 .card--wild2 .body{top:9.5mm}
