@@ -176,7 +176,8 @@ Anatomia banknotu (przełożona na format talii, czyli pionowo 56 x 87 mm): ozdo
 pasmo guilloche rysowane wektorowo w SVG (nie gradientem CSS - gradient rozłazi się przy 300 DPI),
 panel wewnętrzny, okrąg centralny z nominałem, cztery odznaki narożne z kreską przechodzącą przez
 środek i wychodzącą poza okrąg, pionowy napis "Bank rodziny Goraj" przy prawej krawędzi.
-Goraj siedzi jako znak wodny nad i pod okręgiem, dolny do góry nogami.
+Goraj siedzi jako portret nad okręgiem: kapelusz i twarz wystają nad krawędź, tors chowa się za
+okręgiem, więc nigdzie nie widać twardego cięcia obrazka.
 
 Znak nominału to litera M z dwiema poziomymi belkami (SVG `#m-glyph`) plus cyfra - jeden symbol
 używany na wszystkich typach kart.
@@ -226,41 +227,52 @@ i sama się w nią wpisuje. Zmiana koloru ikonki to zmiana akcentu w `PALETTE`, 
 
 | Karta | Ikonka |
 |---|---|
-| Monikracja (Deal Breaker) | `hand-grabbing` |
+| Monikracja (Deal Breaker) | `gavel` |
 | Dzisiaj Nie, Kochanie / Podatkom Mówię NIE | `prohibit` |
 | Otodom / Beata Ma Klucze (Sly Deal) | `detective` |
 | Wspólna Decyzja / Rotacja Leżaków (Forced Deal) | `handshake` |
 | Booking Się Pomylił / Kieliszki / Klucze | `hand-coins` |
 | 6 Października | `cake` |
 | Sezon w Los Alcázares | `arrow-fat-lines-up` |
-| Pass Go (Ślub, GPW, Ikea, Pączki, Wolne Miejsce) | `cards` |
+| Pass Go (Ślub, GPW, Ikea, Pączki, Wolne Miejsce) | `files` |
 | Jednostka Klimatyzacji | `house` |
 | Booking z Oceną 9.4 / Superhost | `buildings` |
 | Karty przypału | `warning` |
 
-Ikonki trzymają się mechaniki karty, nie jej tytułu: wszystkie Pass Go dostały `cards`, bo każda
-z nich znaczy "dobierz dwie karty", a nie "ślub" czy "wolne miejsce". Monikracja ma `hand-grabbing`,
-bo to najmocniejsza karta w talii i ma wyglądać jak wyrwanie kompletu z ręki.
+Ikonki trzymają się mechaniki karty, nie jej tytułu: wszystkie Pass Go dostały `files`, bo każda
+z nich znaczy "dobierz dwie karty", a nie "ślub" czy "wolne miejsce". Monikracja ma `gavel`, bo to
+najmocniejsza karta w talii i młotek czyta się jak wyrok, po którym komplet zmienia właściciela.
+
+**Szukanie zamienników:** katalog z wyszukiwarką to <https://phosphoricons.com>. Wpisujesz hasło,
+klikasz ikonkę, wybierasz wagę Duotone. Nazwę z katalogu wystarczy podać - pliki ciągniemy z repo
+`phosphor-icons/core`, ścieżka `assets/duotone/<nazwa>-duotone.svg`.
 
 Phosphor ma jeszcze wagi Thin, Light, Regular, Bold i Fill - podmiana wagi to podmiana tego jednego
 bloku w `karty.html` (pliki leżą w repo `phosphor-icons/core`, katalog `assets/<waga>`).
 
-## Nominał na kartach akcji
+## Kółko z nominałem
 
-Każda karta akcji, budynku, przypału i czynszu ma nominał w **lewym górnym i prawym dolnym**
-narożniku, dolny obrócony o 180 stopni - tak jak w oryginale. Kółko siedzi 1,1 mm wewnątrz
-keylinu, czyli 4,6 mm od linii cięcia, więc gilotyna go nie dotknie. Wcześniej stało 1 mm od
-cięcia i przy pierwszym nakładzie połowa nominałów by zniknęła.
+**Jedno kółko na całą talię**: 8,6 mm średnicy, obwódka 0,5 mm, nominał wyśrodkowany w pionie
+i poziomie. Ten sam `.badge` na nieruchomościach, jokerach, akcjach, budynkach, przypałach,
+czynszach i banknotach. Banknoty różnią się tylko wypełnieniem - biorą jaśniejszy odcień swojego
+nominału zamiast bieli.
 
-Pasek z typem karty idzie u góry i u dołu (dolny odwrócony), więc kartę czyta się z obu stron
-niezależnie od tego, jak leży na stole.
+Nominał stoi w **lewym górnym i prawym dolnym** narożniku, tak jak w oryginale. Na akcjach i
+czynszach dolny jest obrócony o 180 stopni, na banknotach oba czytane poziomo.
+
+Kółko siedzi 1,1 mm wewnątrz keylinu, czyli 4,6 mm od linii cięcia, więc gilotyna go nie dotknie.
+Wcześniej stało 1 mm od cięcia i przy pierwszym nakładzie połowa nominałów by zniknęła.
+
+Pasek z typem karty idzie u góry i u dołu (dolny odwrócony), na akcjach, przypałach i czynszach,
+więc kartę czyta się z obu stron niezależnie od tego, jak leży na stole.
 
 ## Grubość kreski
 
 Jedna reguła na całą talię, bo to ona spina banknoty z kartami akcji:
 
 - kreski i kropki we wzorkach tła: 0,25 mm (kropki 0,3 mm promienia). Typy kart rozróżnia kąt
-  i rozstaw, nie waga linii.
+  i rozstaw, nie waga linii. Wzorek bierze kolor akcentu swojej karty, więc czerwona karta ma
+  czerwone paski, a zielona zielone.
 - obwódki kółek (ikonka na akcji, nominał na banknocie): 0,3 mm
 - keyline karty: 0,45 mm, jedyna grubsza linia w projekcie
 

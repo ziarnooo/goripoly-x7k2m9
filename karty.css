@@ -138,12 +138,13 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .card--wild2 .half{position:absolute;left:0;right:0;height:40mm;overflow:hidden}
 .card--wild2 .half--a{top:0}
 .card--wild2 .half--b{bottom:0;transform:rotate(180deg)}
-.card--wild2 .half .band{height:8mm}
+/* nazwa uciekaja od kolka z nominalem, ktore siedzi okrakiem na dolnej krawedzi paska */
+.card--wild2 .half .band{height:8mm;padding:0 2mm 0 9mm}
 .card--wild2 .half .band h2{font-size:3mm}
 .card--wild2 .half .band h2.sm{font-size:2.55mm}
 .card--wild2 .half .band h2.xs{font-size:2.15mm;line-height:1.05}
-.card--wild2 .half .badge{--badge-d:7mm;left:calc(5mm - 3.5mm);top:calc(8mm - 3.5mm)}
-.card--wild2 .half .badge .amt{--num:2.65mm}
+/* joker: to samo kolko co wszedzie, okrakiem na dolnej krawedzi paska */
+.card--wild2 .half .badge{left:2.2mm;top:calc(8mm - var(--badge-d)/2)}
 .card--wild2 .body{top:9.5mm}
 .card--wild2 .rent{--num:4.2mm}
 .wild-divider{
@@ -192,12 +193,17 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 }
 
 /* podobizna Goraja jak znak wodny: nad i pod okręgiem, dolna do góry nogami */
+/* Goraj do piersi, dol schowany za okregiem - nad okregiem wystaje sama glowa,
+   wiec nigdzie nie widac twardego ciecia obrazka. Szerokosc 24 mm mija sie
+   z odznakami naroznymi, ktore koncza sie na 11,7 mm. */
+/* Goraj do piersi: nad okregiem wystaje kapelusz i twarz, tors chowa sie za okregiem,
+   wiec nigdzie nie widac twardego ciecia obrazka. Odznaki narozne siedza w rogach,
+   a figura ma 24 mm szerokosci na srodku, wiec sie nie spotykaja. */
 .bill-figure{
-  position:absolute;left:50%;width:auto;height:11mm;z-index:3;
-  filter:grayscale(1) contrast(1.2);opacity:.22;mix-blend-mode:multiply;
+  position:absolute;left:50%;width:auto;height:26mm;z-index:3;top:5mm;
+  filter:grayscale(1) contrast(1.2);opacity:.3;mix-blend-mode:multiply;
 }
-.bill-figure--t{top:12.6mm;transform:translateX(-50%)}
-.bill-figure--b{bottom:12.6mm;transform:translateX(-50%) rotate(180deg)}
+.bill-figure{top:5mm;transform:translateX(-50%)}
 
 .bill-circle{
   position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
@@ -208,16 +214,11 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 /* duża cyfra czytana z boku - obrót w drugą stronę to zmiana znaku przy 90deg */
 .bill-val{--num:11mm;color:var(--ink);transform:rotate(90deg)}
 
-/* nominał w każdym z czterech rogów, wszystkie czytane poziomo */
-.bill-badge{
-  position:absolute;width:8.4mm;height:8.4mm;border-radius:50%;z-index:5;
-  border:.3mm solid var(--ink);background:var(--bg);
-  display:grid;place-items:center;--num:2.9mm;color:var(--ink);
-}
-.bill-badge.tl{left:3.3mm;top:3.3mm}
-.bill-badge.tr{right:3.3mm;top:3.3mm}
-.bill-badge.bl{left:3.3mm;bottom:3.3mm}
-.bill-badge.br{right:3.3mm;bottom:3.3mm}
+/* Nominał w dwóch rogach, jak na kartach akcji. Kółko to ten sam .badge co wszędzie,
+   różni się tylko wypełnieniem - bierze jaśniejszy odcień nominału. Oba czytane poziomo. */
+.bill-badge{background:var(--circle)}
+.bill-badge.tl{left:2.9mm;top:2.9mm}
+.bill-badge.br{right:2.9mm;bottom:2.9mm}
 
 /* ---------------- karty akcji ---------------- */
 .card--action .key{background:var(--c);overflow:hidden}
@@ -226,26 +227,26 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
    Typy rozróżnia kąt i rozstaw, nie waga linii, więc nic nie wybija się na kartach. */
 .pat{position:absolute;inset:0;z-index:1;pointer-events:none}
 .pat--breaker{background-image:
-  repeating-linear-gradient(45deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 2.2mm),
-  repeating-linear-gradient(-45deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 2.2mm)}
-.pat--jsn{background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 2.6mm)}
-.pat--sly{background-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.14) 0 .3mm,transparent .32mm);
+  repeating-linear-gradient(45deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 2.2mm),
+  repeating-linear-gradient(-45deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 2.2mm)}
+.pat--jsn{background-image:repeating-linear-gradient(135deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 2.6mm)}
+.pat--sly{background-image:radial-gradient(circle at 50% 50%,color-mix(in srgb, var(--a) 38%, transparent) 0 .3mm,transparent .32mm);
   background-size:2.6mm 2.6mm}
 .pat--forced{background-image:
-  repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 3.4mm),
-  repeating-linear-gradient(90deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 3.4mm)}
+  repeating-linear-gradient(0deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 3.4mm),
+  repeating-linear-gradient(90deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 3.4mm)}
 .pat--debt{background-image:
-  repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 1.8mm),
-  repeating-linear-gradient(90deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 1.8mm)}
+  repeating-linear-gradient(0deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 1.8mm),
+  repeating-linear-gradient(90deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 1.8mm)}
 .pat--bday{background-image:
-  radial-gradient(circle at 25% 25%,rgba(0,0,0,.14) 0 .3mm,transparent .32mm),
-  radial-gradient(circle at 75% 68%,rgba(0,0,0,.14) 0 .3mm,transparent .32mm);
+  radial-gradient(circle at 25% 25%,color-mix(in srgb, var(--a) 38%, transparent) 0 .3mm,transparent .32mm),
+  radial-gradient(circle at 75% 68%,color-mix(in srgb, var(--a) 38%, transparent) 0 .3mm,transparent .32mm);
   background-size:3.4mm 3.4mm}
-.pat--dbl{background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 3.4mm)}
-.pat--pass{background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 3mm)}
-.pat--build{background-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.14) 0 .3mm,transparent .32mm);
+.pat--dbl{background-image:repeating-linear-gradient(45deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 3.4mm)}
+.pat--pass{background-image:repeating-linear-gradient(0deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 3mm)}
+.pat--build{background-image:radial-gradient(circle at 50% 50%,color-mix(in srgb, var(--a) 38%, transparent) 0 .3mm,transparent .32mm);
   background-size:3.6mm 3.6mm}
-.pat--oops{background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 1.8mm)}
+.pat--oops{background-image:repeating-linear-gradient(45deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 1.8mm)}
 
 /* pasek z typem karty - jedyne miejsce z mocnym kolorem, biały tekst na akcencie */
 .card--action .rent-head{
@@ -256,7 +257,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 }
 /* Nominał w obu narożnikach, jak w oryginale. Kółko siedzi 1,1 mm WEWNĄTRZ keylinu,
    czyli 4,6 mm od linii cięcia - gilotyna go nie dotknie. */
-.badge--action{left:7.6mm;top:7.6mm;--badge-d:7.6mm}
+.badge--action{left:7.6mm;top:7.6mm}
 /* kółko trzyma się grubości kreski z banknotów: jaśniejszy krążek, cienka obwódka */
 .emblem{
   position:absolute;left:50%;top:11.4mm;transform:translateX(-50%);
@@ -285,16 +286,28 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .effect i{display:block;font-size:2.4mm;font-weight:300;font-style:italic;color:rgba(17,17,17,.72);margin-top:.9mm}
 
 /* ---------------- karty czynszu ---------------- */
+.card--rent{--a:#8A6D2F}
 .card--rent .key{background:#F2E6C8;overflow:hidden}
+.card--rent .rent-head{
+  top:0;height:6.4mm;background:var(--a);color:#fff;
+  border-bottom:var(--stroke) solid var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  font-size:2.5mm;letter-spacing:.12em;
+}
+.pat--rent{background-image:repeating-linear-gradient(45deg,
+  color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 2.8mm)}
+.card--rent.all{--a:#3E3E3C}
 .card--rent.all .key{background:#111111;color:#fff}
 .rent-head{
   position:absolute;left:0;right:0;top:2.6mm;text-align:center;
   font-size:2.6mm;font-weight:900;letter-spacing:.14em;text-transform:uppercase;z-index:4;
 }
 .rent-head--flip{top:auto;bottom:2.6mm;transform:rotate(180deg)}
-.card--action .rent-head--flip{top:auto;bottom:0;transform:rotate(180deg);
-  border-bottom:none;border-top:var(--stroke) solid var(--ink)}
-.badge--rent-b{right:7.6mm;bottom:7.6mm;transform:rotate(180deg);--badge-d:7.6mm}
+/* element jest obrocony o 180 stopni, wiec border-bottom laduje wizualnie u gory paska.
+   Zadnych wlasnych obramowan: inaczej robi sie druga linia przy keylinie. */
+.card--action .rent-head--flip,
+.card--rent .rent-head--flip{top:auto;bottom:0}
+.badge--rent-b{right:7.6mm;bottom:7.6mm;transform:rotate(180deg)}
 .rent-emblem{
   position:absolute;left:50%;top:18mm;transform:translateX(-50%);
   width:32mm;height:32mm;border-radius:50%;border:.7mm solid var(--ink);
@@ -308,7 +321,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 }
 .rent-emblem .label b{font-size:5.4mm;font-weight:900;letter-spacing:-.01em;line-height:1}
 .rent-emblem .label i{font-size:2.2mm;font-weight:700;font-style:normal;letter-spacing:.06em}
-.card--rent .effect{top:51mm;bottom:7mm}
+.card--rent .effect{top:51mm;bottom:8mm}
 .card--rent.all .effect{color:#fff}
 .card--rent.all .effect i{color:rgba(255,255,255,.7)}
 
