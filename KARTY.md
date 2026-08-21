@@ -210,7 +210,7 @@ Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się prze
 | **Niezadowoleni Goście** | 2M | Wybrany gracz odkłada 2M do banku | nie ma wiatru, nie da się pływać na kajcie |
 | **Sierpień bez Rezerwacji** | 2M | Wybrany gracz odkłada 2M do banku | apartament stoi pusty w szczycie sezonu |
 | **Zakręt w Żuradzie** | 2M | Wybrany gracz opuszcza następną turę | albo ktoś traci turę, albo Grzanka, Smuga, Franek i Wojtek jadą do rowu |
-| **Ostatnia Fajka na Słowikach** | 2M | Wybrany gracz oddaje dwóm innym graczom po jednej nieruchomości spoza pełnego kompletu | miała iść na trzech, po pierwszym podaniu wpadła filtrem w psie gówno |
+| **Ostatnia Fajka na Słowikach** | 2M | Wybrany gracz oddaje dwóm graczom po jednej nieruchomości spoza kompletu | miała iść na trzech, wpadła w gówno przy pierwszym podaniu |
 
 ---
 
@@ -234,12 +234,12 @@ i sama się w nią wpisuje. Zmiana koloru ikonki to zmiana akcentu w `PALETTE`, 
 | Booking Się Pomylił / Kieliszki / Klucze | `hand-coins` |
 | 6 Października | `cake` |
 | Sezon w Los Alcázares | `arrow-fat-lines-up` |
-| Pass Go (Ślub, GPW, Ikea, Pączki, Wolne Miejsce) | `files` |
+| Pass Go (Ślub, GPW, Ikea, Pączki, Wolne Miejsce) | `copy` |
 | Jednostka Klimatyzacji | `house` |
 | Booking z Oceną 9.4 / Superhost | `buildings` |
 | Karty przypału | `warning` |
 
-Ikonki trzymają się mechaniki karty, nie jej tytułu: wszystkie Pass Go dostały `files`, bo każda
+Ikonki trzymają się mechaniki karty, nie jej tytułu: wszystkie Pass Go dostały `copy`, bo każda
 z nich znaczy "dobierz dwie karty", a nie "ślub" czy "wolne miejsce". Monikracja ma `gavel`, bo to
 najmocniejsza karta w talii i młotek czyta się jak wyrok, po którym komplet zmienia właściciela.
 
@@ -287,20 +287,33 @@ Wcześniej stało 1 mm od cięcia i przy pierwszym nakładzie połowa nominałó
 Pasek z typem karty idzie u góry i u dołu (dolny odwrócony), na akcjach, przypałach i czynszach,
 więc kartę czyta się z obu stron niezależnie od tego, jak leży na stole.
 
+## Stopień pisma na kartach akcji
+
+Jedna wartość bazowa na całą talię, schodzimy tylko wtedy, gdy tekst fizycznie się nie mieści:
+
+- **nazwa karty**: 4,6 mm. Powyżej 22 znaków 4 mm, powyżej 30 znaków 3,5 mm.
+- **opis mechaniki**: 2,7 mm. Gdy opis z podpisem przekracza 120 znaków 2,5 mm, powyżej 136 - 2,3 mm.
+- **podpis**: 89% stopnia opisu, więc skaluje się razem z nim.
+- **interlinia**: 1,2 na nazwie, 1,32 na opisie i podpisie. Wiersze nie kleją się do siebie.
+
+Treść pod ikonką jest wyśrodkowana w pionie w swoim bloku, więc krótki opis nie zostawia
+dziury nad dolnym paskiem.
+
 ## Grubość kreski
 
 Jedna reguła na całą talię, bo to ona spina banknoty z kartami akcji i nieruchomości:
 
-- **wzorki tła: kreska 0,22 mm, kropka 0,26 mm średnicy** - dokładnie tyle samo tuszu, więc
-  kropki nie ważą więcej niż paski. Krycie 18% akcentu karty, żeby tło czytało się jako
-  jednolite i wzorek dawał tylko fakturę. Typy kart rozróżnia kąt i rozstaw, nie waga linii.
+- **wzorki tła: kreska 0,22 mm, krycie 18% akcentu karty.** Cztery rodziny kształtów na całą
+  talię: kratka, paski, ukosy, falka i zygzak. Żadnych kropek - kropka nigdy nie waży tyle
+  samo co kreska. Typy kart rozróżnia kształt i rozstaw, nie waga linii. Falka i zygzak jadą
+  maską SVG, bo w gradiencie CSS nie da się zrobić krzywej o stałej grubości.
 - **obwódka kółka z ikonką: 0,22 mm**, w akcencie rozbielonym do 45%
 - **obwódka kółka z nominałem: 0,35 mm**
 - **emblemat "CZYNSZ" i ikonki kart w drabince: 0,3 mm**
 - **keyline karty: 0,45 mm**, jedyna grubsza linia w projekcie
 
-Kwoty w drabince czynszu i cyfry na ikonkach kart idą złamaną czernią `#3A3A38`, nie pełną.
-Pełna czerń przy tym stopniu pisma waliła w oczy i przykrywała nazwę karty.
+Kolor linii i cyfr to zawsze pełna czerń `#111`. Złamana czerń wyglądała źle obok czarnych
+pasków i czarnych nominałów w kółkach - w talii jest jeden czarny.
 
 ## Ilustracje
 
