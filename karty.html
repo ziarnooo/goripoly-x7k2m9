@@ -117,10 +117,10 @@ const PROPS = [
   ['brown','Szopa na Jasnej','wchodzisz na własne ryzyko'],
   ['brown','Trawnik na Jasnej','duży, będzie co kosić'],
   ['lblue','Dom na Jasnej','pies za dopłatą, remont zrobią wynajmujący'],
-  ['lblue','Dom Mamy na Wiejskiej 33','lodówka zawsze pełna'],
-  ['lblue','Dom Teściów na Skwerze','dwa przystanki od wszystkiego'],
-  ['pink','Komórka na Porcie','osobna księga wieczysta, w razie czego można sprzedać jako kawalerkę'],
-  ['pink','Miejsce Parkingowe na Porcie','luksus, o którym Katowice marzą'],
+  ['lblue','Dom Rodziny na Wiejskiej','Wiejska 33, lodówka zawsze pełna'],
+  ['lblue','Dom Teściów na Skwerze','wchodzisz na chwilę, wychodzisz po trzech godzinach'],
+  ['pink','Komórka na Porcie','osobna księga wieczysta, w razie czego można sprzedać jako kawalerkę w centrum Wrocławia'],
+  ['pink','Miejsce Parkingowe na Porcie','luksus, o którym mieszkańcy Katowic marzą'],
   ['pink','Miejsce na Rower na Porcie','strzeżone lepiej niż mieszkanie'],
   ['orange','Mieszkanie na Porcie Popowice','pierwsza inwestycja zostaje w sercu na zawsze'],
   ['orange','Hotspot','beach bar pod Mostem Milenijnym'],
@@ -136,9 +136,9 @@ const PROPS = [
   ['green','Plaża Las Salinas','5 minut spacerem, do ćwiczenia kite\'a'],
   ['dblue','Apartament Los Alcázares','perła w koronie'],
   ['dblue','Piwnica do Apartamentu','chłodzona wodą prosto ze ściany'],
-  ['rail','Lotnisko Alicante','przylot 23:50, ostatni autobus 23:40'],
+  ['rail','Lotnisko Alicante','FR 2137, przylot 23:50, ostatni autobus 23:40'],
   ['rail','Zakorkowana A4','a po ilu wypadkach Ty się uśmiechniesz?'],
-  ['rail','Trasa Rowerowa na Działkę','działka rolna pod Żywcem, na razie tylko w Otodomie'],
+  ['rail','Ścieżka Rowerowa','Nextbike, gravel albo MTB, nauka wciąż trwa'],
   ['rail','Dworzec Wrocław Główny','peron 3, pociąg opóźniony'],
   ['util','Capri','możesz zjeść za darmo, ale sztućce musisz powycierać'],
   ['util','Ryanair do Alicante','bagaż podręczny 40 x 20 x 25']
@@ -310,7 +310,9 @@ function badge(v, cls){
   if(v===null) return `<div class="badge badge--none ${cls||''}"><b>BEZ<br>WART.</b></div>`;
   return `<div class="badge ${cls||''}">${amt(v)}</div>`;
 }
-function nameCls(n){return n.length > 26 ? 'xs' : n.length > 17 ? 'sm' : ''}
+/* Pasek jokera ma miejsce na dwie linijki, wiec zamiast zjezdzac ze stopniem pisma
+   dla kazdej dluzszej nazwy trzymamy jedna wartosc i lamiemy tekst. */
+function nameCls(n){return n.length > 34 ? 'xs' : ''}
 /* Stopien pisma nazwy karty akcji: jedna wartosc bazowa dla calej talii,
    zjezdzamy tylko gdy nazwa fizycznie sie nie miesci w dwoch linijkach. */
 function actSize(n){const L=n.length; return L<=22 ? 4.6 : L<=30 ? 4 : 3.5}

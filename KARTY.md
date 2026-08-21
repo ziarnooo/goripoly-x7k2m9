@@ -32,15 +32,15 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
 | Oriental Avenue | **Dom na Jasnej** | pies za dopłatą, remont zrobią wynajmujący |
-| Vermont Avenue | **Dom Mamy na Wiejskiej 33** | lodówka zawsze pełna |
-| Connecticut Avenue | **Dom Teściów na Skwerze** | dwa przystanki od wszystkiego |
+| Vermont Avenue | **Dom Rodziny na Wiejskiej** | Wiejska 33, lodówka zawsze pełna |
+| Connecticut Avenue | **Dom Teściów na Skwerze** | wchodzisz na chwilę, wychodzisz po trzech godzinach |
 
 ### Różowe - Wrocław: dodatki lokatorskie | 2M | 1M / 2M / 4M
 
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
-| St. Charles Place | **Komórka na Porcie** | osobna księga wieczysta, w razie czego można sprzedać jako kawalerkę |
-| Virginia Avenue | **Miejsce Parkingowe na Porcie** | luksus, o którym Katowice marzą |
+| St. Charles Place | **Komórka na Porcie** | osobna księga wieczysta, w razie czego można sprzedać jako kawalerkę w centrum Wrocławia |
+| Virginia Avenue | **Miejsce Parkingowe na Porcie** | luksus, o którym mieszkańcy Katowic marzą |
 | States Avenue | **Miejsce na Rower na Porcie** | strzeżone lepiej niż mieszkanie |
 
 ### Pomarańczowe - Wrocław: Port Popowice | 2M | 1M / 3M / 5M
@@ -90,9 +90,9 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
-| Reading Railroad | **Lotnisko Alicante** | przylot 23:50, ostatni autobus 23:40 |
+| Reading Railroad | **Lotnisko Alicante** | FR 2137, przylot 23:50, ostatni autobus 23:40 |
 | Pennsylvania Railroad | **Zakorkowana A4** | a po ilu wypadkach Ty się uśmiechniesz? |
-| B. & O. Railroad | **Trasa Rowerowa na Działkę** | działka rolna pod Żywcem, na razie tylko w Otodomie |
+| B. & O. Railroad | **Ścieżka Rowerowa** | Nextbike, gravel albo MTB, nauka wciąż trwa |
 | Short Line | **Dworzec Wrocław Główny** | peron 3, pociąg opóźniony |
 
 ### Jasnozielone - Usługi niezbędne do życia | 2M | 1M / 2M
@@ -268,8 +268,9 @@ widać, czy leci coś dobrego czy przykrego, bez czytania nazwy.
 | czerwień | blokada | Dzisiaj Nie Kochanie, Podatkom Mówię NIE |
 | cegła | przypał | cały dodatek 8 kart |
 
-Czynsze zostają na kremowym tle, bo dwa kolorowe półkola w emblemacie muszą się wybijać, ale
-pasek i wzorek mają zieleń "kasa wpada" - są w tej samej rodzinie co Debt Collectory.
+Czynsze zostają poza tym systemem: kremowe tło, bo dwa kolorowe półkola w emblemacie muszą się
+wybijać, a pasek w ciemniejszym kremie, żeby nie wchodził w kolory kompletów. "Rozliczenie Roczne"
+jest w całości czarne, razem z paskiem.
 
 ## Kółko z nominałem
 
@@ -292,6 +293,9 @@ więc kartę czyta się z obu stron niezależnie od tego, jak leży na stole.
 Jedna wartość bazowa na całą talię, schodzimy tylko wtedy, gdy tekst fizycznie się nie mieści:
 
 - **nazwa karty**: 4,6 mm. Powyżej 22 znaków 4 mm, powyżej 30 znaków 3,5 mm.
+- **nazwa na jokerze**: 2,8 mm na sztywno. Pasek ma 10,5 mm, czyli miejsce na dwie linijki,
+  więc długa nazwa się łamie zamiast zjeżdżać ze stopniem pisma. Padding jest symetryczny
+  i szerszy niż kółko z nominałem, więc nazwa zostaje wyśrodkowana i nic jej nie zasłania.
 - **opis mechaniki**: 2,7 mm. Gdy opis z podpisem przekracza 120 znaków 2,5 mm, powyżej 136 - 2,3 mm.
 - **podpis**: 89% stopnia opisu, więc skaluje się razem z nim.
 - **interlinia**: 1,2 na nazwie, 1,32 na opisie i podpisie. Wiersze nie kleją się do siebie.
@@ -303,10 +307,25 @@ dziury nad dolnym paskiem.
 
 Jedna reguła na całą talię, bo to ona spina banknoty z kartami akcji i nieruchomości:
 
-- **wzorki tła: kreska 0,22 mm, krycie 18% akcentu karty.** Cztery rodziny kształtów na całą
-  talię: kratka, paski, ukosy, falka i zygzak. Żadnych kropek - kropka nigdy nie waży tyle
-  samo co kreska. Typy kart rozróżnia kształt i rozstaw, nie waga linii. Falka i zygzak jadą
-  maską SVG, bo w gradiencie CSS nie da się zrobić krzywej o stałej grubości.
+- **wzorki tła: kreska 0,22 mm, krycie 12% akcentu karty, rytm 2,6 mm.** Jeden rytm dla
+  wszystkiego, także między kratką prostą i kratką na ukos, więc odstępy wszędzie czyta się
+  jednakowo. Karty rozróżnia sam kształt, nie waga ani gęstość linii. Żadnych kropek - kropka
+  nigdy nie waży tyle samo co kreska. Falki, zygzaki i kreski przerywane jadą maską SVG, bo
+  gradient CSS nie zrobi krzywej ani przerwy o stałej grubości.
+
+  | Kształt | Karty |
+  |---|---|
+  | kratka na ukos | Monikracja |
+  | kratka prosta | Forced Deal |
+  | ukosy w lewo | Just Say No |
+  | ukosy w prawo | Double The Rent |
+  | paski poziome | Pass Go |
+  | paski pionowe | budynki |
+  | falka pozioma | Debt Collector |
+  | falka pionowa | urodziny |
+  | zygzak poziomy | Sly Deal |
+  | zygzak pionowy | przypały |
+  | kreski przerywane | czynsze |
 - **obwódka kółka z ikonką: 0,22 mm**, w akcencie rozbielonym do 45%
 - **obwódka kółka z nominałem: 0,35 mm**
 - **emblemat "CZYNSZ" i ikonki kart w drabince: 0,3 mm**
@@ -357,4 +376,4 @@ Reszta jest 1:1.
 2. Grafiki: ludek w stylu Monopoly z twarzą Goraja (Dominik podeśle materiał). Miejsca na kartach zarezerwowane.
 3. Rewers talii.
 4. Karty zasad: zostały 3 zamiast 4, czyli talia ma 109 kart. Decyzja zapadła, zostaje 109.
-5. Działka rolna w Żywcu: na razie żyje jako podpis pod "Trasa Rowerowa na Działkę" i "Przeglądanie Otodomu na Kibelku". Jak ma być osobną nieruchomością, to musi kogoś wypchnąć z talii.
+5. Działka rolna w Żywcu: na razie żyje jako podpis pod "Ścieżka Rowerowa" i "Przeglądanie Otodomu na Kibelku". Jak ma być osobną nieruchomością, to musi kogoś wypchnąć z talii.

@@ -141,14 +141,14 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .card--wild2 .half{position:absolute;left:0;right:0;height:40mm;overflow:hidden}
 .card--wild2 .half--a{top:0}
 .card--wild2 .half--b{bottom:0;transform:rotate(180deg)}
-/* nazwa uciekaja od kolka z nominalem, ktore siedzi okrakiem na dolnej krawedzi paska */
-.card--wild2 .half .band{height:8mm;padding:0 2mm 0 9mm}
-.card--wild2 .half .band h2{font-size:3mm}
-.card--wild2 .half .band h2.sm{font-size:2.55mm}
-.card--wild2 .half .band h2.xs{font-size:2.15mm;line-height:1.05}
+/* Pasek ma 10,5 mm, czyli miejsce na dwie linijki. Padding jest symetryczny i szerszy
+   niz kolko z nominalem, wiec nazwa zostaje wysrodkowana i nic jej nie zaslania. */
+.card--wild2 .half .band{height:10.5mm;padding:0 9mm}
+.card--wild2 .half .band h2{font-size:2.8mm;line-height:1.12}
+.card--wild2 .half .band h2.xs{font-size:2.4mm}
 /* joker: to samo kolko co wszedzie, okrakiem na dolnej krawedzi paska */
-.card--wild2 .half .badge{left:2.2mm;top:calc(8mm - var(--badge-d)/2)}
-.card--wild2 .body{top:9.5mm}
+.card--wild2 .half .badge{left:2.2mm;top:calc(10.5mm - var(--badge-d)/2)}
+.card--wild2 .body{top:12mm}
 .card--wild2 .rent{--num:4.2mm}
 .wild-divider{
   position:absolute;left:0;right:0;top:40mm;height:0;
@@ -215,43 +215,46 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
    przy bialych nieruchomosciach i kremowych czynszach */
 .card--action .key{background:color-mix(in srgb, var(--c) 82%, #fff);overflow:hidden}
 
-/* Wzorek tła. Cztery rodziny kształtów na całą talię: kratka, paski, ukosy, falka
-   i zygzak - żadnych kropek, bo kropka nigdy nie waży tyle samo co kreska.
-   Kreska ma wszędzie 0,22 mm i 18% krycia akcentu, więc tło czyta się jako jednolite,
-   a wzorek daje tylko fakturę. Typy kart rozróżnia kształt i rozstaw, nie waga linii. */
+/* Wzorek tła. Jedna kreska (0,22 mm), jedno krycie (12% akcentu) i jeden rytm
+   (2,6 mm) na całą talię - również między kratką prostą i kratką na ukos, więc
+   odstępy wszędzie czyta się jednakowo. Karty rozróżnia sam kształt, nie waga
+   ani gęstość linii. Żadnych kropek: kropka nigdy nie waży tyle samo co kreska.
+
+   kratka na ukos - zabierasz komplet      kratka prosta  - wymiana
+   ukosy w lewo   - blokada                ukosy w prawo  - czynsz w gore
+   paski poziome  - dobierasz karty        paski pionowe  - budynek
+   falka pozioma  - kasa wpada             falka pionowa  - urodziny
+   zygzak poziomy - podkradasz             zygzak pionowy - przypal
+   kreski przerywane - czynsz
+*/
 .pat{position:absolute;inset:0;z-index:1;pointer-events:none;
-  --l:color-mix(in srgb, var(--a) 18%, transparent)}
+  --l:color-mix(in srgb, var(--a) 12%, transparent);
+  --p:2.6mm}
 
-/* falka i zygzak jada maska, bo w gradiencie CSS nie da sie zrobic krzywej
-   o stalej grubosci - maskujemy plaszczyzne w kolorze akcentu */
-.pat--wave,.pat--zig{background-color:var(--l);
-  -webkit-mask-repeat:repeat;mask-repeat:repeat}
-.pat--wave{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M0 4Q3 0 6 4T12 4' fill='none' stroke='%23fff' stroke-width='.9'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M0 4Q3 0 6 4T12 4' fill='none' stroke='%23fff' stroke-width='.9'/%3E%3C/svg%3E");
-  -webkit-mask-size:3mm 2mm;mask-size:3mm 2mm}
-.pat--zig{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M0 6 3 2 6 6 9 2 12 6' fill='none' stroke='%23fff' stroke-width='.9'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M0 6 3 2 6 6 9 2 12 6' fill='none' stroke='%23fff' stroke-width='.9'/%3E%3C/svg%3E");
-  -webkit-mask-size:3.2mm 2.1mm;mask-size:3.2mm 2.1mm}
+/* siatki i paski jada gradientem */
+.pat--breaker{background-image:
+  repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm var(--p)),
+  repeating-linear-gradient(-45deg,var(--l) 0 .22mm,transparent .22mm var(--p))}
+.pat--forced{background-image:
+  repeating-linear-gradient(0deg,var(--l) 0 .22mm,transparent .22mm var(--p)),
+  repeating-linear-gradient(90deg,var(--l) 0 .22mm,transparent .22mm var(--p))}
+.pat--jsn{background-image:repeating-linear-gradient(135deg,var(--l) 0 .22mm,transparent .22mm var(--p))}
+.pat--dbl{background-image:repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm var(--p))}
+.pat--pass{background-image:repeating-linear-gradient(0deg,var(--l) 0 .22mm,transparent .22mm var(--p))}
+.pat--build{background-image:repeating-linear-gradient(90deg,var(--l) 0 .22mm,transparent .22mm var(--p))}
 
-.pat--breaker{background-image:                                    /* kratka na ukos */
-  repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm 2.2mm),
-  repeating-linear-gradient(-45deg,var(--l) 0 .22mm,transparent .22mm 2.2mm)}
-.pat--jsn{background-image:                                        /* ukosy w lewo */
-  repeating-linear-gradient(135deg,var(--l) 0 .22mm,transparent .22mm 2.6mm)}
-.pat--forced{background-image:                                     /* kratka szeroka */
-  repeating-linear-gradient(0deg,var(--l) 0 .22mm,transparent .22mm 3.4mm),
-  repeating-linear-gradient(90deg,var(--l) 0 .22mm,transparent .22mm 3.4mm)}
-.pat--debt{background-image:                                       /* kratka drobna */
-  repeating-linear-gradient(0deg,var(--l) 0 .22mm,transparent .22mm 1.8mm),
-  repeating-linear-gradient(90deg,var(--l) 0 .22mm,transparent .22mm 1.8mm)}
-.pat--dbl{background-image:                                        /* ukosy w prawo */
-  repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm 3.4mm)}
-.pat--pass{background-image:                                       /* paski poziome */
-  repeating-linear-gradient(0deg,var(--l) 0 .22mm,transparent .22mm 3mm)}
-.pat--build{background-image:                                      /* paski pionowe */
-  repeating-linear-gradient(90deg,var(--l) 0 .22mm,transparent .22mm 3mm)}
-.pat--oops{background-image:                                       /* ukosy geste */
-  repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm 1.8mm)}
-.pat--rent{background-image:
-  repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm 2.8mm)}
+/* falki, zygzaki i kreski przerywane jada maska, bo gradient CSS nie zrobi
+   krzywej ani przerwy o stalej grubosci */
+.pat--debt,.pat--sly,.pat--bday,.pat--oops,.pat--rent{
+  background-color:var(--l);
+  -webkit-mask-repeat:repeat;mask-repeat:repeat;
+  -webkit-mask-size:var(--p) var(--p);mask-size:var(--p) var(--p);
+}
+.pat--debt{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M0 6Q3 1.5 6 6T12 6' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M0 6Q3 1.5 6 6T12 6' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E")}
+.pat--bday{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 0Q1.5 3 6 6T6 12' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M6 0Q1.5 3 6 6T6 12' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E")}
+.pat--sly{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M0 9 3 3 6 9 9 3 12 9' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M0 9 3 3 6 9 9 3 12 9' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E")}
+.pat--oops{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M9 0 3 3 9 6 3 9 9 12' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M9 0 3 3 9 6 3 9 9 12' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E")}
+.pat--rent{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M0 3H5M7 3H12M0 9H5M7 9H12' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M0 3H5M7 3H12M0 9H5M7 9H12' fill='none' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E")}
 
 /* pasek z typem karty - jedyne miejsce z mocnym kolorem, biały tekst na akcencie */
 .card--action .rent-head{
@@ -292,7 +295,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   color:rgba(17,17,17,.72);margin-top:1.2mm}
 
 /* ---------------- karty czynszu ---------------- */
-.card--rent{--a:#16794E}
+.card--rent{--a:#5A5245}
 .card--rent .key{background:#F8F1E2;overflow:hidden}
 .card--rent .rent-head{
   top:0;height:6.4mm;background:var(--a);color:#fff;
@@ -300,7 +303,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   display:flex;align-items:center;justify-content:center;
   font-size:2.5mm;letter-spacing:.12em;
 }
-.card--rent.all{--a:#16794E}
+.card--rent.all{--a:#111111}
 .card--rent.all .key{background:#111111;color:#fff}
 .rent-head{
   position:absolute;left:0;right:0;top:2.6mm;text-align:center;
