@@ -404,8 +404,8 @@ function wildAllCard(){
         <p>${esc(WILD_ALL.t)}</p>
         <div class="mascot"><img src="bartek.png" alt="Goraj"></div>
       </div>
-      ${badge(0)}
     </div>
+    ${badge(0,'badge--action')}
   </article>`;
 }
 
@@ -476,15 +476,15 @@ function billFrame(v){
 }
 
 function moneyCard([v,q,bg,panel,circle]){
-  const corner = pos => badge(v, 'bill-badge '+pos);
+  const corner = cls => badge(v, 'bill-badge '+cls);
   return `<article class="card card--money" data-t="money"
     style="--bg:${bg};--panel:${panel};--circle:${circle};--ink:${MONEY_INK}">
     <div class="key">
       ${billFrame(v)}
       <div class="bill-panel"></div>
       <div class="bill-circle"><span class="bill-val">${amt(v)}</span></div>
-      ${corner('tl')}${corner('br')}
     </div>
+    ${corner('badge--action')}${corner('badge--money-b')}
   </article>`;
 }
 

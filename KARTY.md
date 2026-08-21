@@ -289,13 +289,18 @@ więc kartę czyta się z obu stron niezależnie od tego, jak leży na stole.
 
 ## Grubość kreski
 
-Jedna reguła na całą talię, bo to ona spina banknoty z kartami akcji:
+Jedna reguła na całą talię, bo to ona spina banknoty z kartami akcji i nieruchomości:
 
-- kreski i kropki we wzorkach tła: 0,25 mm (kropki 0,3 mm promienia). Typy kart rozróżnia kąt
-  i rozstaw, nie waga linii. Wzorek bierze kolor akcentu swojej karty, więc czerwona karta ma
-  czerwone paski, a zielona zielone.
-- obwódki kółek (ikonka na akcji, nominał na banknocie): 0,3 mm
-- keyline karty: 0,45 mm, jedyna grubsza linia w projekcie
+- **wzorki tła: kreska 0,22 mm, kropka 0,26 mm średnicy** - dokładnie tyle samo tuszu, więc
+  kropki nie ważą więcej niż paski. Krycie 18% akcentu karty, żeby tło czytało się jako
+  jednolite i wzorek dawał tylko fakturę. Typy kart rozróżnia kąt i rozstaw, nie waga linii.
+- **obwódka kółka z ikonką: 0,22 mm**, w akcencie rozbielonym do 45%
+- **obwódka kółka z nominałem: 0,35 mm**
+- **emblemat "CZYNSZ" i ikonki kart w drabince: 0,3 mm**
+- **keyline karty: 0,45 mm**, jedyna grubsza linia w projekcie
+
+Kwoty w drabince czynszu i cyfry na ikonkach kart idą złamaną czernią `#3A3A38`, nie pełną.
+Pełna czerń przy tym stopniu pisma waliła w oczy i przykrywała nazwę karty.
 
 ## Ilustracje
 

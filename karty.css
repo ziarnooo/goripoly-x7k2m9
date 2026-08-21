@@ -15,6 +15,7 @@
   --col-right:72%;
 
   --ink:#111111;
+  --soft:#3A3A38;      /* zlamana czern na kwotach, zeby nie waly w oczy */
   --disp:'Poppins','Montserrat','Archivo',system-ui,sans-serif;
 
   --brown:#8B4A2B; --lblue:#AFDDF2; --pink:#D5286E; --orange:#F08A24;
@@ -86,7 +87,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 /* ---------------- badge nominału ---------------- */
 .badge{
   position:absolute;width:var(--badge-d);height:var(--badge-d);border-radius:50%;
-  background:#fff;border:.5mm solid var(--ink);z-index:6;
+  background:#fff;border:.35mm solid var(--ink);z-index:6;
   display:flex;align-items:center;justify-content:center;color:var(--ink);
 }
 .badge--prop{left:calc(6.5mm - var(--badge-d)/2);top:calc(var(--band-h) - var(--badge-d)/2)}
@@ -109,18 +110,19 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .body{position:absolute;left:0;right:0;top:25.5mm}
 .rent-list{list-style:none}
 .rent-row{position:relative;height:var(--pitch)}
-.rent{position:absolute;left:var(--col-right);top:50%;transform:translate(-50%,-50%);--num:6.2mm}
+.rent{position:absolute;left:var(--col-right);top:50%;transform:translate(-50%,-50%);
+  --num:6.2mm;color:var(--soft)}
 
 .fan{position:absolute;left:var(--col-left);top:50%;transform:translate(-50%,-50%)}
 .fan__card{
   position:absolute;left:0;bottom:0;background:#fff;
-  border:var(--stroke) solid var(--ink);border-radius:.8mm;overflow:hidden;
+  border:.3mm solid var(--soft);border-radius:.8mm;overflow:hidden;
   transform-origin:bottom right;
   display:flex;flex-direction:column;align-items:center;
 }
 .fan__bar{height:var(--bar);width:100%;background:var(--set);flex:none}
 .fan__num{flex:1;display:flex;align-items:center;justify-content:center;
-  font-size:var(--num);font-weight:700;color:var(--ink)}
+  font-size:var(--num);font-weight:700;color:var(--soft)}
 
 .complete-set{
   position:relative;left:var(--col-left);transform:translateX(-50%);width:22mm;
@@ -205,36 +207,38 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 /* Nominał w dwóch rogach, jak na kartach akcji. Kółko to ten sam .badge co wszędzie,
    różni się tylko wypełnieniem - bierze jaśniejszy odcień nominału. Oba czytane poziomo. */
 .bill-badge{background:var(--circle)}
-.bill-badge.tl{left:2.9mm;top:2.9mm}
-.bill-badge.br{right:2.9mm;bottom:2.9mm}
+.badge--money-b{right:7.6mm;bottom:7.6mm}
 
 /* ---------------- karty akcji ---------------- */
 .card--action .key{background:var(--c);overflow:hidden}
 
-/* Wzorek tła - jedna grubość kreski na całą talię (0,25 mm, kropki 0,3 mm).
-   Typy rozróżnia kąt i rozstaw, nie waga linii, więc nic nie wybija się na kartach. */
-.pat{position:absolute;inset:0;z-index:1;pointer-events:none}
+/* Wzorek tła. Jedna grubość na całą talię: kreska 0,22 mm, kropka 0,26 mm średnicy,
+   czyli dokładnie tyle samo tuszu. Krycie 18% akcentu, żeby tło czytało się jako
+   jednolite, a wzorek dawał tylko fakturę i nie ciągnął wzroku od treści.
+   Typy kart rozróżnia kąt i rozstaw, nie waga linii. */
+.pat{position:absolute;inset:0;z-index:1;pointer-events:none;--l:color-mix(in srgb, var(--a) 18%, transparent)}
 .pat--breaker{background-image:
-  repeating-linear-gradient(45deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 2.2mm),
-  repeating-linear-gradient(-45deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 2.2mm)}
-.pat--jsn{background-image:repeating-linear-gradient(135deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 2.6mm)}
-.pat--sly{background-image:radial-gradient(circle at 50% 50%,color-mix(in srgb, var(--a) 38%, transparent) 0 .3mm,transparent .32mm);
+  repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm 2.2mm),
+  repeating-linear-gradient(-45deg,var(--l) 0 .22mm,transparent .22mm 2.2mm)}
+.pat--jsn{background-image:repeating-linear-gradient(135deg,var(--l) 0 .22mm,transparent .22mm 2.6mm)}
+.pat--sly{background-image:radial-gradient(circle at 50% 50%,var(--l) 0 .13mm,transparent .15mm);
   background-size:2.6mm 2.6mm}
 .pat--forced{background-image:
-  repeating-linear-gradient(0deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 3.4mm),
-  repeating-linear-gradient(90deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 3.4mm)}
+  repeating-linear-gradient(0deg,var(--l) 0 .22mm,transparent .22mm 3.4mm),
+  repeating-linear-gradient(90deg,var(--l) 0 .22mm,transparent .22mm 3.4mm)}
 .pat--debt{background-image:
-  repeating-linear-gradient(0deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 1.8mm),
-  repeating-linear-gradient(90deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 1.8mm)}
+  repeating-linear-gradient(0deg,var(--l) 0 .22mm,transparent .22mm 1.8mm),
+  repeating-linear-gradient(90deg,var(--l) 0 .22mm,transparent .22mm 1.8mm)}
 .pat--bday{background-image:
-  radial-gradient(circle at 25% 25%,color-mix(in srgb, var(--a) 38%, transparent) 0 .3mm,transparent .32mm),
-  radial-gradient(circle at 75% 68%,color-mix(in srgb, var(--a) 38%, transparent) 0 .3mm,transparent .32mm);
+  radial-gradient(circle at 25% 25%,var(--l) 0 .13mm,transparent .15mm),
+  radial-gradient(circle at 75% 68%,var(--l) 0 .13mm,transparent .15mm);
   background-size:3.4mm 3.4mm}
-.pat--dbl{background-image:repeating-linear-gradient(45deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 3.4mm)}
-.pat--pass{background-image:repeating-linear-gradient(0deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 3mm)}
-.pat--build{background-image:radial-gradient(circle at 50% 50%,color-mix(in srgb, var(--a) 38%, transparent) 0 .3mm,transparent .32mm);
+.pat--dbl{background-image:repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm 3.4mm)}
+.pat--pass{background-image:repeating-linear-gradient(0deg,var(--l) 0 .22mm,transparent .22mm 3mm)}
+.pat--build{background-image:radial-gradient(circle at 50% 50%,var(--l) 0 .13mm,transparent .15mm);
   background-size:3.6mm 3.6mm}
-.pat--oops{background-image:repeating-linear-gradient(45deg,color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 1.8mm)}
+.pat--oops{background-image:repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm 1.8mm)}
+.pat--rent{background-image:repeating-linear-gradient(45deg,var(--l) 0 .22mm,transparent .22mm 2.8mm)}
 
 /* pasek z typem karty - jedyne miejsce z mocnym kolorem, biały tekst na akcencie */
 .card--action .rent-head{
@@ -251,7 +255,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   position:absolute;left:50%;top:11.4mm;transform:translateX(-50%);
   width:27mm;height:27mm;border-radius:50%;
   background:color-mix(in srgb, var(--c) 40%, #fff);
-  border:.3mm solid color-mix(in srgb, var(--a) 40%, #fff);
+  border:.22mm solid color-mix(in srgb, var(--a) 45%, #fff);
   color:var(--a);
   display:grid;place-items:center;z-index:3;
 }
@@ -282,8 +286,6 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   display:flex;align-items:center;justify-content:center;
   font-size:2.5mm;letter-spacing:.12em;
 }
-.pat--rent{background-image:repeating-linear-gradient(45deg,
-  color-mix(in srgb, var(--a) 30%, transparent) 0 .25mm,transparent .25mm 2.8mm)}
 .card--rent.all{--a:#16794E}
 .card--rent.all .key{background:#111111;color:#fff}
 .rent-head{
@@ -298,13 +300,13 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .badge--rent-b{right:7.6mm;bottom:7.6mm;transform:rotate(180deg)}
 .rent-emblem{
   position:absolute;left:50%;top:18mm;transform:translateX(-50%);
-  width:32mm;height:32mm;border-radius:50%;border:.7mm solid var(--ink);
+  width:32mm;height:32mm;border-radius:50%;border:.35mm solid var(--ink);
   overflow:hidden;z-index:3;display:flex;
 }
 .rent-emblem .h{flex:1}
 .rent-emblem .label{
   position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:9mm;background:#fff;
-  border-top:.4mm solid var(--ink);border-bottom:.4mm solid var(--ink);
+  border-top:.3mm solid var(--ink);border-bottom:.3mm solid var(--ink);
   display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink);
 }
 .rent-emblem .label b{font-size:5.4mm;font-weight:900;letter-spacing:-.01em;line-height:1}
