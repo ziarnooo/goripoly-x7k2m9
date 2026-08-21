@@ -215,29 +215,40 @@ Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się prze
 
 ## Ikonki
 
-Ikonki na kartach akcji i przypałów to **Font Awesome Free 6.7.2, styl Solid** (licencja CC BY 4.0,
-fontawesome.com). Nie rysujemy ich sami: jedna rodzina na całą talię trzyma spójne proporcje i
-grubości z definicji. Siedzą jako `<symbol>` w sprite na górze `karty.html`, każdy z komentarzem
-`fa-<nazwa>`, i są równane wysokością (13,5 mm), nie szerokością - viewBoxy w FA mają różne
-szerokości i równanie po szerokości spłaszczałoby część ikon.
+Ikonki na kartach akcji i przypałów to **Phosphor Icons w stylu Duotone** (licencja MIT,
+phosphoricons.com). Nie rysujemy ich sami: jedna rodzina na całą talię trzyma spójne proporcje
+i grubości z definicji. Siedzą jako `<symbol>` w sprite na górze `karty.html`, każdy z komentarzem
+`ph-<nazwa>`, wszystkie w viewBoxie 256 x 256, więc skalują się identycznie.
+
+Duotone to dwie ścieżki: podkład na 20% krycia i rysunek na 100%, oba na `currentColor`. Kółko
+ustawia `color: var(--a)`, czyli akcent danego typu karty, więc ikonka bierze kolor swojej karty
+i sama się w nią wpisuje. Zmiana koloru ikonki to zmiana akcentu w `PALETTE`, nic więcej.
 
 | Karta | Ikonka |
 |---|---|
-| Monikracja (Deal Breaker) | `layer-group` |
-| Dzisiaj Nie, Kochanie / Podatkom Mówię NIE | `ban` |
-| Otodom / Beata Ma Klucze (Sly Deal) | `user-secret` |
-| Wspólna Decyzja / Rotacja Leżaków (Forced Deal) | `right-left` |
-| Booking Się Pomylił / Kieliszki / Klucze | `hand-holding-dollar` |
-| 6 Października | `cake-candles` |
-| Sezon w Los Alcázares | `angles-up` |
+| Monikracja (Deal Breaker) | `cards` |
+| Dzisiaj Nie, Kochanie / Podatkom Mówię NIE | `prohibit` |
+| Otodom / Beata Ma Klucze (Sly Deal) | `detective` |
+| Wspólna Decyzja / Rotacja Leżaków (Forced Deal) | `arrows-left-right` |
+| Booking Się Pomylił / Kieliszki / Klucze | `hand-coins` |
+| 6 Października | `cake` |
+| Sezon w Los Alcázares | `arrow-fat-lines-up` |
 | Pass Go (Ślub, GPW, Ikea, Pączki, Wolne Miejsce) | `flag-checkered` |
 | Jednostka Klimatyzacji | `house` |
-| Booking z Oceną 9.4 / Superhost | `hotel` |
-| Karty przypału | `triangle-exclamation` |
+| Booking z Oceną 9.4 / Superhost | `buildings` |
+| Karty przypału | `warning` |
 
-Podmiana na inną rodzinę to podmiana tego jednego bloku w `karty.html`. Uwaga: Duotone, Thumbprint,
-Whiteboard, Etch i Chisel to rodziny z **Font Awesome Pro** - żeby ich użyć, trzeba licencji i kitu.
-Solid jest darmowy i drukuje się najlepiej, bo to pełne kształty bez cienkich włosowych linii.
+Phosphor ma jeszcze wagi Thin, Light, Regular, Bold i Fill - podmiana wagi to podmiana tego jednego
+bloku w `karty.html` (pliki leżą w repo `phosphor-icons/core`, katalog `assets/<waga>`).
+
+## Grubość kreski
+
+Jedna reguła na całą talię, bo to ona spina banknoty z kartami akcji:
+
+- kreski i kropki we wzorkach tła: 0,25 mm (kropki 0,3 mm promienia). Typy kart rozróżnia kąt
+  i rozstaw, nie waga linii.
+- obwódki kółek (ikonka na akcji, nominał na banknocie): 0,3 mm
+- keyline karty: 0,45 mm, jedyna grubsza linia w projekcie
 
 ## Ilustracje
 

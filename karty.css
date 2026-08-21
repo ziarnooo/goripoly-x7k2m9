@@ -202,7 +202,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .bill-circle{
   position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
   width:32mm;height:32mm;border-radius:50%;z-index:4;
-  background:var(--circle);border:.5mm solid var(--ink);
+  background:var(--circle);border:.3mm solid var(--ink);
   display:grid;place-items:center;
 }
 .bill-val{--num:11mm;color:var(--ink)}
@@ -210,7 +210,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 /* nominał w każdym z czterech rogów, wszystkie czytane poziomo */
 .bill-badge{
   position:absolute;width:8.4mm;height:8.4mm;border-radius:50%;z-index:5;
-  border:.45mm solid var(--ink);background:var(--bg);
+  border:.3mm solid var(--ink);background:var(--bg);
   display:grid;place-items:center;--num:2.9mm;color:var(--ink);
 }
 .bill-badge.tl{left:3.3mm;top:3.3mm}
@@ -218,42 +218,33 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 .bill-badge.bl{left:3.3mm;bottom:3.3mm}
 .bill-badge.br{right:3.3mm;bottom:3.3mm}
 
-.bill-side{
-  position:absolute;right:1.9mm;top:50%;transform:translateY(-50%);z-index:5;
-  writing-mode:vertical-rl;
-  font-size:1.7mm;font-weight:700;text-transform:uppercase;letter-spacing:.2em;
-  color:var(--ink);opacity:.6;
-}
-
 /* ---------------- karty akcji ---------------- */
 .card--action .key{background:var(--c);overflow:hidden}
 
-/* wzorek tła - inny dla każdego typu akcji, delikatny, żeby nie zjadał tekstu */
+/* Wzorek tła - jedna grubość kreski na całą talię (0,25 mm, kropki 0,3 mm).
+   Typy rozróżnia kąt i rozstaw, nie waga linii, więc nic nie wybija się na kartach. */
 .pat{position:absolute;inset:0;z-index:1;pointer-events:none}
 .pat--breaker{background-image:
-  repeating-linear-gradient(45deg,rgba(0,0,0,.10) 0 .3mm,transparent .3mm 2.2mm),
-  repeating-linear-gradient(-45deg,rgba(0,0,0,.10) 0 .3mm,transparent .3mm 2.2mm)}
-.pat--jsn{background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.10) 0 .5mm,transparent .5mm 2.6mm)}
-.pat--sly{background-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.13) 0 .38mm,transparent .4mm);
+  repeating-linear-gradient(45deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 2.2mm),
+  repeating-linear-gradient(-45deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 2.2mm)}
+.pat--jsn{background-image:repeating-linear-gradient(135deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 2.6mm)}
+.pat--sly{background-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.14) 0 .3mm,transparent .32mm);
   background-size:2.6mm 2.6mm}
 .pat--forced{background-image:
-  linear-gradient(135deg,rgba(0,0,0,.09) 25%,transparent 25%),
-  linear-gradient(225deg,rgba(0,0,0,.09) 25%,transparent 25%),
-  linear-gradient(45deg,rgba(0,0,0,.09) 25%,transparent 25%),
-  linear-gradient(315deg,rgba(0,0,0,.09) 25%,transparent 25%);
-  background-position:1.6mm 0,1.6mm 0,0 0,0 0;background-size:3.2mm 3.2mm}
+  repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 3.4mm),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 3.4mm)}
 .pat--debt{background-image:
-  repeating-linear-gradient(0deg,rgba(0,0,0,.09) 0 .25mm,transparent .25mm 2.6mm),
-  repeating-linear-gradient(90deg,rgba(0,0,0,.09) 0 .25mm,transparent .25mm 2.6mm)}
+  repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 1.8mm),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 1.8mm)}
 .pat--bday{background-image:
-  radial-gradient(circle at 25% 25%,rgba(0,0,0,.13) 0 .35mm,transparent .37mm),
-  radial-gradient(circle at 75% 65%,rgba(255,255,255,.55) 0 .35mm,transparent .37mm);
+  radial-gradient(circle at 25% 25%,rgba(0,0,0,.14) 0 .3mm,transparent .32mm),
+  radial-gradient(circle at 75% 68%,rgba(0,0,0,.14) 0 .3mm,transparent .32mm);
   background-size:3.4mm 3.4mm}
-.pat--dbl{background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.09) 0 .9mm,transparent .9mm 3mm)}
-.pat--pass{background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.5) 0 1.4mm,transparent 1.4mm 4.2mm)}
-.pat--build{background-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.10) 0 .55mm,transparent .57mm);
+.pat--dbl{background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 3.4mm)}
+.pat--pass{background-image:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 3mm)}
+.pat--build{background-image:radial-gradient(circle at 50% 50%,rgba(0,0,0,.14) 0 .3mm,transparent .32mm);
   background-size:3.6mm 3.6mm}
-.pat--oops{background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.13) 0 1.6mm,transparent 1.6mm 4.4mm)}
+.pat--oops{background-image:repeating-linear-gradient(45deg,rgba(0,0,0,.12) 0 .25mm,transparent .25mm 1.8mm)}
 
 /* pasek z typem karty - jedyne miejsce z mocnym kolorem, biały tekst na akcencie */
 .card--action .rent-head{
@@ -263,14 +254,16 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   font-size:2.5mm;letter-spacing:.12em;
 }
 .badge--action{left:4mm;top:2.4mm}   /* siedzi na pasku, 1 mm od linii cięcia */
+/* kółko trzyma się grubości kreski z banknotów: jaśniejszy krążek, cienka obwódka */
 .emblem{
   position:absolute;left:50%;top:12mm;transform:translateX(-50%);
-  width:27mm;height:27mm;border-radius:50%;border:.7mm solid var(--ink);
-  background:#fff;box-shadow:inset 0 0 0 .55mm var(--a);
+  width:27mm;height:27mm;border-radius:50%;
+  background:color-mix(in srgb, var(--c) 40%, #fff);
+  border:.3mm solid color-mix(in srgb, var(--a) 40%, #fff);
+  color:var(--a);
   display:grid;place-items:center;z-index:3;
 }
-/* ikonki FA maja rozne szerokosci viewBoxa - rownamy je wysokoscia, nie szerokoscia */
-.emblem svg{height:13.5mm;width:18mm;display:block;fill:var(--ink)}
+.emblem svg{width:15mm;height:15mm;display:block;fill:currentColor}
 .emblem img{width:21mm;height:21mm;object-fit:contain;display:block}
 .act-name{
   text-align:center;font-size:var(--nsize,5mm);font-weight:900;text-transform:uppercase;

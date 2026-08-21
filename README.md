@@ -18,8 +18,9 @@ Personalizowana wersja Monopoly Deal na wieczór kawalerski Bartka Goraja.
 - `goripoly-brief.md` - brief projektowy (ton, kolory, wymogi druku)
 - `archiwum/` - pierwsza wersja porownania oryginal vs GORIpoly
 
-Ikonki na kartach akcji to Font Awesome Free 6.7.2 (styl Solid, CC BY 4.0, fontawesome.com),
-wklejone jako `<symbol>` w `karty.html`. Zestawienie karta -> ikonka siedzi w `KARTY.md`.
+Ikonki na kartach akcji to Phosphor Icons w stylu Duotone (MIT, phosphoricons.com), wklejone
+jako `<symbol>` w `karty.html`. Ikonka bierze akcent koloru swojej karty. Zestawienie
+karta -> ikonka i reguly grubosci kreski siedza w `KARTY.md`.
 
 ## Jak dorzucic swoje uwagi
 
