@@ -169,19 +169,32 @@ const MONEY = [
 ];
 const MONEY_INK = '#1A1A1A';
 
-/* Paleta kart akcji: [tło pastelowe, akcent]. Tło zawsze jasne, żeby czarny tekst
-   był czytelny; akcent siedzi na pasku nagłówka, obwódce ikonki i we wzorku tła. */
+/* Paleta kart akcji: [tło pastelowe, akcent]. Kolor mówi, co karta robi z majątkiem,
+   nie jak się nazywa - dzięki temu widać z drugiego końca stołu, czy leci coś dobrego
+   czy przykrego. Tło zawsze jasne, żeby czarny tekst był czytelny.
+
+   fiolet   - zabierasz komplet (najmocniejsza karta w talii)
+   turkus   - podkradasz jedną nieruchomość
+   zieleń   - kasa wpada
+   limonka  - czynsz w górę
+   szałwia  - budynek podnosi czynsz
+   błękit   - dobierasz karty
+   żółć     - wymiana, nikt nie zyskuje ani nie traci
+   róż      - wszyscy dorzucają na urodziny
+   czerwień - blokada
+   cegła    - przypał, tracisz turę albo płacisz do banku
+*/
 const PALETTE = {
   breaker:['#D9C7F2','#5B2E91'],
-  jsn    :['#A9E5DF','#0A7A72'],
-  sly    :['#F8C6DA','#B82E6B'],
-  forced :['#FBDCA4','#B9720B'],
-  debt   :['#C4D3F5','#2F4C9B'],
-  bday   :['#F2BCE8','#95208A'],
+  sly    :['#A9E5DF','#0A7A72'],
+  debt   :['#A9E2C4','#16794E'],
   dbl    :['#DAEBA6','#5A8A18'],
-  pass   :['#FBBDAE','#BF3524'],
   build  :['#C2E7AC','#2C7A34'],
-  oops   :['#EFA9A4','#9E1B27']
+  pass   :['#BBD8F5','#2465A8'],
+  forced :['#FBDCA4','#B9720B'],
+  bday   :['#F2BCE8','#95208A'],
+  jsn    :['#F9BCB6','#C62828'],
+  oops   :['#E89A94','#8E1B22']
 };
 
 /* karty akcji - kolor i piktogram wg typu oryginału */
@@ -469,7 +482,6 @@ function moneyCard([v,q,bg,panel,circle]){
     <div class="key">
       ${billFrame(v)}
       <div class="bill-panel"></div>
-      <img class="bill-figure" src="bartek.png" alt="">
       <div class="bill-circle"><span class="bill-val">${amt(v)}</span></div>
       ${corner('tl')}${corner('br')}
     </div>

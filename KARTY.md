@@ -176,8 +176,8 @@ Anatomia banknotu (przełożona na format talii, czyli pionowo 56 x 87 mm): ozdo
 pasmo guilloche rysowane wektorowo w SVG (nie gradientem CSS - gradient rozłazi się przy 300 DPI),
 panel wewnętrzny, okrąg centralny z nominałem, cztery odznaki narożne z kreską przechodzącą przez
 środek i wychodzącą poza okrąg, pionowy napis "Bank rodziny Goraj" przy prawej krawędzi.
-Goraj siedzi jako portret nad okręgiem: kapelusz i twarz wystają nad krawędź, tors chowa się za
-okręgiem, więc nigdzie nie widać twardego cięcia obrazka.
+Bez Goraja - banknot zostaje czysty, jak klasyczny nominał. Maskotka pracuje na jokerze i w
+nagłówkach stron.
 
 Znak nominału to litera M z dwiema poziomymi belkami (SVG `#m-glyph`) plus cyfra - jeden symbol
 używany na wszystkich typach kart.
@@ -249,6 +249,27 @@ klikasz ikonkę, wybierasz wagę Duotone. Nazwę z katalogu wystarczy podać - p
 
 Phosphor ma jeszcze wagi Thin, Light, Regular, Bold i Fill - podmiana wagi to podmiana tego jednego
 bloku w `karty.html` (pliki leżą w repo `phosphor-icons/core`, katalog `assets/<waga>`).
+
+## Kolory kart akcji
+
+Kolor mówi, **co karta robi z majątkiem**, nie jak się nazywa. Dzięki temu z drugiego końca stołu
+widać, czy leci coś dobrego czy przykrego, bez czytania nazwy.
+
+| Kolor | Znaczenie | Karty |
+|---|---|---|
+| fiolet | zabierasz cały komplet | Monikracja |
+| turkus | podkradasz jedną nieruchomość | Otodom, Beata Ma Klucze |
+| zieleń | kasa wpada | Booking Się Pomylił, Kieliszki, Klucze, wszystkie czynsze |
+| limonka | czynsz w górę | Sezon w Los Alcázares |
+| szałwia | budynek podnosi czynsz | Jednostka Klimatyzacji, Booking 9.4, Superhost |
+| błękit | dobierasz karty | Ślub, GPW, Ikea, Pączki, Wolne Miejsce |
+| żółć | wymiana, nikt nie zyskuje ani nie traci | Wspólna Decyzja, Rotacja Leżaków |
+| róż | wszyscy dorzucają | 6 Października |
+| czerwień | blokada | Dzisiaj Nie Kochanie, Podatkom Mówię NIE |
+| cegła | przypał | cały dodatek 8 kart |
+
+Czynsze zostają na kremowym tle, bo dwa kolorowe półkola w emblemacie muszą się wybijać, ale
+pasek i wzorek mają zieleń "kasa wpada" - są w tej samej rodzinie co Debt Collectory.
 
 ## Kółko z nominałem
 
