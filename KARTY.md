@@ -146,11 +146,11 @@ Dwustronne, kolory podzielone na pół, w turze można obrócić.
 | Forced Deal | 2 | 3M | **Wspólna Decyzja** | wszyscy po równo niezadowoleni |
 | Forced Deal | 1 | 3M | **Rotacja Leżaków** | ręczniki leżały od 6:40 |
 | Debt Collector | 1 | 3M | **Booking Się Pomylił** | przelew przyszedł dwa razy |
-| Debt Collector | 1 | 3M | **Potłuczone Kieliszki** | komplet był na wyposażeniu |
-| Debt Collector | 1 | 3M | **Zgubione Klucze** | wymiana wkładki na koszt gościa |
+| Debt Collector | 1 | 3M | **Potłuczone Kieliszki** | kaucja to pokryje |
+| Debt Collector | 1 | 3M | **Zgubione Klucze** | nowa wkładka z kaucji |
 | It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, zrzutka obowiązkowa |
 | It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, jest druga w nocy, masz jeszcze 4 godziny picia |
-| It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, nie ma opcji, że kogoś nie było |
+| It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, prezenty tylko w gotówce |
 | Double The Rent | 2 | 1M | **Sezon w Los Alcázares** | lipiec, wszystko drożeje |
 | House | 2 | 3M | **Jednostka Klimatyzacji** | dziura na kable w żelbecie już wykuta |
 | House | 1 | 3M | **Klimatyzacja w Astrze** | kosztowała jak metr kwadratowy na Jasnej |
@@ -159,7 +159,7 @@ Dwustronne, kolory podzielone na pół, w turze można obrócić.
 | Pass Go | 2 | 1M | **Ślub!** | od dziś wszystko robimy wspólnie |
 | Pass Go | 2 | 1M | **Dywidenda z GPW** | na szczęście na IKE, podatku nie ma |
 | Pass Go | 2 | 1M | **Zwrot Szklanek do Ikei** | paragon był, naklejki wróciły, Dagmara przepchnęła |
-| Pass Go | 2 | 1M | **Obiad u Mamy** | wychodzisz z pełnym brzuchem i słoikami |
+| Pass Go | 2 | 1M | **Nabijanie Pączków Marmoladą** | przed tłustym czwartkiem, w celach zarobkowych |
 | Pass Go | 2 | 1M | **Wolne Miejsce przed Gliwicką** | ktoś odjechał, bierz zanim zajmą |
 
 Rozkład zgadza się z oryginałem: Pass Go 10, Sly Deal 3, Forced Deal 3, Debt Collector 3, Birthday 3, Just Say No 3, House 3, Deal Breaker 2, Hotel 2, Double The Rent 2.
@@ -204,9 +204,9 @@ Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się prze
 | **Pielgrzymka: Sekcja Ekologiczna** | 2M | Wybrany gracz opuszcza następną turę | ktoś musi złożyć pole namiotowe |
 | **Kontrola z Urzędu Skarbowego** | 2M | Wybrany gracz odkłada 5M do banku | wszystko się zgadza, tylko trwa |
 | **Zebranie Rady Osiedla** | 2M | Wybrany gracz odkłada 2M do banku | stres i cringe w gratisie |
-| **Beata i Niezadowoleni Goście** | 2M | Wybrany gracz odkłada 2M do banku | nie wieje, nie popływasz |
+| **Niezadowoleni Goście** | 2M | Wybrany gracz odkłada 2M do banku | nie ma wiatru, nie da się pływać na kajcie |
 | **Sierpień bez Rezerwacji** | 2M | Wybrany gracz odkłada 2M do banku | apartament stoi pusty w szczycie sezonu |
-| **Zakręt w Żuradzie** | 2M | Wybrany gracz opuszcza następną turę | Grzanka, Smuga, Franek i Wojtek mogli tam zginąć, Goraj prowadził |
+| **Zakręt w Żuradzie** | 2M | Wybrany gracz opuszcza następną turę | albo ktoś traci turę, albo Grzanka, Smuga, Franek i Wojtek jadą do rowu |
 | **Ostatnia Fajka na Słowikach** | 2M | Wybrany gracz oddaje dwóm innym graczom po jednej nieruchomości spoza pełnego kompletu | miała iść na trzech, po pierwszym podaniu wpadła filtrem w psie gówno |
 
 ---
