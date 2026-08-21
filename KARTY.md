@@ -226,20 +226,34 @@ i sama się w nią wpisuje. Zmiana koloru ikonki to zmiana akcentu w `PALETTE`, 
 
 | Karta | Ikonka |
 |---|---|
-| Monikracja (Deal Breaker) | `cards` |
+| Monikracja (Deal Breaker) | `hand-grabbing` |
 | Dzisiaj Nie, Kochanie / Podatkom Mówię NIE | `prohibit` |
 | Otodom / Beata Ma Klucze (Sly Deal) | `detective` |
-| Wspólna Decyzja / Rotacja Leżaków (Forced Deal) | `arrows-left-right` |
+| Wspólna Decyzja / Rotacja Leżaków (Forced Deal) | `handshake` |
 | Booking Się Pomylił / Kieliszki / Klucze | `hand-coins` |
 | 6 Października | `cake` |
 | Sezon w Los Alcázares | `arrow-fat-lines-up` |
-| Pass Go (Ślub, GPW, Ikea, Pączki, Wolne Miejsce) | `flag-checkered` |
+| Pass Go (Ślub, GPW, Ikea, Pączki, Wolne Miejsce) | `cards` |
 | Jednostka Klimatyzacji | `house` |
 | Booking z Oceną 9.4 / Superhost | `buildings` |
 | Karty przypału | `warning` |
 
+Ikonki trzymają się mechaniki karty, nie jej tytułu: wszystkie Pass Go dostały `cards`, bo każda
+z nich znaczy "dobierz dwie karty", a nie "ślub" czy "wolne miejsce". Monikracja ma `hand-grabbing`,
+bo to najmocniejsza karta w talii i ma wyglądać jak wyrwanie kompletu z ręki.
+
 Phosphor ma jeszcze wagi Thin, Light, Regular, Bold i Fill - podmiana wagi to podmiana tego jednego
 bloku w `karty.html` (pliki leżą w repo `phosphor-icons/core`, katalog `assets/<waga>`).
+
+## Nominał na kartach akcji
+
+Każda karta akcji, budynku, przypału i czynszu ma nominał w **lewym górnym i prawym dolnym**
+narożniku, dolny obrócony o 180 stopni - tak jak w oryginale. Kółko siedzi 1,1 mm wewnątrz
+keylinu, czyli 4,6 mm od linii cięcia, więc gilotyna go nie dotknie. Wcześniej stało 1 mm od
+cięcia i przy pierwszym nakładzie połowa nominałów by zniknęła.
+
+Pasek z typem karty idzie u góry i u dołu (dolny odwrócony), więc kartę czyta się z obu stron
+niezależnie od tego, jak leży na stole.
 
 ## Grubość kreski
 

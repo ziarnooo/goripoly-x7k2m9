@@ -205,7 +205,8 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   background:var(--circle);border:.3mm solid var(--ink);
   display:grid;place-items:center;
 }
-.bill-val{--num:11mm;color:var(--ink)}
+/* duża cyfra czytana z boku - obrót w drugą stronę to zmiana znaku przy 90deg */
+.bill-val{--num:11mm;color:var(--ink);transform:rotate(90deg)}
 
 /* nominał w każdym z czterech rogów, wszystkie czytane poziomo */
 .bill-badge{
@@ -248,15 +249,17 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 
 /* pasek z typem karty - jedyne miejsce z mocnym kolorem, biały tekst na akcencie */
 .card--action .rent-head{
-  top:0;height:7mm;background:var(--a);color:#fff;
+  top:0;height:6.4mm;background:var(--a);color:#fff;
   border-bottom:var(--stroke) solid var(--ink);
   display:flex;align-items:center;justify-content:center;
   font-size:2.5mm;letter-spacing:.12em;
 }
-.badge--action{left:4mm;top:2.4mm}   /* siedzi na pasku, 1 mm od linii cięcia */
+/* Nominał w obu narożnikach, jak w oryginale. Kółko siedzi 1,1 mm WEWNĄTRZ keylinu,
+   czyli 4,6 mm od linii cięcia - gilotyna go nie dotknie. */
+.badge--action{left:7.6mm;top:7.6mm;--badge-d:7.6mm}
 /* kółko trzyma się grubości kreski z banknotów: jaśniejszy krążek, cienka obwódka */
 .emblem{
-  position:absolute;left:50%;top:12mm;transform:translateX(-50%);
+  position:absolute;left:50%;top:11.4mm;transform:translateX(-50%);
   width:27mm;height:27mm;border-radius:50%;
   background:color-mix(in srgb, var(--c) 40%, #fff);
   border:.3mm solid color-mix(in srgb, var(--a) 40%, #fff);
@@ -271,7 +274,7 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
 }
 /* nazwa i opis w jednym pionowym bloku - dluzsza nazwa spycha opis nizej, nie nachodzi */
 .act-body{
-  position:absolute;left:3mm;right:3mm;top:41mm;bottom:2.6mm;z-index:3;
+  position:absolute;left:3mm;right:3mm;top:40mm;bottom:7.4mm;z-index:3;
   display:flex;flex-direction:column;overflow:hidden;
 }
 .card--action .effect{position:static;left:auto;right:auto;top:auto;bottom:auto}
@@ -289,7 +292,9 @@ body{background:#2b2b2b;color:#eee;font-family:var(--disp);font-weight:600}
   font-size:2.6mm;font-weight:900;letter-spacing:.14em;text-transform:uppercase;z-index:4;
 }
 .rent-head--flip{top:auto;bottom:2.6mm;transform:rotate(180deg)}
-.badge--rent-b{right:4mm;bottom:4mm;transform:rotate(180deg)}
+.card--action .rent-head--flip{top:auto;bottom:0;transform:rotate(180deg);
+  border-bottom:none;border-top:var(--stroke) solid var(--ink)}
+.badge--rent-b{right:7.6mm;bottom:7.6mm;transform:rotate(180deg);--badge-d:7.6mm}
 .rent-emblem{
   position:absolute;left:50%;top:18mm;transform:translateX(-50%);
   width:32mm;height:32mm;border-radius:50%;border:.7mm solid var(--ink);
