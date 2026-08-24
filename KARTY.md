@@ -40,7 +40,7 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
 | St. Charles Place | **Komórka na Porcie** | osobna księga wieczysta, w razie czego można sprzedać jako kawalerkę w centrum Wrocławia |
-| Virginia Avenue | **Miejsce Parkingowe na Porcie** | luksus, o którym mieszkańcy Katowic marzą |
+| Virginia Avenue | **Miejsce Parkingowe na Porcie** | luksus, o którym mieszkańcy Katowic mogą pomarzyć |
 | States Avenue | **Miejsce na Rower na Porcie** | strzeżone lepiej niż mieszkanie |
 
 ### Pomarańczowe - Wrocław: Port Popowice | 2M | 1M / 3M / 5M
