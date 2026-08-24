@@ -61,30 +61,30 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 |---|---|---|
 | Kentucky Avenue | **Mieszkanie na Gliwickiej** | Gliwicka 220D/9, pierwsze mieszkanie jako małżeństwo |
 | Indiana Avenue | **Piwnica na Gliwickiej** | to, co się nie mieści na górze |
-| Illinois Avenue | **Zawsze Dostępne Miejsce na Gliwickiej** | widziane ostatnio, zanim powstała kopalnia |
+| Illinois Avenue | **Zawsze Dostępne Miejsce na Gliwickiej** | ostatnio widziane: zanim powstała kopalnia |
 
 ### Żółte - Hiszpania: sąsiedztwo | 3M | 2M / 4M / 6M
 
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
 | Ventnor Avenue | **Mieszkanie Teściowej w Hiszpanii** | blisko. Za blisko? |
-| Marvin Gardens | **Mieszkanie Teścia w Hiszpanii** | azyl po drugiej stronie kompleksu |
+| Marvin Gardens | **Mieszkanie Teścia w Hiszpanii** | azyl po drugiej stronie Nueva Ribera |
 | Atlantic Avenue | **Mieszkanie Beaty** | "szefowej" wspólnoty |
 
-### Zielone - Los Alcázares: życie w kompleksie | 4M | 2M / 4M / 7M
+### Zielone - Nueva Ribera: życie w kompleksie | 4M | 2M / 4M / 7M
 
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
 | North Carolina Avenue | **Taras w Hiszpanii** | poranna kawka z żoną, kajciarze na horyzoncie |
-| Pacific Avenue | **Basen w Hiszpańskim Kompleksie** | ręcznik na leżaku od rana, miejsce zaklepane |
+| Pacific Avenue | **Basen w Nueva Ribera** | ręcznik na leżaku od rana, miejsce zaklepane |
 | Pennsylvania Avenue | **Plaża Las Salinas** | 5 minut spacerem, do ćwiczenia kite'a |
 
 ### Granatowe - Premium | 4M | 3M / 8M
 
 | Oryginał | GORIpoly | Podpis |
 |---|---|---|
-| Boardwalk | **Apartament Los Alcázares** | perła w koronie |
-| Park Place | **Piwnica do Apartamentu** | chłodzona wodą prosto ze ściany |
+| Boardwalk | **Apartament Casa Vera** | perła w koronie |
+| Park Place | **Piwnica pod Casa Verą** | chłodzona wodą prosto ze ściany |
 
 ### Czarne - Trasy Goraja | 2M | 1M / 2M / 3M / 4M
 
@@ -92,7 +92,7 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 |---|---|---|
 | Reading Railroad | **Lotnisko Alicante** | FR 2137, przylot 23:50, ostatni autobus 23:40 |
 | Pennsylvania Railroad | **Zakorkowana A4** | a po ilu wypadkach Ty się uśmiechniesz? |
-| B. & O. Railroad | **Ścieżka Rowerowa** | Nextbike, gravel albo MTB, nauka wciąż trwa |
+| B. & O. Railroad | **Ścieżka Rowerowa** | Nextbike, gravel albo MTB |
 | Short Line | **Dworzec Wrocław Główny** | peron 3, pociąg opóźniony |
 
 ### Jasnozielone - Usługi niezbędne do życia | 2M | 1M / 2M
@@ -128,8 +128,8 @@ Dwustronne, kolory podzielone na pół, w turze można obrócić.
 | brąz / błękit | 2 | 1M | **Czynsz z Olkusza** | u mamy się nie płaci, u reszty tak |
 | róż / pomarańcz | 2 | 1M | **Czynsz z Wrocławia** | razem z opłatą za komórkę |
 | czerwień / żółć | 2 | 1M | **Czynsz z Gliwickiej i Hiszpanii** | nie Twoje, a i tak Ty to ogarniasz |
-| granat / zieleń | 2 | 1M | **Przelew z Bookinga** | goście zapłacili z góry |
-| trasa / usługi | 2 | 1M | **Kilometrówka z Pracy** | paliwo, bilet, bagaż podręczny |
+| granat / zieleń | 2 | 1M | **Przelew z Bookingu** | goście zapłacili z góry |
+| trasa / usługi | 2 | 1M | **Kilometrówka z pracy** | paliwo, bilet, bagaż podręczny |
 | wszystkie kolory | 3 | 3M | **Rozliczenie Roczne** | płatność z góry |
 
 ---
@@ -148,17 +148,17 @@ Dwustronne, kolory podzielone na pół, w turze można obrócić.
 | Debt Collector | 1 | 3M | **Booking Się Pomylił** | przelew przyszedł dwa razy |
 | Debt Collector | 1 | 3M | **Potłuczone Kieliszki** | kaucja to pokryje |
 | Debt Collector | 1 | 3M | **Zgubione Klucze** | nowa wkładka z kaucji |
-| It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, zrzutka obowiązkowa |
+| It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, wyszedł po chleb dla mamy, wrócił nad ranem |
 | It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, jest druga w nocy, masz jeszcze 4 godziny picia |
 | It's My Birthday | 1 | 2M | **6 Października** | urodziny Goraja, prezenty tylko w gotówce |
 | Double The Rent | 2 | 1M | **Sezon w Los Alcázares** | lipiec, wszystko drożeje |
 | House | 2 | 3M | **Jednostka Klimatyzacji** | dziura na kable w żelbecie już wykuta |
-| House | 1 | 3M | **Klimatyzacja w Astrze** | kosztowała jak metr kwadratowy na Jasnej |
+| House | 1 | 3M | **Klimatyzacja w Astrze** | w cenie metra kwadratowego kawalerki |
 | Hotel | 1 | 4M | **Booking z Oceną 9.4** | ręczniki złożone w łabędzie |
 | Hotel | 1 | 4M | **Superhost Sezonu** | skrzynka na klucze otwierana kodem z apki |
 | Pass Go | 2 | 1M | **Ślub!** | od dziś wszystko robimy wspólnie |
 | Pass Go | 2 | 1M | **Dywidenda z GPW** | na szczęście na IKE, podatku nie ma |
-| Pass Go | 2 | 1M | **Zwrot Szklanek do Ikei** | paragon był, naklejki wróciły, Dagmara przepchnęła |
+| Pass Go | 2 | 1M | **Zwrot Szklanek do Ikei** | paragon jest, naklejki przyklejone, szklanki jak nowe |
 | Pass Go | 2 | 1M | **Nabijanie Pączków Marmoladą** | przed tłustym czwartkiem, w celach zarobkowych |
 | Pass Go | 2 | 1M | **Wolne Miejsce przed Gliwicką** | ktoś odjechał, bierz zanim zajmą |
 
@@ -205,8 +205,8 @@ Zagrywasz na wybranego gracza jako jedną z trzech kart w turze. Broni się prze
 |---|---|---|---|
 | **Nocka na Lotnisku w Alicante** | 2M | Wybrany gracz opuszcza następną turę | samolot uciekł, następny dopiero rano |
 | **Pielgrzymka: Sekcja Ekologiczna** | 2M | Wybrany gracz opuszcza następną turę | ktoś musi złożyć pole namiotowe |
-| **Kontrola z Urzędu Skarbowego** | 2M | Wybrany gracz odkłada 5M do banku | wszystko się zgadza, tylko trwa |
-| **Zebranie Rady Osiedla** | 2M | Wybrany gracz odkłada 2M do banku | stres i cringe w gratisie |
+| **Kontrola z Urzędu Skarbowego** | 2M | Wybrany gracz odkłada 5M do banku | na papierze wszystko się zgadza |
+| **Zebranie Rady Osiedla** | 2M | Wybrany gracz odkłada 2M do banku | trzeba jeszcze opłacić tłumacza hiszpańskiego |
 | **Niezadowoleni Goście** | 2M | Wybrany gracz odkłada 2M do banku | nie ma wiatru, nie da się pływać na kajcie |
 | **Sierpień bez Rezerwacji** | 2M | Wybrany gracz odkłada 2M do banku | apartament stoi pusty w szczycie sezonu |
 | **Zakręt w Żuradzie** | 2M | Wybrany gracz opuszcza następną turę | albo ktoś traci turę, albo Grzanka, Smuga, Franek i Wojtek jadą do rowu |
@@ -373,7 +373,7 @@ Reszta jest 1:1.
 ## Otwarte
 
 1. Pomarańczowe: zostawiamy Hotspot i Orbitę czy wchodzą Grunwald / mieszkanie z Justyną i Zerykiem?
-2. Grafiki: ludek w stylu Monopoly z twarzą Goraja (Dominik podeśle materiał). Miejsca na kartach zarezerwowane.
+2. Grafiki: 30 promptów gotowych w `ILUSTRACJE.md`, katalog `art/` obsłużony w kodzie (pole `art` na karcie podmienia ikonkę na obrazek). Nic jeszcze nie wygenerowane, ikonki Phosphor trzymają się dobrze, więc to nie blokuje druku.
 3. Rewers talii.
 4. Karty zasad: zostały 3 zamiast 4, czyli talia ma 109 kart. Decyzja zapadła, zostaje 109.
 5. Działka rolna w Żywcu: na razie żyje jako podpis pod "Ścieżka Rowerowa" i "Przeglądanie Otodomu na Kibelku". Jak ma być osobną nieruchomością, to musi kogoś wypchnąć z talii.

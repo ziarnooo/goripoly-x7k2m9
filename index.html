@@ -393,28 +393,28 @@ const SECTIONS = [
  cards:[
   {n:'Mieszkanie na Gliwickiej',s:'Gliwicka 220D/9, pierwsze mieszkanie jako małżeństwo'},
   {n:'Piwnica na Gliwickiej',s:'to, co się nie mieści na górze'},
-  {n:'Zawsze Dostępne Miejsce na Gliwickiej',s:'widziane ostatnio, zanim powstała kopalnia'},
+  {n:'Zawsze Dostępne Miejsce na Gliwickiej',s:'ostatnio widziane: zanim powstała kopalnia'},
 ]},
 
 {id:'zolte',type:'prop',title:'Żółte - Hiszpania: sąsiedztwo',color:'yellow',val:'3M',rents:['2M','4M','6M'],
  cards:[
   {n:'Mieszkanie Teściowej w Hiszpanii',s:'blisko. Za blisko?'},
-  {n:'Mieszkanie Teścia w Hiszpanii',s:'azyl po drugiej stronie kompleksu'},
+  {n:'Mieszkanie Teścia w Hiszpanii',s:'azyl po drugiej stronie Nueva Ribera'},
   {n:'Mieszkanie Beaty',s:'"szefowej" wspólnoty'},
 ]},
 
-{id:'zielone',type:'prop',title:'Zielone - Los Alcázares: życie w kompleksie',color:'green',val:'4M',rents:['2M','4M','7M'],
+{id:'zielone',type:'prop',title:'Zielone - Nueva Ribera: życie w kompleksie',color:'green',val:'4M',rents:['2M','4M','7M'],
  cards:[
   {n:'Taras w Hiszpanii',s:'poranna kawka z żoną, kajciarze na horyzoncie'},
-  {n:'Basen w Hiszpańskim Kompleksie',s:'ręcznik na leżaku od rana, miejsce zaklepane'},
+  {n:'Basen w Nueva Ribera',s:'ręcznik na leżaku od rana, miejsce zaklepane'},
   {n:'Plaża Las Salinas',s:'5 minut spacerem, do ćwiczenia kite\'a'},
 ]},
 
 {id:'granatowe',type:'prop',title:'Granatowe - Premium',color:'dkblue',val:'4M',rents:['3M','8M'],
  note:'Najdroższa grupa w talii. Komplet to 2 karty.',
  cards:[
-  {n:'Apartament Los Alcázares',s:'perła w koronie'},
-  {n:'Piwnica do Apartamentu',s:'chłodzona wodą prosto ze ściany'},
+  {n:'Apartament Casa Vera',s:'perła w koronie'},
+  {n:'Piwnica pod Casa Verą',s:'chłodzona wodą prosto ze ściany'},
 ]},
 
 {id:'trasy',type:'prop',title:'Czarne - Trasy Goraja',color:'rail',val:'2M',rents:['1M','2M','3M','4M'],
@@ -422,7 +422,7 @@ const SECTIONS = [
  cards:[
   {n:'Lotnisko Alicante',s:'FR 2137, przylot 23:50, ostatni autobus 23:40'},
   {n:'Zakorkowana A4',s:'a po ilu wypadkach Ty się uśmiechniesz?'},
-  {n:'Ścieżka Rowerowa',s:'Nextbike, gravel albo MTB, nauka wciąż trwa'},
+  {n:'Ścieżka Rowerowa',s:'Nextbike, gravel albo MTB'},
   {n:'Dworzec Wrocław Główny',s:'peron 3, pociąg opóźniony'},
 ]},
 
@@ -452,8 +452,8 @@ const SECTIONS = [
   {n:'Czynsz z Olkusza',a:'brown',b:'ltblue',v:'1M',t:'Wszyscy płacą Ci czynsz za brązowe albo błękitne',q:2},
   {n:'Czynsz z Wrocławia',a:'pink',b:'orange',v:'1M',t:'Wszyscy płacą Ci czynsz za różowe albo pomarańczowe',q:2},
   {n:'Czynsz z Gliwickiej i Hiszpanii',a:'red',b:'yellow',v:'1M',t:'Wszyscy płacą Ci czynsz za czerwone albo żółte',q:2},
-  {n:'Przelew z Bookinga',a:'dkblue',b:'green',v:'1M',t:'Wszyscy płacą Ci czynsz za granatowe albo zielone',q:2},
-  {n:'Kilometrówka z Pracy',a:'rail',b:'util',v:'1M',t:'Wszyscy płacą Ci czynsz za trasy albo usługi',q:2},
+  {n:'Przelew z Bookingu',a:'dkblue',b:'green',v:'1M',t:'Wszyscy płacą Ci czynsz za granatowe albo zielone',q:2},
+  {n:'Kilometrówka z pracy',a:'rail',b:'util',v:'1M',t:'Wszyscy płacą Ci czynsz za trasy albo usługi',q:2},
   {n:'Rozliczenie Roczne',multi:true,v:'3M',t:'Wybierasz jednego gracza i jeden dowolny kolor. Płaci Ci czynsz',q:3},
 ]},
 
@@ -470,17 +470,17 @@ const SECTIONS = [
   {n:'Booking Się Pomylił',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'przelew przyszedł dwa razy',q:1},
   {n:'Potłuczone Kieliszki',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'kaucja to pokryje',q:1},
   {n:'Zgubione Klucze',v:'3M',c:A.debt,t:'Wybrany gracz płaci Ci 5M',s:'nowa wkładka z kaucji',q:1},
-  {n:'6 Października',v:'2M',c:A.bday,t:'Każdy gracz daje Ci 2M w prezencie',s:'urodziny Goraja, zrzutka obowiązkowa',q:1},
+  {n:'6 Października',v:'2M',c:A.bday,t:'Każdy gracz daje Ci 2M w prezencie',s:'urodziny Goraja, wyszedł po chleb dla mamy, wrócił nad ranem',q:1},
   {n:'6 Października',v:'2M',c:A.bday,t:'Każdy gracz daje Ci 2M w prezencie',s:'urodziny Goraja, jest druga w nocy, masz jeszcze 4 godziny picia',q:1},
   {n:'6 Października',v:'2M',c:A.bday,t:'Każdy gracz daje Ci 2M w prezencie',s:'urodziny Goraja, prezenty tylko w gotówce',q:1},
   {n:'Sezon w Los Alcázares',v:'1M',c:A.dbl,t:'Zagrywasz razem z kartą czynszu. Stawka x2',s:'lipiec, wszystko drożeje',q:2},
   {n:'Jednostka Klimatyzacji',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'dziura na kable w żelbecie już wykuta',q:2},
-  {n:'Klimatyzacja w Astrze',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'kosztowała jak metr kwadratowy na Jasnej',q:1},
+  {n:'Klimatyzacja w Astrze',v:'3M',c:A.house,t:'Dokładasz do pełnego kompletu. Czynsz za ten kolor rośnie o 3M. Nie działa na trasy i usługi',s:'w cenie metra kwadratowego kawalerki',q:1},
   {n:'Booking z Oceną 9.4',v:'4M',c:A.hotel,t:'Dokładasz do kompletu, który ma już klimatyzację. Czynsz rośnie o kolejne 4M',s:'ręczniki złożone w łabędzie',q:1},
   {n:'Superhost Sezonu',v:'4M',c:A.hotel,t:'Dokładasz do kompletu, który ma już klimatyzację. Czynsz rośnie o kolejne 4M',s:'skrzynka na klucze otwierana kodem z apki',q:1},
   {n:'Ślub!',v:'1M',c:A.pass,t:'Dobierz 2 karty. Wskaż gracza, który dobiera razem z Tobą',s:'od dziś wszystko robimy wspólnie',q:2},
   {n:'Dywidenda z GPW',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'na szczęście na IKE, podatku nie ma',q:2},
-  {n:'Zwrot Szklanek do Ikei',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'paragon był, naklejki wróciły, Dagmara przepchnęła',q:2},
+  {n:'Zwrot Szklanek do Ikei',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'paragon jest, naklejki przyklejone, szklanki jak nowe',q:2},
   {n:'Nabijanie Pączków Marmoladą',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'przed tłustym czwartkiem, w celach zarobkowych',q:2},
   {n:'Wolne Miejsce przed Gliwicką',v:'1M',c:A.pass,t:'Dobierz 2 dodatkowe karty',s:'ktoś odjechał, bierz zanim zajmą',q:2},
 ]},
@@ -490,8 +490,8 @@ const SECTIONS = [
  cards:[
   {n:'Nocka na Lotnisku w Alicante',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz opuszcza następną turę',s:'samolot uciekł, następny dopiero rano',q:1},
   {n:'Pielgrzymka: Sekcja Ekologiczna',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz opuszcza następną turę',s:'ktoś musi złożyć pole namiotowe',q:1},
-  {n:'Kontrola z Urzędu Skarbowego',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 5M do banku',s:'wszystko się zgadza, tylko trwa',q:1},
-  {n:'Zebranie Rady Osiedla',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'stres i cringe w gratisie',q:1},
+  {n:'Kontrola z Urzędu Skarbowego',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 5M do banku',s:'na papierze wszystko się zgadza',q:1},
+  {n:'Zebranie Rady Osiedla',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'trzeba jeszcze opłacić tłumacza hiszpańskiego',q:1},
   {n:'Niezadowoleni Goście',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'nie ma wiatru, nie da się pływać na kajcie',q:1},
   {n:'Sierpień bez Rezerwacji',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz odkłada 2M do banku',s:'apartament stoi pusty w szczycie sezonu',q:1},
   {n:'Zakręt w Żuradzie',v:'2M',c:A.oops,kind:'Karta przypału',t:'Wybrany gracz opuszcza następną turę',s:'albo ktoś traci turę, albo Grzanka, Smuga, Franek i Wojtek jadą do rowu',q:1},
