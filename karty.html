@@ -578,6 +578,32 @@ document.getElementById('dup').onclick=e=>{
   document.body.classList.toggle('all-copies');
   e.target.classList.toggle('on', document.body.classList.contains('all-copies'));
 };
+
+/* =========================== TRYB Z URL ===========================
+   Do automatycznego eksportu PDF (headless Chrome, druk/build-druk.sh).
+   karty.html?tryb=single         -> 1 karta na strone, strona 62 x 93 mm, bez znacznikow
+   karty.html?naklad=1            -> wszystkie kopie wg nakladu (nie tylko wzory)
+   karty.html?filtr=back          -> tylko jeden typ kart (prop|wild|rent|action|building|oops|money|rules|back)
+   karty.html?filtr=fronty        -> wszystkie awersy bez rewersu
+   karty.html?marks=0             -> bez znacznikow ciecia                                  */
+(function(){
+  const q = new URLSearchParams(location.search);
+  if(q.get('naklad')==='1') document.getElementById('dup').click();
+  const f = q.get('filtr');
+  if(f==='fronty'){
+    /* wszystko oprocz rewersu - to jest plik z awersami dla drukarni */
+    document.querySelectorAll('.slot').forEach(s=>{
+      if(s.querySelector('.card').dataset.t==='back') s.style.display='none';
+    });
+  } else if(f){ const b=document.querySelector(`.bar [data-f="${f}"]`); if(b) b.click(); }
+  if(q.get('tryb')==='single') document.getElementById('single').click();
+  if(q.get('marks')==='0' && document.body.classList.contains('print-marks')) document.getElementById('marks').click();
+  if(q.has('tryb')||q.has('naklad')||q.has('filtr')||q.has('marks')){
+    document.querySelector('.bar').style.display='none';
+    document.querySelector('.note').style.display='none';
+    document.body.dataset.ready='1';
+  }
+})();
 </script>
 </body>
 </html>

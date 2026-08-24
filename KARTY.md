@@ -51,7 +51,9 @@ Wartości, czynsze i liczby sztuk są nietykalne, bo to cała matematyka gry. Zm
 | St. James Place | **Hotspot** | beach bar pod Mostem Milenijnym |
 | Tennessee Avenue | **Siłownia i Basen Orbita** | karnet całoroczny, wejścia: dwa |
 
-**Warianty zamienne** (do wyboru, którą trójkę drukujemy):
+Trójka zatwierdzona, komplet zamknięty.
+
+**Odrzucone** (zostają zapisane, gdyby kiedyś trzeba było kogoś podmienić):
 - **Mieszkanie na Grunwaldzie** - balkon w całości oddany gołębiom
 - **Mieszkanie z Justyną i Zerykiem** - suma kątów: 320 stopni
 
@@ -372,8 +374,11 @@ Reszta jest 1:1.
 
 ## Otwarte
 
-1. Pomarańczowe: zostawiamy Hotspot i Orbitę czy wchodzą Grunwald / mieszkanie z Justyną i Zerykiem?
-2. Grafiki: 30 promptów gotowych w `ILUSTRACJE.md`, katalog `art/` obsłużony w kodzie (pole `art` na karcie podmienia ikonkę na obrazek). Nic jeszcze nie wygenerowane, ikonki Phosphor trzymają się dobrze, więc to nie blokuje druku.
-3. Rewers talii.
-4. Karty zasad: zostały 3 zamiast 4, czyli talia ma 109 kart. Decyzja zapadła, zostaje 109.
-5. Działka rolna w Żywcu: na razie żyje jako podpis pod "Ścieżka Rowerowa" i "Przeglądanie Otodomu na Kibelku". Jak ma być osobną nieruchomością, to musi kogoś wypchnąć z talii.
+1. Grafiki: 30 promptów gotowych w `ILUSTRACJE.md`, katalog `art/` obsłużony w kodzie (pole `art` na karcie podmienia ikonkę na obrazek). Nic jeszcze nie wygenerowane, ikonki Phosphor trzymają się dobrze, więc to nie blokuje druku.
+2. Rewers talii: obecny `rewers.jpg` jest tymczasowy, prompt do powtórzenia siedzi w `ILUSTRACJE.md` (sekcja 30). To jedyna karta z pełnym spadem, więc krzywe cięcie widać na niej najmocniej.
+
+## Zamknięte
+
+- **Pomarańczowe**: Mieszkanie na Porcie Popowice, Hotspot, Siłownia i Basen Orbita. Grunwald i mieszkanie z Justyną i Zerykiem odrzucone.
+- **Karty zasad**: 3 zamiast 4, talia ma 109 kart.
+- **Działka rolna w Żywcu**: zostaje podpisem pod "Ścieżka Rowerowa" i "Przeglądanie Otodomu na Kibelku". Osobnej karty nie dostaje, bo 28 nieruchomości to sztywna matematyka gry i musiałaby kogoś wypchnąć.
